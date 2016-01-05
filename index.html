@@ -210,7 +210,7 @@
               
                 
                 <a class="post-title-link" href="/2016/01/05/leetcode-1/" itemprop="url">
-                  leetcode#1
+                  leetcode#1 Two Sum
                 </a>
               
             
@@ -254,7 +254,14 @@
         
           <span itemprop="articleBody">
             
-              
+              <h1 id="231_3A_Two_Sum"><a href="#231_3A_Two_Sum" class="headerlink" title="#1: Two Sum"></a>#1: Two Sum</h1><p>Given an array of integers, find two numbers such that they add up to a specific target number.<br>The function twoSum should return indices of the two numbers such that they add up to the target, where index1 must be less than index2. Please note that your returned answers (both index1 and index2) are not zero-based.<br>You may assume that each input would have exactly one solution.</p>
+<blockquote>
+<p>Input: numbers={2, 7, 11, 15}, target=9</p>
+<p>Output: index1=1, index2=2</p>
+</blockquote>
+<p>Solution:<br><figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public class <span class="type">Solution</span> &#123;</span><br><span class="line">    public <span class="type">int</span>[] twoSum(<span class="type">int</span>[] nums, <span class="type">int</span> target) &#123;</span><br><span class="line">        <span class="type">int</span>[] defaultres = &#123;<span class="number">0</span>, <span class="number">0</span>&#125;;</span><br><span class="line">        <span class="type">HashMap</span>&lt;<span class="type">Integer</span>, <span class="type">Integer</span>&gt; map = new <span class="type">HashMap</span>&lt;<span class="type">Integer</span>, <span class="type">Integer</span>&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(map.get(nums[i]) != null) &#123;</span><br><span class="line">                <span class="type">int</span>[] <span class="literal">result</span> = &#123;map.get(nums[i])+<span class="number">1</span>,i+<span class="number">1</span>&#125;;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">result</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            map.put(target-nums[i], i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> defaultres;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Using hashmap to store target - current number and then compare the value with the key which already exist in the hashmap, if there is a pair, this two will be the result, if not, continue to find the next one.</p>
+
             
           </span>
         
