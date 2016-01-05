@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Math," />
+  <meta name="keywords" content="Depth-first Search,Tree," />
 
 
 
@@ -51,22 +51,25 @@
 
 
 
-<meta name="description" content="258. Add DigitsGiven a non-negative integer num, repeatedly add all its digits until the result has only one digit.
-For example:
-Given num = 38, the process is like: 3 + 8 = 11, 1 + 1 = 2. Since 2 has">
+<meta name="description" content="#104. Maximum Depth of Binary Tree
+Given a binary tree, find its maximum depth.
+The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.
+Solut">
 <meta property="og:type" content="article">
-<meta property="og:title" content="258. Add Digits">
-<meta property="og:url" content="http://yoursite.com/2016/01/05/258-Add-Digits/index.html">
+<meta property="og:title" content="#104 Maximum Depth of Binary Tree">
+<meta property="og:url" content="http://yoursite.com/2016/01/05/104-Maximum-Depth-of-Binary-Tree/index.html">
 <meta property="og:site_name" content="Arbrash">
-<meta property="og:description" content="258. Add DigitsGiven a non-negative integer num, repeatedly add all its digits until the result has only one digit.
-For example:
-Given num = 38, the process is like: 3 + 8 = 11, 1 + 1 = 2. Since 2 has">
-<meta property="og:updated_time" content="2016-01-05T19:24:49.286Z">
+<meta property="og:description" content="#104. Maximum Depth of Binary Tree
+Given a binary tree, find its maximum depth.
+The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.
+Solut">
+<meta property="og:updated_time" content="2016-01-05T19:30:26.392Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="258. Add Digits">
-<meta name="twitter:description" content="258. Add DigitsGiven a non-negative integer num, repeatedly add all its digits until the result has only one digit.
-For example:
-Given num = 38, the process is like: 3 + 8 = 11, 1 + 1 = 2. Since 2 has">
+<meta name="twitter:title" content="#104 Maximum Depth of Binary Tree">
+<meta name="twitter:description" content="#104. Maximum Depth of Binary Tree
+Given a binary tree, find its maximum depth.
+The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.
+Solut">
 
 
 
@@ -78,7 +81,7 @@ Given num = 38, the process is like: 3 + 8 = 11, 1 + 1 = 2. Since 2 has">
   };
 </script>
 
-  <title> 258. Add Digits | Arbrash </title>
+  <title> #104 Maximum Depth of Binary Tree | Arbrash </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -218,7 +221,7 @@ Given num = 38, the process is like: 3 + 8 = 11, 1 + 1 = 2. Since 2 has">
             
             
               
-                258. Add Digits
+                #104 Maximum Depth of Binary Tree
               
             
           </h1>
@@ -227,7 +230,7 @@ Given num = 38, the process is like: 3 + 8 = 11, 1 + 1 = 2. Since 2 has">
         <div class="post-meta">
           <span class="post-time">
             發表於
-            <time itemprop="dateCreated" datetime="2016-01-05T14:17:49-05:00" content="2016-01-05">
+            <time itemprop="dateCreated" datetime="2016-01-05T14:27:00-05:00" content="2016-01-05">
               2016-01-05
             </time>
           </span>
@@ -253,8 +256,8 @@ Given num = 38, the process is like: 3 + 8 = 11, 1 + 1 = 2. Since 2 has">
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/05/258-Add-Digits/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/05/258-Add-Digits/" itemprop="commentsCount"></span>
+                <a href="/2016/01/05/104-Maximum-Depth-of-Binary-Tree/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/05/104-Maximum-Depth-of-Binary-Tree/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -273,12 +276,10 @@ Given num = 38, the process is like: 3 + 8 = 11, 1 + 1 = 2. Since 2 has">
       
 
       
-        <span itemprop="articleBody"><h1 id="258-_Add_Digits"><a href="#258-_Add_Digits" class="headerlink" title="258. Add Digits"></a>258. Add Digits</h1><p>Given a non-negative integer num, repeatedly add all its digits until the result has only one digit.</p>
-<p>For example:</p>
-<p>Given num = 38, the process is like: 3 + 8 = 11, 1 + 1 = 2. Since 2 has only one digit, return it.</p>
-<p>Solution:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">addDigits</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> num==<span class="number">0</span>?<span class="number">0</span>:(num%<span class="number">9</span>==<span class="number">0</span>?<span class="number">9</span>:(num%<span class="number">9</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>This problem is a digit root problem, formula is dr(n) = n mod (b-1) if n % (b-1) != 0. So, for decimals(b=10), we can mod the number by 9.</p>
-<p>Iteration method:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">addDigits</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">while</span>(num &gt;= <span class="number">10</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> temp = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span>(num &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                temp += num % <span class="number">10</span>;</span><br><span class="line">                num /= <span class="number">10</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            num = temp;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> num;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <span itemprop="articleBody"><p>#104. Maximum Depth of Binary Tree</p>
+<p>Given a binary tree, find its maximum depth.</p>
+<p>The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.</p>
+<p>Solution:<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * Definition for a binary tree node.</span><br><span class="line"> * public class TreeNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     TreeNode left;</span><br><span class="line"> *     TreeNode right;</span><br><span class="line"> *     TreeNode(int x) &#123; val = x; &#125;</span><br><span class="line"> * &#125;</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> int maxDepth(<span class="type">TreeNode</span> root) &#123;</span><br><span class="line">        <span class="keyword">if</span>(root==null) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        int <span class="built_in">max</span> = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span> dfs(root,<span class="built_in">max</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    int dfs(<span class="type">TreeNode</span> root, int <span class="built_in">max</span>) &#123;</span><br><span class="line">         <span class="keyword">if</span>(root.<span class="keyword">left</span>==null&amp;&amp;root.<span class="keyword">right</span>==null) <span class="keyword">return</span> <span class="built_in">max</span>;</span><br><span class="line">         <span class="keyword">if</span>(root.<span class="keyword">left</span>==null&amp;&amp;root.<span class="keyword">right</span>!=null) <span class="keyword">return</span> dfs(root.<span class="keyword">right</span>,<span class="built_in">max</span>+<span class="number">1</span>);</span><br><span class="line">         <span class="keyword">if</span>(root.<span class="keyword">left</span>!=null&amp;&amp;root.<span class="keyword">right</span>==null) <span class="keyword">return</span> dfs(root.<span class="keyword">left</span>,<span class="built_in">max</span>+<span class="number">1</span>);</span><br><span class="line">         <span class="keyword">return</span> <span class="type">Math</span>.<span class="built_in">max</span>(dfs(root.<span class="keyword">left</span>, <span class="built_in">max</span>+<span class="number">1</span>),dfs(root.<span class="keyword">right</span>,<span class="built_in">max</span>+<span class="number">1</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 </span>
       
     </div>
@@ -287,7 +288,9 @@ Given num = 38, the process is like: 3 + 8 = 11, 1 + 1 = 2. Since 2 has">
       
         <div class="post-tags">
           
-            <a href="/tags/Math/" rel="tag">#Math</a>
+            <a href="/tags/Depth-first-Search/" rel="tag">#Depth-first Search</a>
+          
+            <a href="/tags/Tree/" rel="tag">#Tree</a>
           
         </div>
       
@@ -296,16 +299,16 @@ Given num = 38, the process is like: 3 + 8 = 11, 1 + 1 = 2. Since 2 has">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/05/293-Flip-Game/" rel="next" title="#293 Flip Game">
-                <i class="fa fa-chevron-left"></i> #293 Flip Game
+              <a href="/2016/01/05/258-Add-Digits/" rel="next" title="258. Add Digits">
+                <i class="fa fa-chevron-left"></i> 258. Add Digits
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/01/05/104-Maximum-Depth-of-Binary-Tree/" rel="prev" title="#104 Maximum Depth of Binary Tree">
-                #104 Maximum Depth of Binary Tree <i class="fa fa-chevron-right"></i>
+              <a href="/2016/01/05/243-Shortest-Word-Distance/" rel="prev" title="#243 Shortest Word Distance">
+                #243 Shortest Word Distance <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -333,8 +336,8 @@ Given num = 38, the process is like: 3 + 8 = 11, 1 + 1 = 2. Since 2 has">
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/01/05/258-Add-Digits/"
-           data-title="258. Add Digits" data-url="http://yoursite.com/2016/01/05/258-Add-Digits/">
+      <div class="ds-thread" data-thread-key="2016/01/05/104-Maximum-Depth-of-Binary-Tree/"
+           data-title="#104 Maximum Depth of Binary Tree" data-url="http://yoursite.com/2016/01/05/104-Maximum-Depth-of-Binary-Tree/">
       </div>
     
   </div>
@@ -424,7 +427,7 @@ Given num = 38, the process is like: 3 + 8 = 11, 1 + 1 = 2. Since 2 has">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#258-_Add_Digits"><span class="nav-number">1.</span> <span class="nav-text">258. Add Digits</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目錄</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

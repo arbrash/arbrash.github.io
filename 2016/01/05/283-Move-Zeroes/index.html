@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Math," />
+  <meta name="keywords" content="Array,Two Pointers," />
 
 
 
@@ -51,22 +51,22 @@
 
 
 
-<meta name="description" content="258. Add DigitsGiven a non-negative integer num, repeatedly add all its digits until the result has only one digit.
-For example:
-Given num = 38, the process is like: 3 + 8 = 11, 1 + 1 = 2. Since 2 has">
+<meta name="description" content="#283. Move Zeroes
+Given an array nums, write a function to move all 0’s to the end of it while maintaining the relative order of the non-zero elements.
+For example, given nums = [0, 1, 0, 3, 12], afte">
 <meta property="og:type" content="article">
-<meta property="og:title" content="258. Add Digits">
-<meta property="og:url" content="http://yoursite.com/2016/01/05/258-Add-Digits/index.html">
+<meta property="og:title" content="#283 Move Zeroes">
+<meta property="og:url" content="http://yoursite.com/2016/01/05/283-Move-Zeroes/index.html">
 <meta property="og:site_name" content="Arbrash">
-<meta property="og:description" content="258. Add DigitsGiven a non-negative integer num, repeatedly add all its digits until the result has only one digit.
-For example:
-Given num = 38, the process is like: 3 + 8 = 11, 1 + 1 = 2. Since 2 has">
-<meta property="og:updated_time" content="2016-01-05T19:24:49.286Z">
+<meta property="og:description" content="#283. Move Zeroes
+Given an array nums, write a function to move all 0’s to the end of it while maintaining the relative order of the non-zero elements.
+For example, given nums = [0, 1, 0, 3, 12], afte">
+<meta property="og:updated_time" content="2016-01-05T20:29:37.265Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="258. Add Digits">
-<meta name="twitter:description" content="258. Add DigitsGiven a non-negative integer num, repeatedly add all its digits until the result has only one digit.
-For example:
-Given num = 38, the process is like: 3 + 8 = 11, 1 + 1 = 2. Since 2 has">
+<meta name="twitter:title" content="#283 Move Zeroes">
+<meta name="twitter:description" content="#283. Move Zeroes
+Given an array nums, write a function to move all 0’s to the end of it while maintaining the relative order of the non-zero elements.
+For example, given nums = [0, 1, 0, 3, 12], afte">
 
 
 
@@ -78,7 +78,7 @@ Given num = 38, the process is like: 3 + 8 = 11, 1 + 1 = 2. Since 2 has">
   };
 </script>
 
-  <title> 258. Add Digits | Arbrash </title>
+  <title> #283 Move Zeroes | Arbrash </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -218,7 +218,7 @@ Given num = 38, the process is like: 3 + 8 = 11, 1 + 1 = 2. Since 2 has">
             
             
               
-                258. Add Digits
+                #283 Move Zeroes
               
             
           </h1>
@@ -227,7 +227,7 @@ Given num = 38, the process is like: 3 + 8 = 11, 1 + 1 = 2. Since 2 has">
         <div class="post-meta">
           <span class="post-time">
             發表於
-            <time itemprop="dateCreated" datetime="2016-01-05T14:17:49-05:00" content="2016-01-05">
+            <time itemprop="dateCreated" datetime="2016-01-05T15:22:26-05:00" content="2016-01-05">
               2016-01-05
             </time>
           </span>
@@ -253,8 +253,8 @@ Given num = 38, the process is like: 3 + 8 = 11, 1 + 1 = 2. Since 2 has">
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/05/258-Add-Digits/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/05/258-Add-Digits/" itemprop="commentsCount"></span>
+                <a href="/2016/01/05/283-Move-Zeroes/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/05/283-Move-Zeroes/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -273,12 +273,12 @@ Given num = 38, the process is like: 3 + 8 = 11, 1 + 1 = 2. Since 2 has">
       
 
       
-        <span itemprop="articleBody"><h1 id="258-_Add_Digits"><a href="#258-_Add_Digits" class="headerlink" title="258. Add Digits"></a>258. Add Digits</h1><p>Given a non-negative integer num, repeatedly add all its digits until the result has only one digit.</p>
-<p>For example:</p>
-<p>Given num = 38, the process is like: 3 + 8 = 11, 1 + 1 = 2. Since 2 has only one digit, return it.</p>
-<p>Solution:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">addDigits</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> num==<span class="number">0</span>?<span class="number">0</span>:(num%<span class="number">9</span>==<span class="number">0</span>?<span class="number">9</span>:(num%<span class="number">9</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>This problem is a digit root problem, formula is dr(n) = n mod (b-1) if n % (b-1) != 0. So, for decimals(b=10), we can mod the number by 9.</p>
-<p>Iteration method:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">addDigits</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">while</span>(num &gt;= <span class="number">10</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> temp = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span>(num &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                temp += num % <span class="number">10</span>;</span><br><span class="line">                num /= <span class="number">10</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            num = temp;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> num;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <span itemprop="articleBody"><p>#283. Move Zeroes</p>
+<p>Given an array nums, write a function to move all 0’s to the end of it while maintaining the relative order of the non-zero elements.</p>
+<p>For example, given nums = [0, 1, 0, 3, 12], after calling your function, nums should be [1, 3, 12, 0, 0].</p>
+<p>Note:<br>You must do this in-place without making a copy of the array.<br>Minimize the total number of operations.</p>
+<p>Solution:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">moveZeroes</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> position = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> num:nums)&#123;</span><br><span class="line">            <span class="keyword">if</span>(num != <span class="number">0</span>)</span><br><span class="line">                nums[position++] = num;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(position &lt; nums.length)</span><br><span class="line">            nums[position++] = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Iterate all elements in the array and store all the nonzero elements in the array start with index 0, then fill 0 for the rest of array.</p>
 </span>
       
     </div>
@@ -287,7 +287,9 @@ Given num = 38, the process is like: 3 + 8 = 11, 1 + 1 = 2. Since 2 has">
       
         <div class="post-tags">
           
-            <a href="/tags/Math/" rel="tag">#Math</a>
+            <a href="/tags/Array/" rel="tag">#Array</a>
+          
+            <a href="/tags/Two-Pointers/" rel="tag">#Two Pointers</a>
           
         </div>
       
@@ -296,17 +298,13 @@ Given num = 38, the process is like: 3 + 8 = 11, 1 + 1 = 2. Since 2 has">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/05/293-Flip-Game/" rel="next" title="#293 Flip Game">
-                <i class="fa fa-chevron-left"></i> #293 Flip Game
+              <a href="/2016/01/05/325-Maximum-Size-Subarray-Sum-Equals-k/" rel="next" title="#325 Maximum Size Subarray Sum Equals k">
+                <i class="fa fa-chevron-left"></i> #325 Maximum Size Subarray Sum Equals k
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/01/05/104-Maximum-Depth-of-Binary-Tree/" rel="prev" title="#104 Maximum Depth of Binary Tree">
-                #104 Maximum Depth of Binary Tree <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -333,8 +331,8 @@ Given num = 38, the process is like: 3 + 8 = 11, 1 + 1 = 2. Since 2 has">
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/01/05/258-Add-Digits/"
-           data-title="258. Add Digits" data-url="http://yoursite.com/2016/01/05/258-Add-Digits/">
+      <div class="ds-thread" data-thread-key="2016/01/05/283-Move-Zeroes/"
+           data-title="#283 Move Zeroes" data-url="http://yoursite.com/2016/01/05/283-Move-Zeroes/">
       </div>
     
   </div>
@@ -424,7 +422,7 @@ Given num = 38, the process is like: 3 + 8 = 11, 1 + 1 = 2. Since 2 has">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#258-_Add_Digits"><span class="nav-number">1.</span> <span class="nav-text">258. Add Digits</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目錄</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
