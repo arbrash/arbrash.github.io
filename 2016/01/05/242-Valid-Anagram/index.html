@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Hash Table,Sort," />
 
 
 
@@ -51,16 +51,25 @@
 
 
 
-<meta name="description" content="292. Nim GameYou are playing the following Nim Game with your friend: There is a heap of stones on the table, each time one of you take turns to remove 1 to 3 stones. The one who removes the last ston">
+<meta name="description" content="#242. Valid Anagram
+Given two strings s and t, write a function to determine if t is an anagram of s.
+For example,s = “anagram”, t = “nagaram”, return true.s = “rat”, t = “car”, return false.
+Note:You">
 <meta property="og:type" content="article">
-<meta property="og:title" content="#292 Nim Game">
-<meta property="og:url" content="http://yoursite.com/2016/01/05/292-Nim-Game/index.html">
+<meta property="og:title" content="#242 Valid Anagram">
+<meta property="og:url" content="http://yoursite.com/2016/01/05/242-Valid-Anagram/index.html">
 <meta property="og:site_name" content="Arbrash">
-<meta property="og:description" content="292. Nim GameYou are playing the following Nim Game with your friend: There is a heap of stones on the table, each time one of you take turns to remove 1 to 3 stones. The one who removes the last ston">
-<meta property="og:updated_time" content="2016-01-05T18:39:36.082Z">
+<meta property="og:description" content="#242. Valid Anagram
+Given two strings s and t, write a function to determine if t is an anagram of s.
+For example,s = “anagram”, t = “nagaram”, return true.s = “rat”, t = “car”, return false.
+Note:You">
+<meta property="og:updated_time" content="2016-01-05T21:16:40.909Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="#292 Nim Game">
-<meta name="twitter:description" content="292. Nim GameYou are playing the following Nim Game with your friend: There is a heap of stones on the table, each time one of you take turns to remove 1 to 3 stones. The one who removes the last ston">
+<meta name="twitter:title" content="#242 Valid Anagram">
+<meta name="twitter:description" content="#242. Valid Anagram
+Given two strings s and t, write a function to determine if t is an anagram of s.
+For example,s = “anagram”, t = “nagaram”, return true.s = “rat”, t = “car”, return false.
+Note:You">
 
 
 
@@ -72,7 +81,7 @@
   };
 </script>
 
-  <title> #292 Nim Game | Arbrash </title>
+  <title> #242 Valid Anagram | Arbrash </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -212,7 +221,7 @@
             
             
               
-                #292 Nim Game
+                #242 Valid Anagram
               
             
           </h1>
@@ -221,7 +230,7 @@
         <div class="post-meta">
           <span class="post-time">
             發表於
-            <time itemprop="dateCreated" datetime="2016-01-05T12:49:17-05:00" content="2016-01-05">
+            <time itemprop="dateCreated" datetime="2016-01-05T15:49:13-05:00" content="2016-01-05">
               2016-01-05
             </time>
           </span>
@@ -247,8 +256,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/05/292-Nim-Game/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/05/292-Nim-Game/" itemprop="commentsCount"></span>
+                <a href="/2016/01/05/242-Valid-Anagram/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/05/242-Valid-Anagram/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -267,32 +276,43 @@
       
 
       
-        <span itemprop="articleBody"><h1 id="292-_Nim_Game"><a href="#292-_Nim_Game" class="headerlink" title="292. Nim Game"></a>292. Nim Game</h1><p>You are playing the following Nim Game with your friend: There is a heap of stones on the table, each time one of you take turns to remove 1 to 3 stones. The one who removes the last stone will be the winner. You will take the first turn to remove the stones.</p>
-<p>Both of you are very clever and have optimal strategies for the game. Write a function to determine whether you can win the game given the number of stones in the heap.</p>
-<p>For example, if there are 4 stones in the heap, then you will never win the game: no matter 1, 2, or 3 stones you remove, the last stone will always be removed by your friend.</p>
-<p>Solution<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> boolean <span class="title">canWinNim</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(n % <span class="number">4</span> == <span class="number">0</span>)  </span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;  </span><br><span class="line">        <span class="keyword">else</span>    </span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>The first one who got the number that is multiple of 4 (i.e. n % 4 == 0) will lost, otherwise he/she will win.</p>
+        <span itemprop="articleBody"><p>#242. Valid Anagram</p>
+<p>Given two strings s and t, write a function to determine if t is an anagram of s.</p>
+<p>For example,<br>s = “anagram”, t = “nagaram”, return true.<br>s = “rat”, t = “car”, return false.</p>
+<p>Note:<br>You may assume the string contains only lowercase alphabets.</p>
+<p>Solution:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> boolean <span class="title">isAnagram</span><span class="params">(String s, String t)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] count1 = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">26</span>];</span><br><span class="line">        <span class="keyword">int</span>[] count2 = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">26</span>];</span><br><span class="line">        <span class="keyword">if</span>(s.length() != t.length()) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s.length();i++)&#123;</span><br><span class="line">            count1[s.charAt(i)-<span class="string">'a'</span>]++;</span><br><span class="line">            count2[t.charAt(i)-<span class="string">'a'</span>]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(Arrays.equals(count1,count2)) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Change the char to ascii value, because string contains only lowercase alphabets, so we can just announce two int[26] array to story the occurrence number of chars from a-z.</p>
+<p>HashTable solution:<br><figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> class Solution &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">boolean</span> isAnagram(<span class="keyword">String</span> s, <span class="keyword">String</span> t) &#123;</span><br><span class="line">        <span class="built_in">char</span>[] arr1=s.toCharArray();</span><br><span class="line">        <span class="built_in">char</span>[] arr2=t.toCharArray();</span><br><span class="line">        <span class="keyword">HashMap</span>&lt;Character,Integer&gt; h=<span class="keyword">new</span> <span class="keyword">HashMap</span>&lt;Character,Integer&gt;();</span><br><span class="line">        <span class="keyword">if</span>(arr1.length != arr2.length)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">       <span class="keyword">for</span>(<span class="built_in">int</span> i=<span class="number">0</span>;i&lt;arr1.length;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(h.<span class="built_in">get</span>(arr1[i])!= <span class="keyword">null</span>)</span><br><span class="line">            h.put(arr1[i],(h.<span class="built_in">get</span>(arr1[i]))+<span class="number">1</span>);</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            h.put(arr1[i],<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="built_in">int</span> i=<span class="number">0</span>;i&lt;arr2.length;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(h.<span class="built_in">get</span>(arr2[i]) ==<span class="keyword">null</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(h.<span class="built_in">get</span>(arr2[i])==<span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            h.put(arr2[i],(h.<span class="built_in">get</span>(arr2[i]))-<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>first store the String s in the map, key is char, value is its occurrence number. Then iterate the String t, reduce the occurrence number if there is a key match.</p>
 </span>
       
     </div>
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Hash-Table/" rel="tag">#Hash Table</a>
+          
+            <a href="/tags/Sort/" rel="tag">#Sort</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/05/1-Two-Sum/" rel="next" title="#1 Two Sum">
-                <i class="fa fa-chevron-left"></i> #1 Two Sum
+              <a href="/2016/01/05/100-Same-Tree/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/01/05/266-Palindrome-Permutation/" rel="prev" title="#266 Palindrome Permutation">
-                #266 Palindrome Permutation <i class="fa fa-chevron-right"></i>
+              <a href="/2016/01/05/252-Meeting-Rooms/" rel="prev" title="#252 Meeting Rooms">
+                #252 Meeting Rooms <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -320,8 +340,8 @@
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/01/05/292-Nim-Game/"
-           data-title="#292 Nim Game" data-url="http://yoursite.com/2016/01/05/292-Nim-Game/">
+      <div class="ds-thread" data-thread-key="2016/01/05/242-Valid-Anagram/"
+           data-title="#242 Valid Anagram" data-url="http://yoursite.com/2016/01/05/242-Valid-Anagram/">
       </div>
     
   </div>
@@ -411,7 +431,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#292-_Nim_Game"><span class="nav-number">1.</span> <span class="nav-text">292. Nim Game</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目錄</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

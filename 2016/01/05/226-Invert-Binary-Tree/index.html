@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Tree," />
 
 
 
@@ -51,16 +51,28 @@
 
 
 
-<meta name="description" content="292. Nim GameYou are playing the following Nim Game with your friend: There is a heap of stones on the table, each time one of you take turns to remove 1 to 3 stones. The one who removes the last ston">
+<meta name="description" content="#226. Invert Binary Tree
+Invert a binary tree.
+4
+   /   \  2     7 / \   / \1   3 6   9to     4   /   \  7     2 / \   / \9   6 3   1
+Solution:123456789101112131415161718/** * Definition for a binary">
 <meta property="og:type" content="article">
-<meta property="og:title" content="#292 Nim Game">
-<meta property="og:url" content="http://yoursite.com/2016/01/05/292-Nim-Game/index.html">
+<meta property="og:title" content="#226 Invert Binary Tree">
+<meta property="og:url" content="http://yoursite.com/2016/01/05/226-Invert-Binary-Tree/index.html">
 <meta property="og:site_name" content="Arbrash">
-<meta property="og:description" content="292. Nim GameYou are playing the following Nim Game with your friend: There is a heap of stones on the table, each time one of you take turns to remove 1 to 3 stones. The one who removes the last ston">
-<meta property="og:updated_time" content="2016-01-05T18:39:36.082Z">
+<meta property="og:description" content="#226. Invert Binary Tree
+Invert a binary tree.
+4
+   /   \  2     7 / \   / \1   3 6   9to     4   /   \  7     2 / \   / \9   6 3   1
+Solution:123456789101112131415161718/** * Definition for a binary">
+<meta property="og:updated_time" content="2016-01-05T20:42:47.258Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="#292 Nim Game">
-<meta name="twitter:description" content="292. Nim GameYou are playing the following Nim Game with your friend: There is a heap of stones on the table, each time one of you take turns to remove 1 to 3 stones. The one who removes the last ston">
+<meta name="twitter:title" content="#226 Invert Binary Tree">
+<meta name="twitter:description" content="#226. Invert Binary Tree
+Invert a binary tree.
+4
+   /   \  2     7 / \   / \1   3 6   9to     4   /   \  7     2 / \   / \9   6 3   1
+Solution:123456789101112131415161718/** * Definition for a binary">
 
 
 
@@ -72,7 +84,7 @@
   };
 </script>
 
-  <title> #292 Nim Game | Arbrash </title>
+  <title> #226 Invert Binary Tree | Arbrash </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -212,7 +224,7 @@
             
             
               
-                #292 Nim Game
+                #226 Invert Binary Tree
               
             
           </h1>
@@ -221,7 +233,7 @@
         <div class="post-meta">
           <span class="post-time">
             發表於
-            <time itemprop="dateCreated" datetime="2016-01-05T12:49:17-05:00" content="2016-01-05">
+            <time itemprop="dateCreated" datetime="2016-01-05T15:34:29-05:00" content="2016-01-05">
               2016-01-05
             </time>
           </span>
@@ -247,8 +259,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/05/292-Nim-Game/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/05/292-Nim-Game/" itemprop="commentsCount"></span>
+                <a href="/2016/01/05/226-Invert-Binary-Tree/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/05/226-Invert-Binary-Tree/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -267,32 +279,39 @@
       
 
       
-        <span itemprop="articleBody"><h1 id="292-_Nim_Game"><a href="#292-_Nim_Game" class="headerlink" title="292. Nim Game"></a>292. Nim Game</h1><p>You are playing the following Nim Game with your friend: There is a heap of stones on the table, each time one of you take turns to remove 1 to 3 stones. The one who removes the last stone will be the winner. You will take the first turn to remove the stones.</p>
-<p>Both of you are very clever and have optimal strategies for the game. Write a function to determine whether you can win the game given the number of stones in the heap.</p>
-<p>For example, if there are 4 stones in the heap, then you will never win the game: no matter 1, 2, or 3 stones you remove, the last stone will always be removed by your friend.</p>
-<p>Solution<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> boolean <span class="title">canWinNim</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(n % <span class="number">4</span> == <span class="number">0</span>)  </span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;  </span><br><span class="line">        <span class="keyword">else</span>    </span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>The first one who got the number that is multiple of 4 (i.e. n % 4 == 0) will lost, otherwise he/she will win.</p>
+        <span itemprop="articleBody"><p>#226. Invert Binary Tree</p>
+<p>Invert a binary tree.</p>
+<pre><code>4
+</code></pre><p>   /   \<br>  2     7<br> / \   / \<br>1   3 6   9<br>to<br>     4<br>   /   \<br>  7     2<br> / \   / \<br>9   6 3   1</p>
+<p>Solution:<br><figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Definition <span class="keyword">for</span> a binary tree node.</span><br><span class="line"> * <span class="keyword">public</span> <span class="keyword">class</span> TreeNode &#123;</span><br><span class="line"> *     <span class="built_in">int</span> val;</span><br><span class="line"> *     TreeNode <span class="built_in">left</span>;</span><br><span class="line"> *     TreeNode <span class="built_in">right</span>;</span><br><span class="line"> *     TreeNode(<span class="built_in">int</span> x) &#123; val = x; &#125;</span><br><span class="line"> * &#125;</span><br><span class="line"> */</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="keyword">public</span> TreeNode invertTree(TreeNode root) &#123;</span><br><span class="line">        <span class="keyword">if</span>(root == <span class="literal">null</span>) return root;</span><br><span class="line">        TreeNode temp = root.<span class="built_in">left</span>;</span><br><span class="line">        root.<span class="built_in">left</span> = invertTree(root.<span class="built_in">right</span>);</span><br><span class="line">        root.<span class="built_in">right</span> = invertTree(temp);</span><br><span class="line">        return root;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Use recursive method.</p>
 </span>
       
     </div>
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Tree/" rel="tag">#Tree</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/05/1-Two-Sum/" rel="next" title="#1 Two Sum">
-                <i class="fa fa-chevron-left"></i> #1 Two Sum
+              <a href="/2016/01/05/283-Move-Zeroes/" rel="next" title="#283 Move Zeroes">
+                <i class="fa fa-chevron-left"></i> #283 Move Zeroes
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/01/05/266-Palindrome-Permutation/" rel="prev" title="#266 Palindrome Permutation">
-                #266 Palindrome Permutation <i class="fa fa-chevron-right"></i>
+              <a href="/2016/01/05/100-Same-Tree/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -320,8 +339,8 @@
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/01/05/292-Nim-Game/"
-           data-title="#292 Nim Game" data-url="http://yoursite.com/2016/01/05/292-Nim-Game/">
+      <div class="ds-thread" data-thread-key="2016/01/05/226-Invert-Binary-Tree/"
+           data-title="#226 Invert Binary Tree" data-url="http://yoursite.com/2016/01/05/226-Invert-Binary-Tree/">
       </div>
     
   </div>
@@ -411,7 +430,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#292-_Nim_Game"><span class="nav-number">1.</span> <span class="nav-text">292. Nim Game</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目錄</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Depth-first Search,Tree," />
 
 
 
@@ -51,16 +51,22 @@
 
 
 
-<meta name="description" content="292. Nim GameYou are playing the following Nim Game with your friend: There is a heap of stones on the table, each time one of you take turns to remove 1 to 3 stones. The one who removes the last ston">
+<meta name="description" content="#100. Same Tree
+Given two binary trees, write a function to check if they are equal or not.
+Two binary trees are considered equal if they are structurally identical and the nodes have the same value.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="#292 Nim Game">
-<meta property="og:url" content="http://yoursite.com/2016/01/05/292-Nim-Game/index.html">
+<meta property="og:title" content="Arbrash">
+<meta property="og:url" content="http://yoursite.com/2016/01/05/100-Same-Tree/index.html">
 <meta property="og:site_name" content="Arbrash">
-<meta property="og:description" content="292. Nim GameYou are playing the following Nim Game with your friend: There is a heap of stones on the table, each time one of you take turns to remove 1 to 3 stones. The one who removes the last ston">
-<meta property="og:updated_time" content="2016-01-05T18:39:36.082Z">
+<meta property="og:description" content="#100. Same Tree
+Given two binary trees, write a function to check if they are equal or not.
+Two binary trees are considered equal if they are structurally identical and the nodes have the same value.">
+<meta property="og:updated_time" content="2016-01-05T20:49:26.064Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="#292 Nim Game">
-<meta name="twitter:description" content="292. Nim GameYou are playing the following Nim Game with your friend: There is a heap of stones on the table, each time one of you take turns to remove 1 to 3 stones. The one who removes the last ston">
+<meta name="twitter:title" content="Arbrash">
+<meta name="twitter:description" content="#100. Same Tree
+Given two binary trees, write a function to check if they are equal or not.
+Two binary trees are considered equal if they are structurally identical and the nodes have the same value.">
 
 
 
@@ -72,7 +78,7 @@
   };
 </script>
 
-  <title> #292 Nim Game | Arbrash </title>
+  <title>  | Arbrash </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -212,7 +218,7 @@
             
             
               
-                #292 Nim Game
+                
               
             
           </h1>
@@ -221,7 +227,7 @@
         <div class="post-meta">
           <span class="post-time">
             發表於
-            <time itemprop="dateCreated" datetime="2016-01-05T12:49:17-05:00" content="2016-01-05">
+            <time itemprop="dateCreated" datetime="2016-01-05T15:43:08-05:00" content="2016-01-05">
               2016-01-05
             </time>
           </span>
@@ -247,8 +253,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/05/292-Nim-Game/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/05/292-Nim-Game/" itemprop="commentsCount"></span>
+                <a href="/2016/01/05/100-Same-Tree/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/05/100-Same-Tree/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -267,32 +273,40 @@
       
 
       
-        <span itemprop="articleBody"><h1 id="292-_Nim_Game"><a href="#292-_Nim_Game" class="headerlink" title="292. Nim Game"></a>292. Nim Game</h1><p>You are playing the following Nim Game with your friend: There is a heap of stones on the table, each time one of you take turns to remove 1 to 3 stones. The one who removes the last stone will be the winner. You will take the first turn to remove the stones.</p>
-<p>Both of you are very clever and have optimal strategies for the game. Write a function to determine whether you can win the game given the number of stones in the heap.</p>
-<p>For example, if there are 4 stones in the heap, then you will never win the game: no matter 1, 2, or 3 stones you remove, the last stone will always be removed by your friend.</p>
-<p>Solution<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> boolean <span class="title">canWinNim</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(n % <span class="number">4</span> == <span class="number">0</span>)  </span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;  </span><br><span class="line">        <span class="keyword">else</span>    </span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>The first one who got the number that is multiple of 4 (i.e. n % 4 == 0) will lost, otherwise he/she will win.</p>
+        <span itemprop="articleBody"><p>#100. Same Tree</p>
+<p>Given two binary trees, write a function to check if they are equal or not.</p>
+<p>Two binary trees are considered equal if they are structurally identical and the nodes have the same value.</p>
+<p>Solution:<br><figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Definition <span class="keyword">for</span> a binary tree node.</span><br><span class="line"> * <span class="keyword">public</span> <span class="keyword">class</span> TreeNode &#123;</span><br><span class="line"> *     <span class="built_in">int</span> val;</span><br><span class="line"> *     TreeNode <span class="built_in">left</span>;</span><br><span class="line"> *     TreeNode <span class="built_in">right</span>;</span><br><span class="line"> *     TreeNode(<span class="built_in">int</span> x) &#123; val = x; &#125;</span><br><span class="line"> * &#125;</span><br><span class="line"> */</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="keyword">public</span> boolean isSameTree(TreeNode p, TreeNode q) &#123;</span><br><span class="line">        <span class="keyword">if</span>(p == <span class="literal">null</span> &amp;&amp; q == <span class="literal">null</span>) return <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span>(p == <span class="literal">null</span> || q == <span class="literal">null</span>) return <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">if</span>(p.val == q.val)&#123;</span><br><span class="line">            boolean <span class="built_in">left</span> = isSameTree(p.<span class="built_in">left</span>, q.<span class="built_in">left</span>);</span><br><span class="line">            boolean <span class="built_in">right</span> = isSameTree(p.<span class="built_in">right</span>, q.<span class="built_in">right</span>);</span><br><span class="line">            return (<span class="built_in">left</span> &amp;&amp; <span class="built_in">right</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        return <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Use recursive method.</p>
 </span>
       
     </div>
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Depth-first-Search/" rel="tag">#Depth-first Search</a>
+          
+            <a href="/tags/Tree/" rel="tag">#Tree</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/05/1-Two-Sum/" rel="next" title="#1 Two Sum">
-                <i class="fa fa-chevron-left"></i> #1 Two Sum
+              <a href="/2016/01/05/226-Invert-Binary-Tree/" rel="next" title="#226 Invert Binary Tree">
+                <i class="fa fa-chevron-left"></i> #226 Invert Binary Tree
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/01/05/266-Palindrome-Permutation/" rel="prev" title="#266 Palindrome Permutation">
-                #266 Palindrome Permutation <i class="fa fa-chevron-right"></i>
+              <a href="/2016/01/05/242-Valid-Anagram/" rel="prev" title="#242 Valid Anagram">
+                #242 Valid Anagram <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -320,8 +334,8 @@
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/01/05/292-Nim-Game/"
-           data-title="#292 Nim Game" data-url="http://yoursite.com/2016/01/05/292-Nim-Game/">
+      <div class="ds-thread" data-thread-key="2016/01/05/100-Same-Tree/"
+           data-title="" data-url="http://yoursite.com/2016/01/05/100-Same-Tree/">
       </div>
     
   </div>
@@ -411,7 +425,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#292-_Nim_Game"><span class="nav-number">1.</span> <span class="nav-text">292. Nim Game</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目錄</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

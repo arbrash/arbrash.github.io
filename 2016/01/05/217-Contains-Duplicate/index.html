@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Array,Hash Table," />
 
 
 
@@ -51,16 +51,19 @@
 
 
 
-<meta name="description" content="292. Nim GameYou are playing the following Nim Game with your friend: There is a heap of stones on the table, each time one of you take turns to remove 1 to 3 stones. The one who removes the last ston">
+<meta name="description" content="#217. Contains Duplicate
+Given an array of integers, find if the array contains any duplicates. Your function should return true if any value appears at least twice in the array, and it should return">
 <meta property="og:type" content="article">
-<meta property="og:title" content="#292 Nim Game">
-<meta property="og:url" content="http://yoursite.com/2016/01/05/292-Nim-Game/index.html">
+<meta property="og:title" content="#217 Contains Duplicate">
+<meta property="og:url" content="http://yoursite.com/2016/01/05/217-Contains-Duplicate/index.html">
 <meta property="og:site_name" content="Arbrash">
-<meta property="og:description" content="292. Nim GameYou are playing the following Nim Game with your friend: There is a heap of stones on the table, each time one of you take turns to remove 1 to 3 stones. The one who removes the last ston">
-<meta property="og:updated_time" content="2016-01-05T18:39:36.082Z">
+<meta property="og:description" content="#217. Contains Duplicate
+Given an array of integers, find if the array contains any duplicates. Your function should return true if any value appears at least twice in the array, and it should return">
+<meta property="og:updated_time" content="2016-01-05T21:47:23.762Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="#292 Nim Game">
-<meta name="twitter:description" content="292. Nim GameYou are playing the following Nim Game with your friend: There is a heap of stones on the table, each time one of you take turns to remove 1 to 3 stones. The one who removes the last ston">
+<meta name="twitter:title" content="#217 Contains Duplicate">
+<meta name="twitter:description" content="#217. Contains Duplicate
+Given an array of integers, find if the array contains any duplicates. Your function should return true if any value appears at least twice in the array, and it should return">
 
 
 
@@ -72,7 +75,7 @@
   };
 </script>
 
-  <title> #292 Nim Game | Arbrash </title>
+  <title> #217 Contains Duplicate | Arbrash </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -212,7 +215,7 @@
             
             
               
-                #292 Nim Game
+                #217 Contains Duplicate
               
             
           </h1>
@@ -221,7 +224,7 @@
         <div class="post-meta">
           <span class="post-time">
             發表於
-            <time itemprop="dateCreated" datetime="2016-01-05T12:49:17-05:00" content="2016-01-05">
+            <time itemprop="dateCreated" datetime="2016-01-05T16:43:52-05:00" content="2016-01-05">
               2016-01-05
             </time>
           </span>
@@ -247,8 +250,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/05/292-Nim-Game/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/05/292-Nim-Game/" itemprop="commentsCount"></span>
+                <a href="/2016/01/05/217-Contains-Duplicate/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/05/217-Contains-Duplicate/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -267,32 +270,39 @@
       
 
       
-        <span itemprop="articleBody"><h1 id="292-_Nim_Game"><a href="#292-_Nim_Game" class="headerlink" title="292. Nim Game"></a>292. Nim Game</h1><p>You are playing the following Nim Game with your friend: There is a heap of stones on the table, each time one of you take turns to remove 1 to 3 stones. The one who removes the last stone will be the winner. You will take the first turn to remove the stones.</p>
-<p>Both of you are very clever and have optimal strategies for the game. Write a function to determine whether you can win the game given the number of stones in the heap.</p>
-<p>For example, if there are 4 stones in the heap, then you will never win the game: no matter 1, 2, or 3 stones you remove, the last stone will always be removed by your friend.</p>
-<p>Solution<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> boolean <span class="title">canWinNim</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(n % <span class="number">4</span> == <span class="number">0</span>)  </span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;  </span><br><span class="line">        <span class="keyword">else</span>    </span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>The first one who got the number that is multiple of 4 (i.e. n % 4 == 0) will lost, otherwise he/she will win.</p>
+        <span itemprop="articleBody"><p>#217. Contains Duplicate</p>
+<p>Given an array of integers, find if the array contains any duplicates. Your function should return true if any value appears at least twice in the array, and it should return false if every element is distinct.</p>
+<p>Solution:<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Solution</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> boolean <span class="title">containsDuplicate</span>(<span class="params"><span class="keyword">int</span>[] nums</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(nums==<span class="keyword">null</span> || nums.length==<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line"> </span><br><span class="line">        HashSet&lt;Integer&gt; <span class="keyword">set</span> = <span class="keyword">new</span> HashSet&lt;Integer&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i: nums)&#123;</span><br><span class="line">            <span class="keyword">if</span>(!<span class="keyword">set</span>.add(i))&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Because a HashSet cannot have duplicate elements, so we can use the add function of HashSet to know the array whether contains any duplicates.</p>
 </span>
       
     </div>
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Array/" rel="tag">#Array</a>
+          
+            <a href="/tags/Hash-Table/" rel="tag">#Hash Table</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/05/1-Two-Sum/" rel="next" title="#1 Two Sum">
-                <i class="fa fa-chevron-left"></i> #1 Two Sum
+              <a href="/2016/01/05/252-Meeting-Rooms/" rel="next" title="#252 Meeting Rooms">
+                <i class="fa fa-chevron-left"></i> #252 Meeting Rooms
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/01/05/266-Palindrome-Permutation/" rel="prev" title="#266 Palindrome Permutation">
-                #266 Palindrome Permutation <i class="fa fa-chevron-right"></i>
+              <a href="/2016/01/05/171-Excel-Sheet-Column-Number/" rel="prev" title="#171 Excel Sheet Column Number">
+                #171 Excel Sheet Column Number <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -320,8 +330,8 @@
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/01/05/292-Nim-Game/"
-           data-title="#292 Nim Game" data-url="http://yoursite.com/2016/01/05/292-Nim-Game/">
+      <div class="ds-thread" data-thread-key="2016/01/05/217-Contains-Duplicate/"
+           data-title="#217 Contains Duplicate" data-url="http://yoursite.com/2016/01/05/217-Contains-Duplicate/">
       </div>
     
   </div>
@@ -411,7 +421,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#292-_Nim_Game"><span class="nav-number">1.</span> <span class="nav-text">292. Nim Game</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目錄</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

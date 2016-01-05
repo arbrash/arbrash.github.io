@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Array,Bit Manipulation,Divide and Conquer," />
 
 
 
@@ -51,16 +51,22 @@
 
 
 
-<meta name="description" content="292. Nim GameYou are playing the following Nim Game with your friend: There is a heap of stones on the table, each time one of you take turns to remove 1 to 3 stones. The one who removes the last ston">
+<meta name="description" content="#169. Majority Element
+Given an array of size n, find the majority element. The majority element is the element that appears more than ⌊ n/2 ⌋ times.
+You may assume that the array is non-empty and the">
 <meta property="og:type" content="article">
-<meta property="og:title" content="#292 Nim Game">
-<meta property="og:url" content="http://yoursite.com/2016/01/05/292-Nim-Game/index.html">
+<meta property="og:title" content="#169 Majority Element">
+<meta property="og:url" content="http://yoursite.com/2016/01/05/169-Majority-Element/index.html">
 <meta property="og:site_name" content="Arbrash">
-<meta property="og:description" content="292. Nim GameYou are playing the following Nim Game with your friend: There is a heap of stones on the table, each time one of you take turns to remove 1 to 3 stones. The one who removes the last ston">
-<meta property="og:updated_time" content="2016-01-05T18:39:36.082Z">
+<meta property="og:description" content="#169. Majority Element
+Given an array of size n, find the majority element. The majority element is the element that appears more than ⌊ n/2 ⌋ times.
+You may assume that the array is non-empty and the">
+<meta property="og:updated_time" content="2016-01-05T22:02:07.692Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="#292 Nim Game">
-<meta name="twitter:description" content="292. Nim GameYou are playing the following Nim Game with your friend: There is a heap of stones on the table, each time one of you take turns to remove 1 to 3 stones. The one who removes the last ston">
+<meta name="twitter:title" content="#169 Majority Element">
+<meta name="twitter:description" content="#169. Majority Element
+Given an array of size n, find the majority element. The majority element is the element that appears more than ⌊ n/2 ⌋ times.
+You may assume that the array is non-empty and the">
 
 
 
@@ -72,7 +78,7 @@
   };
 </script>
 
-  <title> #292 Nim Game | Arbrash </title>
+  <title> #169 Majority Element | Arbrash </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -212,7 +218,7 @@
             
             
               
-                #292 Nim Game
+                #169 Majority Element
               
             
           </h1>
@@ -221,7 +227,7 @@
         <div class="post-meta">
           <span class="post-time">
             發表於
-            <time itemprop="dateCreated" datetime="2016-01-05T12:49:17-05:00" content="2016-01-05">
+            <time itemprop="dateCreated" datetime="2016-01-05T16:58:36-05:00" content="2016-01-05">
               2016-01-05
             </time>
           </span>
@@ -247,8 +253,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/05/292-Nim-Game/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/05/292-Nim-Game/" itemprop="commentsCount"></span>
+                <a href="/2016/01/05/169-Majority-Element/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/05/169-Majority-Element/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -267,33 +273,39 @@
       
 
       
-        <span itemprop="articleBody"><h1 id="292-_Nim_Game"><a href="#292-_Nim_Game" class="headerlink" title="292. Nim Game"></a>292. Nim Game</h1><p>You are playing the following Nim Game with your friend: There is a heap of stones on the table, each time one of you take turns to remove 1 to 3 stones. The one who removes the last stone will be the winner. You will take the first turn to remove the stones.</p>
-<p>Both of you are very clever and have optimal strategies for the game. Write a function to determine whether you can win the game given the number of stones in the heap.</p>
-<p>For example, if there are 4 stones in the heap, then you will never win the game: no matter 1, 2, or 3 stones you remove, the last stone will always be removed by your friend.</p>
-<p>Solution<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> boolean <span class="title">canWinNim</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(n % <span class="number">4</span> == <span class="number">0</span>)  </span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;  </span><br><span class="line">        <span class="keyword">else</span>    </span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>The first one who got the number that is multiple of 4 (i.e. n % 4 == 0) will lost, otherwise he/she will win.</p>
+        <span itemprop="articleBody"><p>#169. Majority Element</p>
+<p>Given an array of size n, find the majority element. The majority element is the element that appears more than ⌊ n/2 ⌋ times.</p>
+<p>You may assume that the array is non-empty and the majority element always exist in the array.</p>
+<p>Solution:<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    public <span class="built_in">int</span> majorityElement(<span class="built_in">int</span>[] <span class="built_in">num</span>) &#123;</span><br><span class="line">    	<span class="keyword">if</span> (<span class="built_in">num</span>.length == <span class="number">1</span>) &#123;</span><br><span class="line">    		<span class="keyword">return</span> <span class="built_in">num</span>[<span class="number">0</span>];</span><br><span class="line">    	&#125;</span><br><span class="line">    	Arrays.sort(<span class="built_in">num</span>);</span><br><span class="line">    	<span class="keyword">return</span> <span class="built_in">num</span>[<span class="built_in">num</span>.length / <span class="number">2</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Because the majority element appears more than n/2 times, so we can sort the array and the median is the majority element.</p>
 </span>
       
     </div>
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Array/" rel="tag">#Array</a>
+          
+            <a href="/tags/Bit-Manipulation/" rel="tag">#Bit Manipulation</a>
+          
+            <a href="/tags/Divide-and-Conquer/" rel="tag">#Divide and Conquer</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/05/1-Two-Sum/" rel="next" title="#1 Two Sum">
-                <i class="fa fa-chevron-left"></i> #1 Two Sum
+              <a href="/2016/01/05/171-Excel-Sheet-Column-Number/" rel="next" title="#171 Excel Sheet Column Number">
+                <i class="fa fa-chevron-left"></i> #171 Excel Sheet Column Number
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/01/05/266-Palindrome-Permutation/" rel="prev" title="#266 Palindrome Permutation">
-                #266 Palindrome Permutation <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -320,8 +332,8 @@
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/01/05/292-Nim-Game/"
-           data-title="#292 Nim Game" data-url="http://yoursite.com/2016/01/05/292-Nim-Game/">
+      <div class="ds-thread" data-thread-key="2016/01/05/169-Majority-Element/"
+           data-title="#169 Majority Element" data-url="http://yoursite.com/2016/01/05/169-Majority-Element/">
       </div>
     
   </div>
@@ -411,7 +423,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#292-_Nim_Game"><span class="nav-number">1.</span> <span class="nav-text">292. Nim Game</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目錄</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
