@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Array,Hash Table," />
+  <meta name="keywords" content="String," />
 
 
 
@@ -51,16 +51,16 @@
 
 
 
-<meta name="description" content="1. Two SumGiven an array of integers, find two numbers such that they add up to a specific target number.The function twoSum should return indices of the two numbers such that they add up to the targe">
+<meta name="description" content="You are playing the following Flip Game with your friend: Given a string that contains only these two characters: + and -, you and your friend take turns to flip two consecutive “++” into “–”. The gam">
 <meta property="og:type" content="article">
-<meta property="og:title" content="#1 Two Sum">
-<meta property="og:url" content="http://yoursite.com/2016/01/05/1-Two-Sum/index.html">
+<meta property="og:title" content="#293 Flip Game">
+<meta property="og:url" content="http://yoursite.com/2016/01/05/293-Flip-Game/index.html">
 <meta property="og:site_name" content="Arbrash">
-<meta property="og:description" content="1. Two SumGiven an array of integers, find two numbers such that they add up to a specific target number.The function twoSum should return indices of the two numbers such that they add up to the targe">
-<meta property="og:updated_time" content="2016-01-05T18:39:22.170Z">
+<meta property="og:description" content="You are playing the following Flip Game with your friend: Given a string that contains only these two characters: + and -, you and your friend take turns to flip two consecutive “++” into “–”. The gam">
+<meta property="og:updated_time" content="2016-01-05T18:54:23.152Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="#1 Two Sum">
-<meta name="twitter:description" content="1. Two SumGiven an array of integers, find two numbers such that they add up to a specific target number.The function twoSum should return indices of the two numbers such that they add up to the targe">
+<meta name="twitter:title" content="#293 Flip Game">
+<meta name="twitter:description" content="You are playing the following Flip Game with your friend: Given a string that contains only these two characters: + and -, you and your friend take turns to flip two consecutive “++” into “–”. The gam">
 
 
 
@@ -72,7 +72,7 @@
   };
 </script>
 
-  <title> #1 Two Sum | Arbrash </title>
+  <title> #293 Flip Game | Arbrash </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -212,7 +212,7 @@
             
             
               
-                #1 Two Sum
+                #293 Flip Game
               
             
           </h1>
@@ -221,7 +221,7 @@
         <div class="post-meta">
           <span class="post-time">
             發表於
-            <time itemprop="dateCreated" datetime="2016-01-05T10:43:03-05:00" content="2016-01-05">
+            <time itemprop="dateCreated" datetime="2016-01-05T13:47:37-05:00" content="2016-01-05">
               2016-01-05
             </time>
           </span>
@@ -247,8 +247,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/05/1-Two-Sum/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/05/1-Two-Sum/" itemprop="commentsCount"></span>
+                <a href="/2016/01/05/293-Flip-Game/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/05/293-Flip-Game/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -267,13 +267,11 @@
       
 
       
-        <span itemprop="articleBody"><h1 id="1-_Two_Sum"><a href="#1-_Two_Sum" class="headerlink" title="1. Two Sum"></a>1. Two Sum</h1><p>Given an array of integers, find two numbers such that they add up to a specific target number.<br>The function twoSum should return indices of the two numbers such that they add up to the target, where index1 must be less than index2. Please note that your returned answers (both index1 and index2) are not zero-based.<br>You may assume that each input would have exactly one solution.</p>
-<blockquote>
-<p>Input: numbers={2, 7, 11, 15}, target=9</p>
-<p>Output: index1=1, index2=2</p>
-</blockquote>
-<p>Solution:<br><figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public class <span class="type">Solution</span> &#123;</span><br><span class="line">    public <span class="type">int</span>[] twoSum(<span class="type">int</span>[] nums, <span class="type">int</span> target) &#123;</span><br><span class="line">        <span class="type">int</span>[] defaultres = &#123;<span class="number">0</span>, <span class="number">0</span>&#125;;</span><br><span class="line">        <span class="type">HashMap</span>&lt;<span class="type">Integer</span>, <span class="type">Integer</span>&gt; map = new <span class="type">HashMap</span>&lt;<span class="type">Integer</span>, <span class="type">Integer</span>&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(map.get(nums[i]) != null) &#123;</span><br><span class="line">                <span class="type">int</span>[] <span class="literal">result</span> = &#123;map.get(nums[i])+<span class="number">1</span>,i+<span class="number">1</span>&#125;;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">result</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            map.put(target-nums[i], i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> defaultres;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>Using hashmap to store target - current number and then compare the value with the key which already exist in the hashmap, if there is a pair, this two will be the result, if not, continue to find the next one.</p>
+        <span itemprop="articleBody"><p>You are playing the following Flip Game with your friend: Given a string that contains only these two characters: + and -, you and your friend take turns to flip two consecutive “++” into “–”. The game ends when a person can no longer make a move and therefore the other person will be the winner.</p>
+<p>Write a function to compute all possible states of the string after one valid move.</p>
+<p>For example, given s = “++++”, after one move, it may become one of the following states:</p>
+<p>[<br>  “–++”,<br>  “+–+”,<br>  “++–”<br>]<br>If there is no valid move, return an empty list [].</p>
+<p>Solution:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> List&lt;String&gt; generatePossibleNextMoves(String s) &#123;</span><br><span class="line">    List <span class="built_in">list</span> = <span class="keyword">new</span> ArrayList();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=-<span class="number">1</span>; (i = s.indexOf(<span class="string">"++"</span>, i+<span class="number">1</span>)) &gt;= <span class="number">0</span>; )</span><br><span class="line">        <span class="built_in">list</span>.add(s.substring(<span class="number">0</span>, i) + <span class="string">"--"</span> + s.substring(i+<span class="number">2</span>));</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">list</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 </span>
       
     </div>
@@ -282,9 +280,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Array/" rel="tag">#Array</a>
-          
-            <a href="/tags/Hash-Table/" rel="tag">#Hash Table</a>
+            <a href="/tags/String/" rel="tag">#String</a>
           
         </div>
       
@@ -293,13 +289,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/01/05/266-Palindrome-Permutation/" rel="next" title="#266 Palindrome Permutation">
+                <i class="fa fa-chevron-left"></i> #266 Palindrome Permutation
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/01/05/292-Nim-Game/" rel="prev" title="#292 Nim Game">
-                #292 Nim Game <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -326,8 +322,8 @@
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/01/05/1-Two-Sum/"
-           data-title="#1 Two Sum" data-url="http://yoursite.com/2016/01/05/1-Two-Sum/">
+      <div class="ds-thread" data-thread-key="2016/01/05/293-Flip-Game/"
+           data-title="#293 Flip Game" data-url="http://yoursite.com/2016/01/05/293-Flip-Game/">
       </div>
     
   </div>
@@ -417,7 +413,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-_Two_Sum"><span class="nav-number">1.</span> <span class="nav-text">1. Two Sum</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目錄</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
