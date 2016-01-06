@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Array,Hash Table," />
+  <meta name="keywords" content="Array,Math," />
 
 
 
@@ -51,19 +51,25 @@
 
 
 
-<meta name="description" content="#217. Contains Duplicate
-Given an array of integers, find if the array contains any duplicates. Your function should return true if any value appears at least twice in the array, and it should return">
+<meta name="description" content="#66. Plus One
+Given a non-negative number represented as an array of digits, plus one to the number.
+The digits are stored such that the most significant digit is at the head of the list.
+Solution:123">
 <meta property="og:type" content="article">
-<meta property="og:title" content="#217 Contains Duplicate">
-<meta property="og:url" content="http://yoursite.com/2016/01/05/217-Contains-Duplicate/index.html">
+<meta property="og:title" content="#66 Plus One">
+<meta property="og:url" content="http://yoursite.com/2016/01/06/66-Plus-One/index.html">
 <meta property="og:site_name" content="Arbrash">
-<meta property="og:description" content="#217. Contains Duplicate
-Given an array of integers, find if the array contains any duplicates. Your function should return true if any value appears at least twice in the array, and it should return">
-<meta property="og:updated_time" content="2016-01-05T21:47:23.762Z">
+<meta property="og:description" content="#66. Plus One
+Given a non-negative number represented as an array of digits, plus one to the number.
+The digits are stored such that the most significant digit is at the head of the list.
+Solution:123">
+<meta property="og:updated_time" content="2016-01-06T08:23:25.883Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="#217 Contains Duplicate">
-<meta name="twitter:description" content="#217. Contains Duplicate
-Given an array of integers, find if the array contains any duplicates. Your function should return true if any value appears at least twice in the array, and it should return">
+<meta name="twitter:title" content="#66 Plus One">
+<meta name="twitter:description" content="#66. Plus One
+Given a non-negative number represented as an array of digits, plus one to the number.
+The digits are stored such that the most significant digit is at the head of the list.
+Solution:123">
 
 
 
@@ -75,7 +81,7 @@ Given an array of integers, find if the array contains any duplicates. Your func
   };
 </script>
 
-  <title> #217 Contains Duplicate | Arbrash </title>
+  <title> #66 Plus One | Arbrash </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -215,7 +221,7 @@ Given an array of integers, find if the array contains any duplicates. Your func
             
             
               
-                #217 Contains Duplicate
+                #66 Plus One
               
             
           </h1>
@@ -224,8 +230,8 @@ Given an array of integers, find if the array contains any duplicates. Your func
         <div class="post-meta">
           <span class="post-time">
             發表於
-            <time itemprop="dateCreated" datetime="2016-01-05T16:43:52-05:00" content="2016-01-05">
-              2016-01-05
+            <time itemprop="dateCreated" datetime="2016-01-06T02:59:14-05:00" content="2016-01-06">
+              2016-01-06
             </time>
           </span>
 
@@ -250,8 +256,8 @@ Given an array of integers, find if the array contains any duplicates. Your func
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/05/217-Contains-Duplicate/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/05/217-Contains-Duplicate/" itemprop="commentsCount"></span>
+                <a href="/2016/01/06/66-Plus-One/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/06/66-Plus-One/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -270,10 +276,11 @@ Given an array of integers, find if the array contains any duplicates. Your func
       
 
       
-        <span itemprop="articleBody"><p>#217. Contains Duplicate</p>
-<p>Given an array of integers, find if the array contains any duplicates. Your function should return true if any value appears at least twice in the array, and it should return false if every element is distinct.</p>
-<p>Solution:<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Solution</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> boolean <span class="title">containsDuplicate</span>(<span class="params"><span class="keyword">int</span>[] nums</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(nums==<span class="keyword">null</span> || nums.length==<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line"> </span><br><span class="line">        HashSet&lt;Integer&gt; <span class="keyword">set</span> = <span class="keyword">new</span> HashSet&lt;Integer&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i: nums)&#123;</span><br><span class="line">            <span class="keyword">if</span>(!<span class="keyword">set</span>.add(i))&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>Because a HashSet cannot have duplicate elements, so we can use the add function of HashSet to know the array whether contains any duplicates.</p>
+        <span itemprop="articleBody"><p>#66. Plus One</p>
+<p>Given a non-negative number represented as an array of digits, plus one to the number.</p>
+<p>The digits are stored such that the most significant digit is at the head of the list.</p>
+<p>Solution:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] plusOne(<span class="keyword">int</span>[] digits) &#123;</span><br><span class="line">        <span class="keyword">if</span>(digits.length == <span class="number">0</span> || digits == null) <span class="keyword">return</span> digits;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = digits.length-<span class="number">1</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">            <span class="keyword">if</span>(digits[i]!=<span class="number">9</span>)&#123;</span><br><span class="line">                digits[i]++;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(i==<span class="number">0</span>)&#123;</span><br><span class="line">                digits = <span class="keyword">new</span> <span class="keyword">int</span>[digits.length+<span class="number">1</span>];</span><br><span class="line">                digits[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                digits[i] = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> digits;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>If digit not 9, just ++, if 9, set 0 and carry to next digit, if digits only contains 9, announce a new array which has a larger length and set the first digit 0.</p>
 </span>
       
     </div>
@@ -284,7 +291,7 @@ Given an array of integers, find if the array contains any duplicates. Your func
           
             <a href="/tags/Array/" rel="tag">#Array</a>
           
-            <a href="/tags/Hash-Table/" rel="tag">#Hash Table</a>
+            <a href="/tags/Math/" rel="tag">#Math</a>
           
         </div>
       
@@ -293,17 +300,13 @@ Given an array of integers, find if the array contains any duplicates. Your func
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/05/252-Meeting-Rooms/" rel="next" title="#252 Meeting Rooms">
-                <i class="fa fa-chevron-left"></i> #252 Meeting Rooms
+              <a href="/2016/01/06/26-Remove-Duplicates-from-Sorted-Array/" rel="next" title="#26 Remove Duplicates from Sorted Array">
+                <i class="fa fa-chevron-left"></i> #26 Remove Duplicates from Sorted Array
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/01/05/171-Excel-Sheet-Column-Number/" rel="prev" title="#171 Excel Sheet Column Number">
-                #171 Excel Sheet Column Number <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -330,8 +333,8 @@ Given an array of integers, find if the array contains any duplicates. Your func
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/01/05/217-Contains-Duplicate/"
-           data-title="#217 Contains Duplicate" data-url="http://yoursite.com/2016/01/05/217-Contains-Duplicate/">
+      <div class="ds-thread" data-thread-key="2016/01/06/66-Plus-One/"
+           data-title="#66 Plus One" data-url="http://yoursite.com/2016/01/06/66-Plus-One/">
       </div>
     
   </div>

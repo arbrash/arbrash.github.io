@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Array,Hash Table," />
+  <meta name="keywords" content="Dynamic Programming," />
 
 
 
@@ -51,19 +51,19 @@
 
 
 
-<meta name="description" content="#217. Contains Duplicate
-Given an array of integers, find if the array contains any duplicates. Your function should return true if any value appears at least twice in the array, and it should return">
+<meta name="description" content="#198. House Robber
+You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is">
 <meta property="og:type" content="article">
-<meta property="og:title" content="#217 Contains Duplicate">
-<meta property="og:url" content="http://yoursite.com/2016/01/05/217-Contains-Duplicate/index.html">
+<meta property="og:title" content="#198 House Robber">
+<meta property="og:url" content="http://yoursite.com/2016/01/06/198-House-Robber/index.html">
 <meta property="og:site_name" content="Arbrash">
-<meta property="og:description" content="#217. Contains Duplicate
-Given an array of integers, find if the array contains any duplicates. Your function should return true if any value appears at least twice in the array, and it should return">
-<meta property="og:updated_time" content="2016-01-05T21:47:23.762Z">
+<meta property="og:description" content="#198. House Robber
+You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is">
+<meta property="og:updated_time" content="2016-01-06T07:33:30.669Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="#217 Contains Duplicate">
-<meta name="twitter:description" content="#217. Contains Duplicate
-Given an array of integers, find if the array contains any duplicates. Your function should return true if any value appears at least twice in the array, and it should return">
+<meta name="twitter:title" content="#198 House Robber">
+<meta name="twitter:description" content="#198. House Robber
+You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is">
 
 
 
@@ -75,7 +75,7 @@ Given an array of integers, find if the array contains any duplicates. Your func
   };
 </script>
 
-  <title> #217 Contains Duplicate | Arbrash </title>
+  <title> #198 House Robber | Arbrash </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -215,7 +215,7 @@ Given an array of integers, find if the array contains any duplicates. Your func
             
             
               
-                #217 Contains Duplicate
+                #198 House Robber
               
             
           </h1>
@@ -224,8 +224,8 @@ Given an array of integers, find if the array contains any duplicates. Your func
         <div class="post-meta">
           <span class="post-time">
             發表於
-            <time itemprop="dateCreated" datetime="2016-01-05T16:43:52-05:00" content="2016-01-05">
-              2016-01-05
+            <time itemprop="dateCreated" datetime="2016-01-06T02:18:41-05:00" content="2016-01-06">
+              2016-01-06
             </time>
           </span>
 
@@ -250,8 +250,8 @@ Given an array of integers, find if the array contains any duplicates. Your func
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/05/217-Contains-Duplicate/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/05/217-Contains-Duplicate/" itemprop="commentsCount"></span>
+                <a href="/2016/01/06/198-House-Robber/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/06/198-House-Robber/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -270,10 +270,11 @@ Given an array of integers, find if the array contains any duplicates. Your func
       
 
       
-        <span itemprop="articleBody"><p>#217. Contains Duplicate</p>
-<p>Given an array of integers, find if the array contains any duplicates. Your function should return true if any value appears at least twice in the array, and it should return false if every element is distinct.</p>
-<p>Solution:<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Solution</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> boolean <span class="title">containsDuplicate</span>(<span class="params"><span class="keyword">int</span>[] nums</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(nums==<span class="keyword">null</span> || nums.length==<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line"> </span><br><span class="line">        HashSet&lt;Integer&gt; <span class="keyword">set</span> = <span class="keyword">new</span> HashSet&lt;Integer&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i: nums)&#123;</span><br><span class="line">            <span class="keyword">if</span>(!<span class="keyword">set</span>.add(i))&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>Because a HashSet cannot have duplicate elements, so we can use the add function of HashSet to know the array whether contains any duplicates.</p>
+        <span itemprop="articleBody"><p>#198. House Robber</p>
+<p>You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is that adjacent houses have security system connected and it will automatically contact the police if two adjacent houses were broken into on the same night.</p>
+<p>Given a list of non-negative integers representing the amount of money of each house, determine the maximum amount of money you can rob tonight without alerting the police.</p>
+<p>Solution:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">rob</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> a = <span class="number">0</span>, b = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nums.length;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(i%<span class="number">2</span>==<span class="number">0</span>)</span><br><span class="line">                a = Math.max(a+nums[i],b);</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                b = Math.max(b+nums[i],a);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> Math.max(a,b);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>DP: P(k)=Max(P(k-2)+m(k),P(k-1))</p>
 </span>
       
     </div>
@@ -282,9 +283,7 @@ Given an array of integers, find if the array contains any duplicates. Your func
       
         <div class="post-tags">
           
-            <a href="/tags/Array/" rel="tag">#Array</a>
-          
-            <a href="/tags/Hash-Table/" rel="tag">#Hash Table</a>
+            <a href="/tags/Dynamic-Programming/" rel="tag">#Dynamic Programming</a>
           
         </div>
       
@@ -293,16 +292,16 @@ Given an array of integers, find if the array contains any duplicates. Your func
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/05/252-Meeting-Rooms/" rel="next" title="#252 Meeting Rooms">
-                <i class="fa fa-chevron-left"></i> #252 Meeting Rooms
+              <a href="/2016/01/06/107-Binary-Tree-Level-Order-Traversal-II/" rel="next" title="#107 Binary Tree Level Order Traversal II">
+                <i class="fa fa-chevron-left"></i> #107 Binary Tree Level Order Traversal II
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/01/05/171-Excel-Sheet-Column-Number/" rel="prev" title="#171 Excel Sheet Column Number">
-                #171 Excel Sheet Column Number <i class="fa fa-chevron-right"></i>
+              <a href="/2016/01/06/26-Remove-Duplicates-from-Sorted-Array/" rel="prev" title="#26 Remove Duplicates from Sorted Array">
+                #26 Remove Duplicates from Sorted Array <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -330,8 +329,8 @@ Given an array of integers, find if the array contains any duplicates. Your func
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/01/05/217-Contains-Duplicate/"
-           data-title="#217 Contains Duplicate" data-url="http://yoursite.com/2016/01/05/217-Contains-Duplicate/">
+      <div class="ds-thread" data-thread-key="2016/01/06/198-House-Robber/"
+           data-title="#198 House Robber" data-url="http://yoursite.com/2016/01/06/198-House-Robber/">
       </div>
     
   </div>
