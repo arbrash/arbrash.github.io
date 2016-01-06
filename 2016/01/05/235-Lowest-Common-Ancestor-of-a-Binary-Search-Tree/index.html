@@ -51,28 +51,22 @@
 
 
 
-<meta name="description" content="#226. Invert Binary Tree
-Invert a binary tree.
-4
-   /   \  2     7 / \   / \1   3 6   9to     4   /   \  7     2 / \   / \9   6 3   1
-Solution:123456789101112131415161718/** * Definition for a binary">
+<meta name="description" content="#235. Lowest Common Ancestor of a Binary Search Tree
+Given a binary search tree (BST), find the lowest common ancestor (LCA) of two given nodes in the BST.
+According to the definition of LCA on Wikipe">
 <meta property="og:type" content="article">
-<meta property="og:title" content="#226 Invert Binary Tree">
-<meta property="og:url" content="http://yoursite.com/2016/01/05/226-Invert-Binary-Tree/index.html">
+<meta property="og:title" content="#235 Lowest Common Ancestor of a Binary Search Tree">
+<meta property="og:url" content="http://yoursite.com/2016/01/05/235-Lowest-Common-Ancestor-of-a-Binary-Search-Tree/index.html">
 <meta property="og:site_name" content="Arbrash">
-<meta property="og:description" content="#226. Invert Binary Tree
-Invert a binary tree.
-4
-   /   \  2     7 / \   / \1   3 6   9to     4   /   \  7     2 / \   / \9   6 3   1
-Solution:123456789101112131415161718/** * Definition for a binary">
-<meta property="og:updated_time" content="2016-01-05T20:42:47.258Z">
+<meta property="og:description" content="#235. Lowest Common Ancestor of a Binary Search Tree
+Given a binary search tree (BST), find the lowest common ancestor (LCA) of two given nodes in the BST.
+According to the definition of LCA on Wikipe">
+<meta property="og:updated_time" content="2016-01-05T22:35:16.908Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="#226 Invert Binary Tree">
-<meta name="twitter:description" content="#226. Invert Binary Tree
-Invert a binary tree.
-4
-   /   \  2     7 / \   / \1   3 6   9to     4   /   \  7     2 / \   / \9   6 3   1
-Solution:123456789101112131415161718/** * Definition for a binary">
+<meta name="twitter:title" content="#235 Lowest Common Ancestor of a Binary Search Tree">
+<meta name="twitter:description" content="#235. Lowest Common Ancestor of a Binary Search Tree
+Given a binary search tree (BST), find the lowest common ancestor (LCA) of two given nodes in the BST.
+According to the definition of LCA on Wikipe">
 
 
 
@@ -84,7 +78,7 @@ Solution:123456789101112131415161718/** * Definition for a binary">
   };
 </script>
 
-  <title> #226 Invert Binary Tree | Arbrash </title>
+  <title> #235 Lowest Common Ancestor of a Binary Search Tree | Arbrash </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -224,7 +218,7 @@ Solution:123456789101112131415161718/** * Definition for a binary">
             
             
               
-                #226 Invert Binary Tree
+                #235 Lowest Common Ancestor of a Binary Search Tree
               
             
           </h1>
@@ -233,7 +227,7 @@ Solution:123456789101112131415161718/** * Definition for a binary">
         <div class="post-meta">
           <span class="post-time">
             發表於
-            <time itemprop="dateCreated" datetime="2016-01-05T15:34:29-05:00" content="2016-01-05">
+            <time itemprop="dateCreated" datetime="2016-01-05T17:19:40-05:00" content="2016-01-05">
               2016-01-05
             </time>
           </span>
@@ -259,8 +253,8 @@ Solution:123456789101112131415161718/** * Definition for a binary">
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/05/226-Invert-Binary-Tree/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/05/226-Invert-Binary-Tree/" itemprop="commentsCount"></span>
+                <a href="/2016/01/05/235-Lowest-Common-Ancestor-of-a-Binary-Search-Tree/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/05/235-Lowest-Common-Ancestor-of-a-Binary-Search-Tree/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -279,12 +273,15 @@ Solution:123456789101112131415161718/** * Definition for a binary">
       
 
       
-        <span itemprop="articleBody"><p>#226. Invert Binary Tree</p>
-<p>Invert a binary tree.</p>
-<pre><code>4
-</code></pre><p>   /   \<br>  2     7<br> / \   / \<br>1   3 6   9<br>to<br>     4<br>   /   \<br>  7     2<br> / \   / \<br>9   6 3   1</p>
-<p>Solution:<br><figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Definition <span class="keyword">for</span> a binary tree node.</span><br><span class="line"> * <span class="keyword">public</span> <span class="keyword">class</span> TreeNode &#123;</span><br><span class="line"> *     <span class="built_in">int</span> val;</span><br><span class="line"> *     TreeNode <span class="built_in">left</span>;</span><br><span class="line"> *     TreeNode <span class="built_in">right</span>;</span><br><span class="line"> *     TreeNode(<span class="built_in">int</span> x) &#123; val = x; &#125;</span><br><span class="line"> * &#125;</span><br><span class="line"> */</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="keyword">public</span> TreeNode invertTree(TreeNode root) &#123;</span><br><span class="line">        <span class="keyword">if</span>(root == <span class="literal">null</span>) return root;</span><br><span class="line">        TreeNode temp = root.<span class="built_in">left</span>;</span><br><span class="line">        root.<span class="built_in">left</span> = invertTree(root.<span class="built_in">right</span>);</span><br><span class="line">        root.<span class="built_in">right</span> = invertTree(temp);</span><br><span class="line">        return root;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>Use recursive method.</p>
+        <span itemprop="articleBody"><p>#235. Lowest Common Ancestor of a Binary Search Tree</p>
+<p>Given a binary search tree (BST), find the lowest common ancestor (LCA) of two given nodes in the BST.</p>
+<p>According to the definition of LCA on Wikipedia: “The lowest common ancestor is defined between two nodes v and w as the lowest node in T that has both v and w as descendants (where we allow a node to be a descendant of itself).”</p>
+<pre><code>    _______6______
+   /              \
+___2__          ___8__
+</code></pre><p>   /      \        /      \<br>   0      _4       7       9<br>         /  \<br>         3   5<br>For example, the lowest common ancestor (LCA) of nodes 2 and 8 is 6. Another example is LCA of nodes 2 and 4 is 2, since a node can be a descendant of itself according to the LCA definition.</p>
+<p>Solution:<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * Definition for a binary tree node.</span><br><span class="line"> * public class TreeNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     TreeNode left;</span><br><span class="line"> *     TreeNode right;</span><br><span class="line"> *     TreeNode(int x) &#123; val = x; &#125;</span><br><span class="line"> * &#125;</span><br><span class="line"> */</span></span><br><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line">    public <span class="type">TreeNode</span> lowestCommonAncestor(<span class="type">TreeNode</span> root, <span class="type">TreeNode</span> p, <span class="type">TreeNode</span> q) &#123;</span><br><span class="line">        <span class="type">TreeNode</span> m = root;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">if</span>((m.<span class="keyword">val</span> &gt; p.<span class="keyword">val</span> &amp;&amp; m.<span class="keyword">val</span> &lt; q.<span class="keyword">val</span>) || (m.<span class="keyword">val</span> &lt; p.<span class="keyword">val</span> &amp;&amp; m.<span class="keyword">val</span> &gt; q.<span class="keyword">val</span>))&#123;</span><br><span class="line">        <span class="keyword">return</span> m;  </span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(m.<span class="keyword">val</span>&gt;p.<span class="keyword">val</span> &amp;&amp; m.<span class="keyword">val</span> &gt; q.<span class="keyword">val</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> lowestCommonAncestor(root.left, p, q);</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(m.<span class="keyword">val</span>&lt;p.<span class="keyword">val</span> &amp;&amp; m.<span class="keyword">val</span> &lt; q.<span class="keyword">val</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> lowestCommonAncestor(root.right, p, q);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Use recursive method. If root is the LCA, return root, if root &lt; p and q, then continue search the right part of the bst, if root &gt; p and q, then continue search the left of the bst.</p>
 </span>
       
     </div>
@@ -302,16 +299,16 @@ Solution:123456789101112131415161718/** * Definition for a binary">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/05/283-Move-Zeroes/" rel="next" title="#283 Move Zeroes">
-                <i class="fa fa-chevron-left"></i> #283 Move Zeroes
+              <a href="/2016/01/05/169-Majority-Element/" rel="next" title="#169 Majority Element">
+                <i class="fa fa-chevron-left"></i> #169 Majority Element
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/01/05/100-Same-Tree/" rel="prev" title="#100 Same Tree">
-                #100 Same Tree <i class="fa fa-chevron-right"></i>
+              <a href="/2016/01/05/191-Number-of-1-Bits/" rel="prev" title="#191 Number of 1 Bits">
+                #191 Number of 1 Bits <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -339,8 +336,8 @@ Solution:123456789101112131415161718/** * Definition for a binary">
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/01/05/226-Invert-Binary-Tree/"
-           data-title="#226 Invert Binary Tree" data-url="http://yoursite.com/2016/01/05/226-Invert-Binary-Tree/">
+      <div class="ds-thread" data-thread-key="2016/01/05/235-Lowest-Common-Ancestor-of-a-Binary-Search-Tree/"
+           data-title="#235 Lowest Common Ancestor of a Binary Search Tree" data-url="http://yoursite.com/2016/01/05/235-Lowest-Common-Ancestor-of-a-Binary-Search-Tree/">
       </div>
     
   </div>
