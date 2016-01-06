@@ -220,8 +220,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/01/05/226-Invert-Binary-Tree/" itemprop="url">
-                  #226 Invert Binary Tree
+                <a class="post-title-link" href="/2016/01/05/83-Remove-Duplicates-from-Sorted-List/" itemprop="url">
+                  #83 Remove Duplicates from Sorted List
                 </a>
               
             
@@ -231,7 +231,7 @@
         <div class="post-meta">
           <span class="post-time">
             發表於
-            <time itemprop="dateCreated" datetime="2016-01-05T15:34:29-05:00" content="2016-01-05">
+            <time itemprop="dateCreated" datetime="2016-01-05T21:14:27-05:00" content="2016-01-05">
               2016-01-05
             </time>
           </span>
@@ -257,8 +257,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/05/226-Invert-Binary-Tree/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/05/226-Invert-Binary-Tree/" itemprop="commentsCount"></span>
+                <a href="/2016/01/05/83-Remove-Duplicates-from-Sorted-List/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/05/83-Remove-Duplicates-from-Sorted-List/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -280,12 +280,11 @@
         
           <span itemprop="articleBody">
             
-              <p>#226. Invert Binary Tree</p>
-<p>Invert a binary tree.</p>
-<pre><code>4
-</code></pre><p>   /   \<br>  2     7<br> / \   / \<br>1   3 6   9<br>to<br>     4<br>   /   \<br>  7     2<br> / \   / \<br>9   6 3   1</p>
-<p>Solution:<br><figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Definition <span class="keyword">for</span> a binary tree node.</span><br><span class="line"> * <span class="keyword">public</span> <span class="keyword">class</span> TreeNode &#123;</span><br><span class="line"> *     <span class="built_in">int</span> val;</span><br><span class="line"> *     TreeNode <span class="built_in">left</span>;</span><br><span class="line"> *     TreeNode <span class="built_in">right</span>;</span><br><span class="line"> *     TreeNode(<span class="built_in">int</span> x) &#123; val = x; &#125;</span><br><span class="line"> * &#125;</span><br><span class="line"> */</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="keyword">public</span> TreeNode invertTree(TreeNode root) &#123;</span><br><span class="line">        <span class="keyword">if</span>(root == <span class="literal">null</span>) return root;</span><br><span class="line">        TreeNode temp = root.<span class="built_in">left</span>;</span><br><span class="line">        root.<span class="built_in">left</span> = invertTree(root.<span class="built_in">right</span>);</span><br><span class="line">        root.<span class="built_in">right</span> = invertTree(temp);</span><br><span class="line">        return root;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>Use recursive method.</p>
+              <p>#83. Remove Duplicates from Sorted List</p>
+<p>Given a sorted linked list, delete all duplicates such that each element appear only once.</p>
+<p>For example,<br>Given 1-&gt;1-&gt;2, return 1-&gt;2.<br>Given 1-&gt;1-&gt;2-&gt;3-&gt;3, return 1-&gt;2-&gt;3.</p>
+<p>Solution:<br><figure class="highlight monkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line">    <span class="keyword">public</span> ListNode deleteDuplicates(ListNode head) &#123;</span><br><span class="line">        <span class="keyword">if</span>(head == <span class="literal">null</span> || head.<span class="keyword">next</span> == <span class="literal">null</span>)<span class="keyword">return</span> head;</span><br><span class="line">        head.<span class="keyword">next</span> = deleteDuplicates(head.<span class="keyword">next</span>);</span><br><span class="line">        <span class="keyword">return</span> head.val == head.<span class="keyword">next</span>.val ? head.<span class="keyword">next</span> : head;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Iterative solution:<br><figure class="highlight monkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line">    <span class="keyword">public</span> ListNode deleteDuplicates(ListNode head) &#123;</span><br><span class="line">        <span class="keyword">if</span>(head == <span class="literal">null</span> || head.<span class="keyword">next</span> == <span class="literal">null</span>)</span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line">        ListNode p = head;</span><br><span class="line">        <span class="keyword">while</span>( p!= <span class="literal">null</span> &amp;&amp; p.<span class="keyword">next</span> != <span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(p.val == p.<span class="keyword">next</span>.val)</span><br><span class="line">                p.<span class="keyword">next</span> = p.<span class="keyword">next</span>.<span class="keyword">next</span>;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">                p = p.<span class="keyword">next</span>; </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
             
           </span>
@@ -328,8 +327,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/01/05/283-Move-Zeroes/" itemprop="url">
-                  #283 Move Zeroes
+                <a class="post-title-link" href="/2016/01/05/206-Reverse-Linked-List/" itemprop="url">
+                  #206 Reverse Linked List
                 </a>
               
             
@@ -339,7 +338,7 @@
         <div class="post-meta">
           <span class="post-time">
             發表於
-            <time itemprop="dateCreated" datetime="2016-01-05T15:22:26-05:00" content="2016-01-05">
+            <time itemprop="dateCreated" datetime="2016-01-05T19:19:46-05:00" content="2016-01-05">
               2016-01-05
             </time>
           </span>
@@ -365,8 +364,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/05/283-Move-Zeroes/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/05/283-Move-Zeroes/" itemprop="commentsCount"></span>
+                <a href="/2016/01/05/206-Reverse-Linked-List/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/05/206-Reverse-Linked-List/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -388,12 +387,13 @@
         
           <span itemprop="articleBody">
             
-              <p>#283. Move Zeroes</p>
-<p>Given an array nums, write a function to move all 0’s to the end of it while maintaining the relative order of the non-zero elements.</p>
-<p>For example, given nums = [0, 1, 0, 3, 12], after calling your function, nums should be [1, 3, 12, 0, 0].</p>
-<p>Note:<br>You must do this in-place without making a copy of the array.<br>Minimize the total number of operations.</p>
-<p>Solution:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">moveZeroes</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> position = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> num:nums)&#123;</span><br><span class="line">            <span class="keyword">if</span>(num != <span class="number">0</span>)</span><br><span class="line">                nums[position++] = num;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(position &lt; nums.length)</span><br><span class="line">            nums[position++] = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>Iterate all elements in the array and store all the nonzero elements in the array start with index 0, then fill 0 for the rest of array.</p>
+              <p>#206. Reverse Linked List</p>
+<p>Reverse a singly linked list.</p>
+<p>Solution:<br><figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Definition <span class="keyword">for</span> singly-linked list.</span><br><span class="line"> * <span class="keyword">public</span> <span class="keyword">class</span> ListNode &#123;</span><br><span class="line"> *     <span class="built_in">int</span> val;</span><br><span class="line"> *     ListNode <span class="keyword">next</span>;</span><br><span class="line"> *     ListNode(<span class="built_in">int</span> x) &#123; val = x; &#125;</span><br><span class="line"> * &#125;</span><br><span class="line"> */</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="keyword">public</span> ListNode reverseList(ListNode head) &#123;</span><br><span class="line">        <span class="keyword">if</span>(head == <span class="literal">null</span>) return head;</span><br><span class="line">        ListNode newHead = <span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line">        newHead.<span class="keyword">next</span> = head;</span><br><span class="line">        <span class="keyword">while</span>(head.<span class="keyword">next</span> != <span class="literal">null</span>)&#123;</span><br><span class="line">            ListNode temp = head.<span class="keyword">next</span>;</span><br><span class="line">            head.<span class="keyword">next</span> = head.<span class="keyword">next</span>.<span class="keyword">next</span>;</span><br><span class="line">            temp.<span class="keyword">next</span> = newHead.<span class="keyword">next</span>;</span><br><span class="line">            newHead.<span class="keyword">next</span> = temp;</span><br><span class="line">        &#125;</span><br><span class="line">        return newHead.<span class="keyword">next</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Use iterate method, in each loop, put the head.next to the first position.</p>
+<p>In place solution:<br><figure class="highlight monkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line">    <span class="keyword">public</span> ListNode reverseList(ListNode head) &#123;</span><br><span class="line">        ListNode newHead = <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">while</span>(head != <span class="literal">null</span>)&#123;</span><br><span class="line">            ListNode temp = head.<span class="keyword">next</span>;</span><br><span class="line">            head.<span class="keyword">next</span> = newHead;</span><br><span class="line">            newHead = head;</span><br><span class="line">            head = temp;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> newHead;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>In each loop, make the pointer direction from the to next element to the previous element. </p>
+<p>In place recursive solution:<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="keyword">public</span> ListNode reverseList(ListNode head) &#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">reverse</span>(<span class="keyword">null</span>, head);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">private</span> ListNode <span class="keyword">reverse</span>(ListNode newHead, ListNode head)&#123;</span><br><span class="line">        <span class="keyword">if</span>(head == <span class="keyword">null</span>) <span class="keyword">return</span> newHead;</span><br><span class="line">        ListNode temp = head.<span class="keyword">next</span>;</span><br><span class="line">        head.<span class="keyword">next</span> = newHead;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">reverse</span>(head, temp);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
             
           </span>
@@ -436,8 +436,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/01/05/325-Maximum-Size-Subarray-Sum-Equals-k/" itemprop="url">
-                  #325 Maximum Size Subarray Sum Equals k
+                <a class="post-title-link" href="/2016/01/05/13-Roman-to-Integer/" itemprop="url">
+                  #13 Roman to Integer
                 </a>
               
             
@@ -447,7 +447,7 @@
         <div class="post-meta">
           <span class="post-time">
             發表於
-            <time itemprop="dateCreated" datetime="2016-01-05T14:45:15-05:00" content="2016-01-05">
+            <time itemprop="dateCreated" datetime="2016-01-05T18:36:49-05:00" content="2016-01-05">
               2016-01-05
             </time>
           </span>
@@ -473,8 +473,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/05/325-Maximum-Size-Subarray-Sum-Equals-k/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/05/325-Maximum-Size-Subarray-Sum-Equals-k/" itemprop="commentsCount"></span>
+                <a href="/2016/01/05/13-Roman-to-Integer/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/05/13-Roman-to-Integer/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -496,12 +496,11 @@
         
           <span itemprop="articleBody">
             
-              <p>#325. Maximum Size Subarray Sum Equals k</p>
-<p>Given an array nums and a target value k, find the maximum length of a subarray that sums to k. If there isn’t one, return 0 instead.</p>
-<p>Example 1:<br>Given nums = [1, -1, 5, -2, 3], k = 3,<br>return 4. (because the subarray [1, -1, 5, -2] sums to 3 and is the longest)</p>
-<p>Example 2:<br>Given nums = [-2, -1, 2, 1], k = 1,<br>return 2. (because the subarray [-1, 2] sums to 1 and is the longest)</p>
-<p>Solution:<br><figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> maxSubArrayLen(<span class="built_in">int</span>[] nums, <span class="built_in">int</span> k) &#123;</span><br><span class="line">        <span class="built_in">int</span> <span class="built_in">sum</span> = <span class="number">0</span>, <span class="built_in">max</span> = <span class="number">0</span>;</span><br><span class="line">        HashMap&lt;<span class="type">Integer</span>, <span class="type">Integer</span>&gt; map = new HashMap&lt;<span class="type">Integer</span>, <span class="type">Integer</span>&gt;();</span><br><span class="line">        for(<span class="built_in">int</span> i=<span class="number">0</span>;i&lt;nums.length;i++)&#123;</span><br><span class="line">            <span class="built_in">sum</span> += nums[i];</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">sum</span> == k) <span class="built_in">max</span> = i + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(map.containsKey(<span class="built_in">sum</span>-k))</span><br><span class="line">                <span class="built_in">max</span> = Math.<span class="built_in">max</span>(<span class="built_in">max</span>, i - map.get(<span class="built_in">sum</span>-k));</span><br><span class="line">            <span class="keyword">if</span>(<span class="comment">!map.containsKey(sum))</span></span><br><span class="line">                map.put(<span class="built_in">sum</span>, i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">max</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>Use hashmap to store sum before index i, key = sum and value = i. If sum = k, return i+1, if current sum - previous sum = k, return current i - previous i.</p>
+              <p>#13. Roman to Integer</p>
+<p>Given a roman numeral, convert it to an integer.</p>
+<p>Input is guaranteed to be within the range from 1 to 3999.</p>
+<p>Solution:<br><figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">public class <span class="type">Solution</span> &#123;</span><br><span class="line">    public <span class="type">int</span> romanToInt(<span class="type">String</span> s) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="literal">result</span> = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = s.length() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">            <span class="type">char</span> c = s.charAt(i);</span><br><span class="line">            switch(c)&#123;</span><br><span class="line">                <span class="keyword">case</span> 'I':</span><br><span class="line">                    <span class="literal">result</span> += (<span class="literal">result</span>&gt;=<span class="number">5</span>?-<span class="number">1</span>:<span class="number">1</span>);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> 'V':</span><br><span class="line">                    <span class="literal">result</span> += <span class="number">5</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> 'X':</span><br><span class="line">                    <span class="literal">result</span> += <span class="number">10</span> * (<span class="literal">result</span>&gt;=<span class="number">50</span>?-<span class="number">1</span>:<span class="number">1</span>);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> 'L':</span><br><span class="line">                    <span class="literal">result</span> += <span class="number">50</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> 'C':</span><br><span class="line">                    <span class="literal">result</span> += <span class="number">100</span> * (<span class="literal">result</span>&gt;=<span class="number">500</span>?-<span class="number">1</span>:<span class="number">1</span>);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> 'D':</span><br><span class="line">                    <span class="literal">result</span> += <span class="number">500</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> 'M':</span><br><span class="line">                    <span class="literal">result</span> += <span class="number">1000</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">result</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>When I,X,C is on the left of a Larger Roman digit, it means the Larger Roman digit minus the I/X/C.</p>
 
             
           </span>
@@ -544,8 +543,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/01/05/237-Delete-Node-in-a-Linked-List/" itemprop="url">
-                  #237 Delete Node in a Linked List
+                <a class="post-title-link" href="/2016/01/05/191-Number-of-1-Bits/" itemprop="url">
+                  #191 Number of 1 Bits
                 </a>
               
             
@@ -555,7 +554,7 @@
         <div class="post-meta">
           <span class="post-time">
             發表於
-            <time itemprop="dateCreated" datetime="2016-01-05T14:42:37-05:00" content="2016-01-05">
+            <time itemprop="dateCreated" datetime="2016-01-05T17:35:55-05:00" content="2016-01-05">
               2016-01-05
             </time>
           </span>
@@ -581,8 +580,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/05/237-Delete-Node-in-a-Linked-List/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/05/237-Delete-Node-in-a-Linked-List/" itemprop="commentsCount"></span>
+                <a href="/2016/01/05/191-Number-of-1-Bits/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/05/191-Number-of-1-Bits/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -604,10 +603,13 @@
         
           <span itemprop="articleBody">
             
-              <p>#237. Delete Node in a Linked List</p>
-<p>Write a function to delete a node (except the tail) in a singly linked list, given only access to that node.</p>
-<p>Supposed the linked list is 1 -&gt; 2 -&gt; 3 -&gt; 4 and you are given the third node with value 3, the linked list should become 1 -&gt; 2 -&gt; 4 after calling your function.</p>
-<p>Solution:<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Definition for singly-linked list.</span><br><span class="line"> * public class ListNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     ListNode next;</span><br><span class="line"> *     ListNode(int x) &#123; val = x; &#125;</span><br><span class="line"> * &#125;</span><br><span class="line"> */</span><br><span class="line">public class Solution &#123;</span><br><span class="line">    public void deleteNode(ListNode <span class="keyword">node</span><span class="identifier"></span><span class="title">) &#123;</span><br><span class="line">        node</span>.val = <span class="keyword">node</span>.<span class="identifier"></span><span class="title">next</span>.val;</span><br><span class="line">        <span class="keyword">node</span>.<span class="identifier"></span><span class="title">next</span> = <span class="keyword">node</span>.<span class="identifier"></span><span class="title">next</span>.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+              <p>#191. Number of 1 Bits</p>
+<p>Write a function that takes an unsigned integer and returns the number of ’1’ bits it has (also known as the Hamming weight).</p>
+<p>For example, the 32-bit integer ’11’ has binary representation 00000000000000000000000000001011, so the function should return 3.</p>
+<p>Solution:<br><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> hammingWeight(<span class="keyword">int</span> n) &#123;</span><br><span class="line">        <span class="keyword">int</span> <span class="keyword">count</span> = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(n != <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">count</span> ++;</span><br><span class="line">            n = n &amp; (n - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">count</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Every n &amp; (n-1) operation will eliminate a bit of 1 from the number.</p>
+<p>Another solution:<br><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> hammingWeight(<span class="keyword">int</span> n) &#123;</span><br><span class="line">        <span class="keyword">int</span> <span class="keyword">count</span> = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(n != <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">count</span> = <span class="keyword">count</span> + (n &amp; <span class="number">1</span>);</span><br><span class="line">            n = n &gt;&gt;&gt; <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">count</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>To count the 1s in the Integer representation with put the input int n in bit AND with 1, so we can do this operation , count++ and do a zero fill right shift liter iteratively,finally return count.</p>
 
             
           </span>
@@ -650,8 +652,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/01/05/243-Shortest-Word-Distance/" itemprop="url">
-                  #243 Shortest Word Distance
+                <a class="post-title-link" href="/2016/01/05/235-Lowest-Common-Ancestor-of-a-Binary-Search-Tree/" itemprop="url">
+                  #235 Lowest Common Ancestor of a Binary Search Tree
                 </a>
               
             
@@ -661,7 +663,7 @@
         <div class="post-meta">
           <span class="post-time">
             發表於
-            <time itemprop="dateCreated" datetime="2016-01-05T14:36:36-05:00" content="2016-01-05">
+            <time itemprop="dateCreated" datetime="2016-01-05T17:19:40-05:00" content="2016-01-05">
               2016-01-05
             </time>
           </span>
@@ -687,8 +689,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/05/243-Shortest-Word-Distance/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/05/243-Shortest-Word-Distance/" itemprop="commentsCount"></span>
+                <a href="/2016/01/05/235-Lowest-Common-Ancestor-of-a-Binary-Search-Tree/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/05/235-Lowest-Common-Ancestor-of-a-Binary-Search-Tree/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -710,11 +712,15 @@
         
           <span itemprop="articleBody">
             
-              <p>#243. Shortest Word Distance</p>
-<p>Given a list of words and two words word1 and word2, return the shortest distance between these two words in the list.</p>
-<p>For example,<br>Assume that words = [“practice”, “makes”, “perfect”, “coding”, “makes”].</p>
-<p>Given word1 = “coding”, word2 = “practice”, return 3.<br>Given word1 = “makes”, word2 = “coding”, return 1.</p>
-<p>Solution:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">shortestDistance</span><span class="params">(String[] words, String word1, String word2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (words == null) <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> p1 = -<span class="number">1</span>, p2 = -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> diff = words.length;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; words.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (words[i].equals(word1)) &#123;</span><br><span class="line">                p1 = i;</span><br><span class="line">                <span class="keyword">if</span> (p2 != -<span class="number">1</span>) </span><br><span class="line">                    diff = Math.min(diff, p1 - p2);</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (words[i].equals(word2)) &#123;</span><br><span class="line">                p2 = i;</span><br><span class="line">                <span class="keyword">if</span> (p1 != -<span class="number">1</span>) </span><br><span class="line">                    diff = Math.min(diff, p2 - p1);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> diff;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+              <p>#235. Lowest Common Ancestor of a Binary Search Tree</p>
+<p>Given a binary search tree (BST), find the lowest common ancestor (LCA) of two given nodes in the BST.</p>
+<p>According to the definition of LCA on Wikipedia: “The lowest common ancestor is defined between two nodes v and w as the lowest node in T that has both v and w as descendants (where we allow a node to be a descendant of itself).”</p>
+<pre><code>    _______6______
+   /              \
+___2__          ___8__
+</code></pre><p>   /      \        /      \<br>   0      _4       7       9<br>         /  \<br>         3   5<br>For example, the lowest common ancestor (LCA) of nodes 2 and 8 is 6. Another example is LCA of nodes 2 and 4 is 2, since a node can be a descendant of itself according to the LCA definition.</p>
+<p>Solution:<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * Definition for a binary tree node.</span><br><span class="line"> * public class TreeNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     TreeNode left;</span><br><span class="line"> *     TreeNode right;</span><br><span class="line"> *     TreeNode(int x) &#123; val = x; &#125;</span><br><span class="line"> * &#125;</span><br><span class="line"> */</span></span><br><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line">    public <span class="type">TreeNode</span> lowestCommonAncestor(<span class="type">TreeNode</span> root, <span class="type">TreeNode</span> p, <span class="type">TreeNode</span> q) &#123;</span><br><span class="line">        <span class="type">TreeNode</span> m = root;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">if</span>((m.<span class="keyword">val</span> &gt; p.<span class="keyword">val</span> &amp;&amp; m.<span class="keyword">val</span> &lt; q.<span class="keyword">val</span>) || (m.<span class="keyword">val</span> &lt; p.<span class="keyword">val</span> &amp;&amp; m.<span class="keyword">val</span> &gt; q.<span class="keyword">val</span>))&#123;</span><br><span class="line">        <span class="keyword">return</span> m;  </span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(m.<span class="keyword">val</span>&gt;p.<span class="keyword">val</span> &amp;&amp; m.<span class="keyword">val</span> &gt; q.<span class="keyword">val</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> lowestCommonAncestor(root.left, p, q);</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(m.<span class="keyword">val</span>&lt;p.<span class="keyword">val</span> &amp;&amp; m.<span class="keyword">val</span> &lt; q.<span class="keyword">val</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> lowestCommonAncestor(root.right, p, q);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Use recursive method. If root is the LCA, return root, if root &lt; p and q, then continue search the right part of the bst, if root &gt; p and q, then continue search the left of the bst.</p>
 
             
           </span>
@@ -757,8 +763,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/01/05/104-Maximum-Depth-of-Binary-Tree/" itemprop="url">
-                  #104 Maximum Depth of Binary Tree
+                <a class="post-title-link" href="/2016/01/05/169-Majority-Element/" itemprop="url">
+                  #169 Majority Element
                 </a>
               
             
@@ -768,7 +774,7 @@
         <div class="post-meta">
           <span class="post-time">
             發表於
-            <time itemprop="dateCreated" datetime="2016-01-05T14:27:00-05:00" content="2016-01-05">
+            <time itemprop="dateCreated" datetime="2016-01-05T16:58:36-05:00" content="2016-01-05">
               2016-01-05
             </time>
           </span>
@@ -794,8 +800,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/05/104-Maximum-Depth-of-Binary-Tree/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/05/104-Maximum-Depth-of-Binary-Tree/" itemprop="commentsCount"></span>
+                <a href="/2016/01/05/169-Majority-Element/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/05/169-Majority-Element/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -817,10 +823,11 @@
         
           <span itemprop="articleBody">
             
-              <p>#104. Maximum Depth of Binary Tree</p>
-<p>Given a binary tree, find its maximum depth.</p>
-<p>The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.</p>
-<p>Solution:<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * Definition for a binary tree node.</span><br><span class="line"> * public class TreeNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     TreeNode left;</span><br><span class="line"> *     TreeNode right;</span><br><span class="line"> *     TreeNode(int x) &#123; val = x; &#125;</span><br><span class="line"> * &#125;</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> int maxDepth(<span class="type">TreeNode</span> root) &#123;</span><br><span class="line">        <span class="keyword">if</span>(root==null) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        int <span class="built_in">max</span> = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span> dfs(root,<span class="built_in">max</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    int dfs(<span class="type">TreeNode</span> root, int <span class="built_in">max</span>) &#123;</span><br><span class="line">         <span class="keyword">if</span>(root.<span class="keyword">left</span>==null&amp;&amp;root.<span class="keyword">right</span>==null) <span class="keyword">return</span> <span class="built_in">max</span>;</span><br><span class="line">         <span class="keyword">if</span>(root.<span class="keyword">left</span>==null&amp;&amp;root.<span class="keyword">right</span>!=null) <span class="keyword">return</span> dfs(root.<span class="keyword">right</span>,<span class="built_in">max</span>+<span class="number">1</span>);</span><br><span class="line">         <span class="keyword">if</span>(root.<span class="keyword">left</span>!=null&amp;&amp;root.<span class="keyword">right</span>==null) <span class="keyword">return</span> dfs(root.<span class="keyword">left</span>,<span class="built_in">max</span>+<span class="number">1</span>);</span><br><span class="line">         <span class="keyword">return</span> <span class="type">Math</span>.<span class="built_in">max</span>(dfs(root.<span class="keyword">left</span>, <span class="built_in">max</span>+<span class="number">1</span>),dfs(root.<span class="keyword">right</span>,<span class="built_in">max</span>+<span class="number">1</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+              <p>#169. Majority Element</p>
+<p>Given an array of size n, find the majority element. The majority element is the element that appears more than ⌊ n/2 ⌋ times.</p>
+<p>You may assume that the array is non-empty and the majority element always exist in the array.</p>
+<p>Solution:<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    public <span class="built_in">int</span> majorityElement(<span class="built_in">int</span>[] <span class="built_in">num</span>) &#123;</span><br><span class="line">    	<span class="keyword">if</span> (<span class="built_in">num</span>.length == <span class="number">1</span>) &#123;</span><br><span class="line">    		<span class="keyword">return</span> <span class="built_in">num</span>[<span class="number">0</span>];</span><br><span class="line">    	&#125;</span><br><span class="line">    	Arrays.sort(<span class="built_in">num</span>);</span><br><span class="line">    	<span class="keyword">return</span> <span class="built_in">num</span>[<span class="built_in">num</span>.length / <span class="number">2</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Because the majority element appears more than n/2 times, so we can sort the array and the median is the majority element.</p>
 
             
           </span>
@@ -863,8 +870,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/01/05/258-Add-Digits/" itemprop="url">
-                  258. Add Digits
+                <a class="post-title-link" href="/2016/01/05/171-Excel-Sheet-Column-Number/" itemprop="url">
+                  #171 Excel Sheet Column Number
                 </a>
               
             
@@ -874,7 +881,7 @@
         <div class="post-meta">
           <span class="post-time">
             發表於
-            <time itemprop="dateCreated" datetime="2016-01-05T14:17:49-05:00" content="2016-01-05">
+            <time itemprop="dateCreated" datetime="2016-01-05T16:48:11-05:00" content="2016-01-05">
               2016-01-05
             </time>
           </span>
@@ -900,8 +907,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/05/258-Add-Digits/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/05/258-Add-Digits/" itemprop="commentsCount"></span>
+                <a href="/2016/01/05/171-Excel-Sheet-Column-Number/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/05/171-Excel-Sheet-Column-Number/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -923,12 +930,19 @@
         
           <span itemprop="articleBody">
             
-              <h1 id="258-_Add_Digits"><a href="#258-_Add_Digits" class="headerlink" title="258. Add Digits"></a>258. Add Digits</h1><p>Given a non-negative integer num, repeatedly add all its digits until the result has only one digit.</p>
+              <p>#171. Excel Sheet Column Number</p>
+<p>Related to question Excel Sheet Column Title</p>
+<p>Given a column title as appear in an Excel sheet, return its corresponding column number.</p>
 <p>For example:</p>
-<p>Given num = 38, the process is like: 3 + 8 = 11, 1 + 1 = 2. Since 2 has only one digit, return it.</p>
-<p>Solution:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">addDigits</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> num==<span class="number">0</span>?<span class="number">0</span>:(num%<span class="number">9</span>==<span class="number">0</span>?<span class="number">9</span>:(num%<span class="number">9</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>This problem is a digit root problem, formula is dr(n) = n mod (b-1) if n % (b-1) != 0. So, for decimals(b=10), we can mod the number by 9.</p>
-<p>Iteration method:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">addDigits</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">while</span>(num &gt;= <span class="number">10</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> temp = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span>(num &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                temp += num % <span class="number">10</span>;</span><br><span class="line">                num /= <span class="number">10</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            num = temp;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> num;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<pre><code>A -&gt; 1
+B -&gt; 2
+C -&gt; 3
+...
+Z -&gt; 26
+AA -&gt; 27
+AB -&gt; 28 
+</code></pre><p>Solution:<br><figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public class <span class="type">Solution</span> &#123;</span><br><span class="line">    public <span class="type">int</span> titleToNumber(<span class="type">String</span> s) &#123;</span><br><span class="line">        <span class="type">char</span>[] sArray = s.toCharArray();</span><br><span class="line">        <span class="type">int</span> <span class="literal">result</span> = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; sArray.length; i ++)</span><br><span class="line">            <span class="literal">result</span> = <span class="literal">result</span>*<span class="number">26</span> + (sArray[i]-'A'+<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">result</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Use -‘A’ to convert the char to ascii value. Carry every 26.</p>
 
             
           </span>
@@ -971,8 +985,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/01/05/293-Flip-Game/" itemprop="url">
-                  #293 Flip Game
+                <a class="post-title-link" href="/2016/01/05/217-Contains-Duplicate/" itemprop="url">
+                  #217 Contains Duplicate
                 </a>
               
             
@@ -982,7 +996,7 @@
         <div class="post-meta">
           <span class="post-time">
             發表於
-            <time itemprop="dateCreated" datetime="2016-01-05T13:47:37-05:00" content="2016-01-05">
+            <time itemprop="dateCreated" datetime="2016-01-05T16:43:52-05:00" content="2016-01-05">
               2016-01-05
             </time>
           </span>
@@ -1008,8 +1022,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/05/293-Flip-Game/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/05/293-Flip-Game/" itemprop="commentsCount"></span>
+                <a href="/2016/01/05/217-Contains-Duplicate/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/05/217-Contains-Duplicate/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -1031,11 +1045,10 @@
         
           <span itemprop="articleBody">
             
-              <p>You are playing the following Flip Game with your friend: Given a string that contains only these two characters: + and -, you and your friend take turns to flip two consecutive “++” into “–”. The game ends when a person can no longer make a move and therefore the other person will be the winner.</p>
-<p>Write a function to compute all possible states of the string after one valid move.</p>
-<p>For example, given s = “++++”, after one move, it may become one of the following states:</p>
-<p>[<br>  “–++”,<br>  “+–+”,<br>  “++–”<br>]<br>If there is no valid move, return an empty list [].</p>
-<p>Solution:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="keyword">public</span> List&lt;String&gt; generatePossibleNextMoves(String s) &#123;</span><br><span class="line">         List <span class="built_in">list</span> = <span class="keyword">new</span> ArrayList();</span><br><span class="line">         <span class="keyword">for</span> (<span class="keyword">int</span> i=-<span class="number">1</span>; (i = s.indexOf(<span class="string">"++"</span>, i+<span class="number">1</span>)) &gt;= <span class="number">0</span>; )</span><br><span class="line">             <span class="built_in">list</span>.add(s.substring(<span class="number">0</span>, i) + <span class="string">"--"</span> + s.substring(i+<span class="number">2</span>));</span><br><span class="line">         <span class="keyword">return</span> <span class="built_in">list</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+              <p>#217. Contains Duplicate</p>
+<p>Given an array of integers, find if the array contains any duplicates. Your function should return true if any value appears at least twice in the array, and it should return false if every element is distinct.</p>
+<p>Solution:<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Solution</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> boolean <span class="title">containsDuplicate</span>(<span class="params"><span class="keyword">int</span>[] nums</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(nums==<span class="keyword">null</span> || nums.length==<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line"> </span><br><span class="line">        HashSet&lt;Integer&gt; <span class="keyword">set</span> = <span class="keyword">new</span> HashSet&lt;Integer&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i: nums)&#123;</span><br><span class="line">            <span class="keyword">if</span>(!<span class="keyword">set</span>.add(i))&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Because a HashSet cannot have duplicate elements, so we can use the add function of HashSet to know the array whether contains any duplicates.</p>
 
             
           </span>
@@ -1078,8 +1091,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/01/05/266-Palindrome-Permutation/" itemprop="url">
-                  #266 Palindrome Permutation
+                <a class="post-title-link" href="/2016/01/05/252-Meeting-Rooms/" itemprop="url">
+                  #252 Meeting Rooms
                 </a>
               
             
@@ -1089,7 +1102,7 @@
         <div class="post-meta">
           <span class="post-time">
             發表於
-            <time itemprop="dateCreated" datetime="2016-01-05T13:27:16-05:00" content="2016-01-05">
+            <time itemprop="dateCreated" datetime="2016-01-05T16:17:27-05:00" content="2016-01-05">
               2016-01-05
             </time>
           </span>
@@ -1115,8 +1128,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/05/266-Palindrome-Permutation/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/05/266-Palindrome-Permutation/" itemprop="commentsCount"></span>
+                <a href="/2016/01/05/252-Meeting-Rooms/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/05/252-Meeting-Rooms/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -1138,10 +1151,11 @@
         
           <span itemprop="articleBody">
             
-              <h1 id="266-_Palindrome_Permutation"><a href="#266-_Palindrome_Permutation" class="headerlink" title="266. Palindrome Permutation"></a>266. Palindrome Permutation</h1><p>Given a string, determine if a permutation of the string could form a palindrome.</p>
-<p>For example,<br>“code” -&gt; False, “aab” -&gt; True, “carerac” -&gt; True.</p>
-<p>Solution:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> boolean <span class="title">canPermutePalindrome</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        Set&lt;Character&gt; <span class="built_in">set</span>=<span class="keyword">new</span> HashSet&lt;Character&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;s.length(); ++i)</span><br><span class="line">            <span class="keyword">if</span> (!<span class="built_in">set</span>.add(s.charAt(i)))</span><br><span class="line">                <span class="built_in">set</span>.remove(s.charAt(i));</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">set</span>.size()&lt;=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>The idea is to iterate over string, adding current character to set if set doesn’t contain that character, or removing current character from set if set contains it. When the iteration is finished, just return set.size()&lt;=1</p>
+              <p>#252. Meeting Rooms</p>
+<p>Given an array of meeting time intervals consisting of start and end times [[s1,e1],[s2,e2],…] (si &lt; ei), determine if a person could attend all meetings.</p>
+<p>For example,<br>Given [[0, 30],[5, 10],[15, 20]],<br>return false.</p>
+<p>Solution:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * Definition for an interval.</span><br><span class="line"> * public class Interval &#123;</span><br><span class="line"> *     int start;</span><br><span class="line"> *     int end;</span><br><span class="line"> *     Interval() &#123; start = 0; end = 0; &#125;</span><br><span class="line"> *     Interval(int s, int e) &#123; start = s; end = e; &#125;</span><br><span class="line"> * &#125;</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">canAttendMeetings</span><span class="params">(Interval[] intervals)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Arrays.sort(intervals, <span class="keyword">new</span> IntervalComparator());</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">        </span><br><span class="line">    <span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">IntervalComparator</span> <span class="keyword">implements</span> <span class="title">Comparator</span>&lt;<span class="title">Interval</span>&gt; </span>&#123;</span><br><span class="line">        <span class="annotation">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Interval o1, Interval o2)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (o1.start &lt; o2.start &amp;&amp; o1.end &lt;= o2.start)</span><br><span class="line">                <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (o1.start &gt; o2.start &amp;&amp; o1.start &gt;= o2.end)</span><br><span class="line">                <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>During sort, use comparator to throw a exception if a person couldn’t attend all meetings, then catch the exception and return false.</p>
 
             
           </span>
@@ -1184,8 +1198,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/01/05/292-Nim-Game/" itemprop="url">
-                  #292 Nim Game
+                <a class="post-title-link" href="/2016/01/05/242-Valid-Anagram/" itemprop="url">
+                  #242 Valid Anagram
                 </a>
               
             
@@ -1195,7 +1209,7 @@
         <div class="post-meta">
           <span class="post-time">
             發表於
-            <time itemprop="dateCreated" datetime="2016-01-05T12:49:17-05:00" content="2016-01-05">
+            <time itemprop="dateCreated" datetime="2016-01-05T15:49:13-05:00" content="2016-01-05">
               2016-01-05
             </time>
           </span>
@@ -1221,8 +1235,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/05/292-Nim-Game/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/05/292-Nim-Game/" itemprop="commentsCount"></span>
+                <a href="/2016/01/05/242-Valid-Anagram/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/05/242-Valid-Anagram/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -1244,11 +1258,14 @@
         
           <span itemprop="articleBody">
             
-              <h1 id="292-_Nim_Game"><a href="#292-_Nim_Game" class="headerlink" title="292. Nim Game"></a>292. Nim Game</h1><p>You are playing the following Nim Game with your friend: There is a heap of stones on the table, each time one of you take turns to remove 1 to 3 stones. The one who removes the last stone will be the winner. You will take the first turn to remove the stones.</p>
-<p>Both of you are very clever and have optimal strategies for the game. Write a function to determine whether you can win the game given the number of stones in the heap.</p>
-<p>For example, if there are 4 stones in the heap, then you will never win the game: no matter 1, 2, or 3 stones you remove, the last stone will always be removed by your friend.</p>
-<p>Solution<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> boolean <span class="title">canWinNim</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(n % <span class="number">4</span> == <span class="number">0</span>)  </span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;  </span><br><span class="line">        <span class="keyword">else</span>    </span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>The first one who got the number that is multiple of 4 (i.e. n % 4 == 0) will lost, otherwise he/she will win.</p>
+              <p>#242. Valid Anagram</p>
+<p>Given two strings s and t, write a function to determine if t is an anagram of s.</p>
+<p>For example,<br>s = “anagram”, t = “nagaram”, return true.<br>s = “rat”, t = “car”, return false.</p>
+<p>Note:<br>You may assume the string contains only lowercase alphabets.</p>
+<p>Solution:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> boolean <span class="title">isAnagram</span><span class="params">(String s, String t)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] count1 = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">26</span>];</span><br><span class="line">        <span class="keyword">int</span>[] count2 = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">26</span>];</span><br><span class="line">        <span class="keyword">if</span>(s.length() != t.length()) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s.length();i++)&#123;</span><br><span class="line">            count1[s.charAt(i)-<span class="string">'a'</span>]++;</span><br><span class="line">            count2[t.charAt(i)-<span class="string">'a'</span>]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(Arrays.equals(count1,count2)) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Change the char to ascii value, because string contains only lowercase alphabets, so we can just announce two int[26] array to story the occurrence number of chars from a-z.</p>
+<p>HashTable solution:<br><figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> class Solution &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">boolean</span> isAnagram(<span class="keyword">String</span> s, <span class="keyword">String</span> t) &#123;</span><br><span class="line">        <span class="built_in">char</span>[] arr1=s.toCharArray();</span><br><span class="line">        <span class="built_in">char</span>[] arr2=t.toCharArray();</span><br><span class="line">        <span class="keyword">HashMap</span>&lt;Character,Integer&gt; h=<span class="keyword">new</span> <span class="keyword">HashMap</span>&lt;Character,Integer&gt;();</span><br><span class="line">        <span class="keyword">if</span>(arr1.length != arr2.length)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">       <span class="keyword">for</span>(<span class="built_in">int</span> i=<span class="number">0</span>;i&lt;arr1.length;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(h.<span class="built_in">get</span>(arr1[i])!= <span class="keyword">null</span>)</span><br><span class="line">            h.put(arr1[i],(h.<span class="built_in">get</span>(arr1[i]))+<span class="number">1</span>);</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            h.put(arr1[i],<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="built_in">int</span> i=<span class="number">0</span>;i&lt;arr2.length;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(h.<span class="built_in">get</span>(arr2[i]) ==<span class="keyword">null</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(h.<span class="built_in">get</span>(arr2[i])==<span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            h.put(arr2[i],(h.<span class="built_in">get</span>(arr2[i]))-<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>first store the String s in the map, key is char, value is its occurrence number. Then iterate the String t, reduce the occurrence number if there is a key match.</p>
 
             
           </span>
@@ -1275,7 +1292,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1316,7 +1333,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-count">32</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
@@ -1330,7 +1347,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-count">14</span>
               <span class="site-state-item-name">標籤</span>
               </a>
           </div>
