@@ -220,6 +220,327 @@
             
               
                 
+                <a class="post-title-link" href="/2016/01/05/325-Maximum-Size-Subarray-Sum-Equals-k/" itemprop="url">
+                  #325 Maximum Size Subarray Sum Equals k
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Posted on
+            <time itemprop="dateCreated" datetime="2016-01-05T14:45:15-05:00" content="2016-01-05">
+              2016-01-05
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; In
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2016/01/05/325-Maximum-Size-Subarray-Sum-Equals-k/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/05/325-Maximum-Size-Subarray-Sum-Equals-k/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>#325. Maximum Size Subarray Sum Equals k</p>
+<p>Given an array nums and a target value k, find the maximum length of a subarray that sums to k. If there isn’t one, return 0 instead.</p>
+<p>Example 1:<br>Given nums = [1, -1, 5, -2, 3], k = 3,<br>return 4. (because the subarray [1, -1, 5, -2] sums to 3 and is the longest)</p>
+<p>Example 2:<br>Given nums = [-2, -1, 2, 1], k = 1,<br>return 2. (because the subarray [-1, 2] sums to 1 and is the longest)</p>
+<p>Solution:<br><figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> maxSubArrayLen(<span class="built_in">int</span>[] nums, <span class="built_in">int</span> k) &#123;</span><br><span class="line">        <span class="built_in">int</span> <span class="built_in">sum</span> = <span class="number">0</span>, <span class="built_in">max</span> = <span class="number">0</span>;</span><br><span class="line">        HashMap&lt;<span class="type">Integer</span>, <span class="type">Integer</span>&gt; map = new HashMap&lt;<span class="type">Integer</span>, <span class="type">Integer</span>&gt;();</span><br><span class="line">        for(<span class="built_in">int</span> i=<span class="number">0</span>;i&lt;nums.length;i++)&#123;</span><br><span class="line">            <span class="built_in">sum</span> += nums[i];</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">sum</span> == k) <span class="built_in">max</span> = i + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(map.containsKey(<span class="built_in">sum</span>-k))</span><br><span class="line">                <span class="built_in">max</span> = Math.<span class="built_in">max</span>(<span class="built_in">max</span>, i - map.get(<span class="built_in">sum</span>-k));</span><br><span class="line">            <span class="keyword">if</span>(<span class="comment">!map.containsKey(sum))</span></span><br><span class="line">                map.put(<span class="built_in">sum</span>, i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">max</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Use hashmap to store sum before index i, key = sum and value = i. If sum = k, return i+1, if current sum - previous sum = k, return current i - previous i.</p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/01/05/237-Delete-Node-in-a-Linked-List/" itemprop="url">
+                  #237 Delete Node in a Linked List
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Posted on
+            <time itemprop="dateCreated" datetime="2016-01-05T14:42:37-05:00" content="2016-01-05">
+              2016-01-05
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; In
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2016/01/05/237-Delete-Node-in-a-Linked-List/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/05/237-Delete-Node-in-a-Linked-List/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>#237. Delete Node in a Linked List</p>
+<p>Write a function to delete a node (except the tail) in a singly linked list, given only access to that node.</p>
+<p>Supposed the linked list is 1 -&gt; 2 -&gt; 3 -&gt; 4 and you are given the third node with value 3, the linked list should become 1 -&gt; 2 -&gt; 4 after calling your function.</p>
+<p>Solution:<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Definition for singly-linked list.</span><br><span class="line"> * public class ListNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     ListNode next;</span><br><span class="line"> *     ListNode(int x) &#123; val = x; &#125;</span><br><span class="line"> * &#125;</span><br><span class="line"> */</span><br><span class="line">public class Solution &#123;</span><br><span class="line">    public void deleteNode(ListNode <span class="keyword">node</span><span class="identifier"></span><span class="title">) &#123;</span><br><span class="line">        node</span>.val = <span class="keyword">node</span>.<span class="identifier"></span><span class="title">next</span>.val;</span><br><span class="line">        <span class="keyword">node</span>.<span class="identifier"></span><span class="title">next</span> = <span class="keyword">node</span>.<span class="identifier"></span><span class="title">next</span>.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/01/05/243-Shortest-Word-Distance/" itemprop="url">
+                  #243 Shortest Word Distance
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Posted on
+            <time itemprop="dateCreated" datetime="2016-01-05T14:36:36-05:00" content="2016-01-05">
+              2016-01-05
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; In
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2016/01/05/243-Shortest-Word-Distance/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/05/243-Shortest-Word-Distance/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>#243. Shortest Word Distance</p>
+<p>Given a list of words and two words word1 and word2, return the shortest distance between these two words in the list.</p>
+<p>For example,<br>Assume that words = [“practice”, “makes”, “perfect”, “coding”, “makes”].</p>
+<p>Given word1 = “coding”, word2 = “practice”, return 3.<br>Given word1 = “makes”, word2 = “coding”, return 1.</p>
+<p>Solution:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">shortestDistance</span><span class="params">(String[] words, String word1, String word2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (words == null) <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> p1 = -<span class="number">1</span>, p2 = -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> diff = words.length;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; words.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (words[i].equals(word1)) &#123;</span><br><span class="line">                p1 = i;</span><br><span class="line">                <span class="keyword">if</span> (p2 != -<span class="number">1</span>) </span><br><span class="line">                    diff = Math.min(diff, p1 - p2);</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (words[i].equals(word2)) &#123;</span><br><span class="line">                p2 = i;</span><br><span class="line">                <span class="keyword">if</span> (p1 != -<span class="number">1</span>) </span><br><span class="line">                    diff = Math.min(diff, p2 - p1);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> diff;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/01/05/104-Maximum-Depth-of-Binary-Tree/" itemprop="url">
                   #104 Maximum Depth of Binary Tree
                 </a>
@@ -888,7 +1209,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">56</span>
+              <span class="site-state-item-count">59</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>

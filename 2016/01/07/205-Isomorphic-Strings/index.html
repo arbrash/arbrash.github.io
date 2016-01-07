@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Math," />
+  <meta name="keywords" content="Hash Table," />
 
 
 
@@ -51,25 +51,25 @@
 
 
 
-<meta name="description" content="#172. Factorial Trailing Zeroes
-Given an integer n, return the number of trailing zeroes in n!.
-Note: Your solution should be in logarithmic time complexity.
-Solution:12345678public class Solution &amp;#1">
+<meta name="description" content="#205. Isomorphic Strings
+Given two strings s and t, determine if they are isomorphic.
+Two strings are isomorphic if the characters in s can be replaced to get t.
+All occurrences of a character must be">
 <meta property="og:type" content="article">
-<meta property="og:title" content="#172 Factorial Trailing Zeroes">
-<meta property="og:url" content="http://yoursite.com/2016/01/06/172-Factorial-Trailing-Zeroes/index.html">
+<meta property="og:title" content="#205 Isomorphic Strings">
+<meta property="og:url" content="http://yoursite.com/2016/01/07/205-Isomorphic-Strings/index.html">
 <meta property="og:site_name" content="Arbrash's Blog">
-<meta property="og:description" content="#172. Factorial Trailing Zeroes
-Given an integer n, return the number of trailing zeroes in n!.
-Note: Your solution should be in logarithmic time complexity.
-Solution:12345678public class Solution &amp;#1">
-<meta property="og:updated_time" content="2016-01-06T19:43:53.677Z">
+<meta property="og:description" content="#205. Isomorphic Strings
+Given two strings s and t, determine if they are isomorphic.
+Two strings are isomorphic if the characters in s can be replaced to get t.
+All occurrences of a character must be">
+<meta property="og:updated_time" content="2016-01-07T17:24:22.034Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="#172 Factorial Trailing Zeroes">
-<meta name="twitter:description" content="#172. Factorial Trailing Zeroes
-Given an integer n, return the number of trailing zeroes in n!.
-Note: Your solution should be in logarithmic time complexity.
-Solution:12345678public class Solution &amp;#1">
+<meta name="twitter:title" content="#205 Isomorphic Strings">
+<meta name="twitter:description" content="#205. Isomorphic Strings
+Given two strings s and t, determine if they are isomorphic.
+Two strings are isomorphic if the characters in s can be replaced to get t.
+All occurrences of a character must be">
 
 
 
@@ -81,7 +81,7 @@ Solution:12345678public class Solution &amp;#1">
   };
 </script>
 
-  <title> #172 Factorial Trailing Zeroes | Arbrash's Blog </title>
+  <title> #205 Isomorphic Strings | Arbrash's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -221,7 +221,7 @@ Solution:12345678public class Solution &amp;#1">
             
             
               
-                #172 Factorial Trailing Zeroes
+                #205 Isomorphic Strings
               
             
           </h1>
@@ -230,8 +230,8 @@ Solution:12345678public class Solution &amp;#1">
         <div class="post-meta">
           <span class="post-time">
             Posted on
-            <time itemprop="dateCreated" datetime="2016-01-06T14:26:02-05:00" content="2016-01-06">
-              2016-01-06
+            <time itemprop="dateCreated" datetime="2016-01-07T11:25:02-05:00" content="2016-01-07">
+              2016-01-07
             </time>
           </span>
 
@@ -256,8 +256,8 @@ Solution:12345678public class Solution &amp;#1">
             
               <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2016/01/06/172-Factorial-Trailing-Zeroes/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/06/172-Factorial-Trailing-Zeroes/" itemprop="commentsCount"></span>
+              <a href="/2016/01/07/205-Isomorphic-Strings/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/07/205-Isomorphic-Strings/" itemprop="commentsCount"></span>
               </a>
             </span>
             
@@ -276,11 +276,17 @@ Solution:12345678public class Solution &amp;#1">
       
 
       
-        <span itemprop="articleBody"><p>#172. Factorial Trailing Zeroes</p>
-<p>Given an integer n, return the number of trailing zeroes in n!.</p>
-<p>Note: Your solution should be in logarithmic time complexity.</p>
-<p>Solution:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">trailingZeroes</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> num = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(n&gt;<span class="number">4</span>)</span><br><span class="line">            num += (n /=<span class="number">5</span>);</span><br><span class="line">        <span class="keyword">return</span> num;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>Because all trailing 0 is from factors 5 * 2. But sometimes one number may have several 5 factors, for example, 25 have two 5 factors, 125 have three 5 factors. In the n! operation, factors 2 is always ample. So we just count how many 5 factors in all number from 1 to n.</p>
+        <span itemprop="articleBody"><p>#205. Isomorphic Strings</p>
+<p>Given two strings s and t, determine if they are isomorphic.</p>
+<p>Two strings are isomorphic if the characters in s can be replaced to get t.</p>
+<p>All occurrences of a character must be replaced with another character while preserving the order of characters. No two characters may map to the same character but a character may map to itself.</p>
+<p>For example,<br>Given “egg”, “add”, return true.</p>
+<p>Given “foo”, “bar”, return false.</p>
+<p>Given “paper”, “title”, return true.</p>
+<p>Solution:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> boolean <span class="title">isIsomorphic</span><span class="params">(String s, String t)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] m = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">512</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (m[s.charAt(i)] != m[t.charAt(i)+<span class="number">256</span>]) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            m[s.charAt(i)] = m[t.charAt(i)+<span class="number">256</span>] = i+<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Use a 512 length of array to store pairs of ascii from s and t, s stores in [0 255], t stores in [256 511], the key stores in array is unique.</p>
+<p>Hash Table solution:<br><figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> class Solution &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">boolean</span> isIsomorphic(<span class="keyword">String</span> s, <span class="keyword">String</span> t) &#123;</span><br><span class="line">        <span class="keyword">if</span>(s == <span class="keyword">null</span> || s.length() &lt;= <span class="number">1</span>) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">HashMap</span>&lt;Character, Character&gt; <span class="built_in">map</span> = <span class="keyword">new</span> <span class="keyword">HashMap</span>&lt;Character, Character&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="built_in">int</span> i=<span class="number">0</span>;i&lt;s.length();i++)&#123;</span><br><span class="line">            <span class="built_in">char</span> a = s.charAt(i);</span><br><span class="line">            <span class="built_in">char</span> b = t.charAt(i);</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">map</span>.containsKey(a))&#123;</span><br><span class="line">                <span class="keyword">if</span>(<span class="built_in">map</span>.<span class="built_in">get</span>(a).equals(b))</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">if</span>(!<span class="built_in">map</span>.containsValue(b))</span><br><span class="line">                    <span class="built_in">map</span>.put(a,b);</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>If not contains key, but value is contained, return false,<br>if contains key, but value is not equal, return false, else return true.</p>
 </span>
       
     </div>
@@ -289,7 +295,7 @@ Solution:12345678public class Solution &amp;#1">
       
         <div class="post-tags">
           
-            <a href="/tags/Math/" rel="tag">#Math</a>
+            <a href="/tags/Hash-Table/" rel="tag">#Hash Table</a>
           
         </div>
       
@@ -298,16 +304,16 @@ Solution:12345678public class Solution &amp;#1">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/06/118-Pascal-s-Triangle/" rel="next" title="#118 Pascal's Triangle">
-                <i class="fa fa-chevron-left"></i> #118 Pascal's Triangle
+              <a href="/2016/01/07/20-Valid-Parentheses/" rel="next" title="#20 Valid Parentheses">
+                <i class="fa fa-chevron-left"></i> #20 Valid Parentheses
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/01/06/102-Binary-Tree-Level-Order-Traversal/" rel="prev" title="#102 Binary Tree Level Order Traversal">
-                #102 Binary Tree Level Order Traversal <i class="fa fa-chevron-right"></i>
+              <a href="/2016/01/07/290-Word-Pattern/" rel="prev" title="#290 Word Pattern">
+                #290 Word Pattern <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -486,9 +492,9 @@ Solution:12345678public class Solution &amp;#1">
 
     <script type="text/javascript">
       var disqus_shortname = 'arbrash';
-      var disqus_identifier = '2016/01/06/172-Factorial-Trailing-Zeroes/';
-      var disqus_title = '#172 Factorial Trailing Zeroes';
-      var disqus_url = 'http://yoursite.com/2016/01/06/172-Factorial-Trailing-Zeroes/';
+      var disqus_identifier = '2016/01/07/205-Isomorphic-Strings/';
+      var disqus_title = '#205 Isomorphic Strings';
+      var disqus_url = 'http://yoursite.com/2016/01/07/205-Isomorphic-Strings/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
