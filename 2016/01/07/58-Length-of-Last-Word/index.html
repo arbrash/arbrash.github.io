@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Bit Manipulation," />
+  <meta name="keywords" content="String," />
 
 
 
@@ -51,22 +51,22 @@
 
 
 
-<meta name="description" content="#190. Reverse Bits
-Reverse bits of a given 32 bits unsigned integer.
-For example, given input 43261596 (represented in binary as 00000010100101000001111010011100), return 964176192 (represented in bin">
+<meta name="description" content="#58. Length of Last Word
+Given a string s consists of upper/lower-case alphabets and empty space characters ‘ ‘, return the length of last word in the string.
+If the last word does not exist, return 0">
 <meta property="og:type" content="article">
-<meta property="og:title" content="#190 Reverse Bits">
-<meta property="og:url" content="http://yoursite.com/2016/01/06/190-Reverse-Bits/index.html">
+<meta property="og:title" content="#58 Length of Last Word">
+<meta property="og:url" content="http://yoursite.com/2016/01/07/58-Length-of-Last-Word/index.html">
 <meta property="og:site_name" content="Arbrash's Blog">
-<meta property="og:description" content="#190. Reverse Bits
-Reverse bits of a given 32 bits unsigned integer.
-For example, given input 43261596 (represented in binary as 00000010100101000001111010011100), return 964176192 (represented in bin">
-<meta property="og:updated_time" content="2016-01-07T05:41:39.538Z">
+<meta property="og:description" content="#58. Length of Last Word
+Given a string s consists of upper/lower-case alphabets and empty space characters ‘ ‘, return the length of last word in the string.
+If the last word does not exist, return 0">
+<meta property="og:updated_time" content="2016-01-07T09:33:52.819Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="#190 Reverse Bits">
-<meta name="twitter:description" content="#190. Reverse Bits
-Reverse bits of a given 32 bits unsigned integer.
-For example, given input 43261596 (represented in binary as 00000010100101000001111010011100), return 964176192 (represented in bin">
+<meta name="twitter:title" content="#58 Length of Last Word">
+<meta name="twitter:description" content="#58. Length of Last Word
+Given a string s consists of upper/lower-case alphabets and empty space characters ‘ ‘, return the length of last word in the string.
+If the last word does not exist, return 0">
 
 
 
@@ -78,7 +78,7 @@ For example, given input 43261596 (represented in binary as 00000010100101000001
   };
 </script>
 
-  <title> #190 Reverse Bits | Arbrash's Blog </title>
+  <title> #58 Length of Last Word | Arbrash's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -218,7 +218,7 @@ For example, given input 43261596 (represented in binary as 00000010100101000001
             
             
               
-                #190 Reverse Bits
+                #58 Length of Last Word
               
             
           </h1>
@@ -227,8 +227,8 @@ For example, given input 43261596 (represented in binary as 00000010100101000001
         <div class="post-meta">
           <span class="post-time">
             Posted on
-            <time itemprop="dateCreated" datetime="2016-01-06T20:37:42-05:00" content="2016-01-06">
-              2016-01-06
+            <time itemprop="dateCreated" datetime="2016-01-07T04:10:38-05:00" content="2016-01-07">
+              2016-01-07
             </time>
           </span>
 
@@ -253,8 +253,8 @@ For example, given input 43261596 (represented in binary as 00000010100101000001
             
               <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2016/01/06/190-Reverse-Bits/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/06/190-Reverse-Bits/" itemprop="commentsCount"></span>
+              <a href="/2016/01/07/58-Length-of-Last-Word/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/07/58-Length-of-Last-Word/" itemprop="commentsCount"></span>
               </a>
             </span>
             
@@ -273,13 +273,15 @@ For example, given input 43261596 (represented in binary as 00000010100101000001
       
 
       
-        <span itemprop="articleBody"><p>#190. Reverse Bits</p>
-<p>Reverse bits of a given 32 bits unsigned integer.</p>
-<p>For example, given input 43261596 (represented in binary as 00000010100101000001111010011100), return 964176192 (represented in binary as 00111001011110000010100101000000).</p>
-<p>Follow up:<br>If this function is called many times, how would you optimize it?</p>
-<p>Related problem: Reverse Integer</p>
-<p>Solution:<br><figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public class <span class="type">Solution</span> &#123;</span><br><span class="line">    // you need treat n <span class="keyword">as</span> an unsigned value</span><br><span class="line">    public <span class="type">int</span> reverseBits(<span class="type">int</span> n) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="literal">result</span> = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">32</span>;++i)&#123;</span><br><span class="line">            <span class="literal">result</span> = <span class="literal">result</span>&lt;&lt;<span class="number">1</span> | (n&amp;<span class="number">1</span>);</span><br><span class="line">            n&gt;&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">result</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>Store the last bit to the result  then n shift to the right and the result shift to the left.</p>
+        <span itemprop="articleBody"><p>#58. Length of Last Word</p>
+<p>Given a string s consists of upper/lower-case alphabets and empty space characters ‘ ‘, return the length of last word in the string.</p>
+<p>If the last word does not exist, return 0.</p>
+<p>Note: A word is defined as a character sequence consists of non-space characters only.</p>
+<p>For example,<br>Given s = “Hello World”,<br>return 5.</p>
+<p>Solution:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lengthOfLastWord</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        s = s.trim();</span><br><span class="line">        <span class="keyword">int</span> lastIndex = s.lastIndexOf(<span class="string">' '</span>) + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span> s.length() - lastIndex;        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Use lastIndexOf() function to find the last space between words.</p>
+<p>RE solution:<br><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> lengthOfLastWord(String s) &#123;</span><br><span class="line">        <span class="keyword">int</span> len = s.replaceAll(<span class="string">"\\s*$"</span>, <span class="string">""</span>).length();</span><br><span class="line">        <span class="keyword">int</span> <span class="keyword">count</span> = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">char</span>[] c = s.toCharArray();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=len-<span class="number">1</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">            <span class="keyword">if</span>(c[i]==<span class="string">' '</span>)</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="keyword">count</span>++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">count</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Use regular expression to eliminate the tail spaces then count the last word’s length.</p>
 </span>
       
     </div>
@@ -288,7 +290,7 @@ For example, given input 43261596 (represented in binary as 00000010100101000001
       
         <div class="post-tags">
           
-            <a href="/tags/Bit-Manipulation/" rel="tag">#Bit Manipulation</a>
+            <a href="/tags/String/" rel="tag">#String</a>
           
         </div>
       
@@ -297,16 +299,16 @@ For example, given input 43261596 (represented in binary as 00000010100101000001
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/06/249-Group-Shifted-Strings/" rel="next" title="#249 Group Shifted Strings">
-                <i class="fa fa-chevron-left"></i> #249 Group Shifted Strings
+              <a href="/2016/01/07/219-Contains-Duplicate-II/" rel="next" title="#219 Contains Duplicate II">
+                <i class="fa fa-chevron-left"></i> #219 Contains Duplicate II
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/01/07/157-Read-N-Characters-Given-Read4/" rel="prev" title="#157 Read N Characters Given Read4">
-                #157 Read N Characters Given Read4 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/01/07/19-Remove-Nth-Node-From-End-of-List/" rel="prev" title="#19 Remove Nth Node From End of List">
+                #19 Remove Nth Node From End of List <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -485,9 +487,9 @@ For example, given input 43261596 (represented in binary as 00000010100101000001
 
     <script type="text/javascript">
       var disqus_shortname = 'arbrash';
-      var disqus_identifier = '2016/01/06/190-Reverse-Bits/';
-      var disqus_title = '#190 Reverse Bits';
-      var disqus_url = 'http://yoursite.com/2016/01/06/190-Reverse-Bits/';
+      var disqus_identifier = '2016/01/07/58-Length-of-Last-Word/';
+      var disqus_title = '#58 Length of Last Word';
+      var disqus_url = 'http://yoursite.com/2016/01/07/58-Length-of-Last-Word/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
