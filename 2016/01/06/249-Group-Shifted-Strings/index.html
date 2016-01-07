@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Hash Table,String," />
 
 
 
@@ -51,16 +51,22 @@
 
 
 
-<meta name="description">
+<meta name="description" content="#249. Group Shifted Strings
+Given a string, we can “shift” each of its letter to its successive letter, for example: “abc” -&amp;gt; “bcd”. We can keep “shifting” which forms the sequence:
+“abc” -&amp;gt; “bc">
 <meta property="og:type" content="article">
 <meta property="og:title" content="#249 Group Shifted Strings">
 <meta property="og:url" content="http://yoursite.com/2016/01/06/249-Group-Shifted-Strings/index.html">
 <meta property="og:site_name" content="Arbrash">
-<meta property="og:description">
-<meta property="og:updated_time" content="2016-01-06T22:49:33.161Z">
+<meta property="og:description" content="#249. Group Shifted Strings
+Given a string, we can “shift” each of its letter to its successive letter, for example: “abc” -&amp;gt; “bcd”. We can keep “shifting” which forms the sequence:
+“abc” -&amp;gt; “bc">
+<meta property="og:updated_time" content="2016-01-07T01:37:10.291Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="#249 Group Shifted Strings">
-<meta name="twitter:description">
+<meta name="twitter:description" content="#249. Group Shifted Strings
+Given a string, we can “shift” each of its letter to its successive letter, for example: “abc” -&amp;gt; “bcd”. We can keep “shifting” which forms the sequence:
+“abc” -&amp;gt; “bc">
 
 
 
@@ -267,11 +273,26 @@
       
 
       
-        <span itemprop="articleBody"></span>
+        <span itemprop="articleBody"><p>#249. Group Shifted Strings</p>
+<p>Given a string, we can “shift” each of its letter to its successive letter, for example: “abc” -&gt; “bcd”. We can keep “shifting” which forms the sequence:</p>
+<p>“abc” -&gt; “bcd” -&gt; … -&gt; “xyz”<br>Given a list of strings which contains only lowercase alphabets, group all strings that belong to the same shifting sequence.</p>
+<p>For example, given: [“abc”, “bcd”, “acef”, “xyz”, “az”, “ba”, “a”, “z”],<br>Return:</p>
+<p>[<br>  [“abc”,”bcd”,”xyz”],<br>  [“az”,”ba”],<br>  [“acef”],<br>  [“a”,”z”]<br>]</p>
+<p>Solution:<br><figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> class Solution &#123;</span><br><span class="line">    <span class="keyword">public</span> List&lt;List&lt;<span class="keyword">String</span>&gt;&gt; groupStrings(<span class="keyword">String</span>[] strings) &#123;</span><br><span class="line">        List&lt;List&lt;<span class="keyword">String</span>&gt;&gt; result = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        Map&lt;<span class="keyword">String</span>, List&lt;<span class="keyword">String</span>&gt;&gt; <span class="built_in">map</span> = <span class="keyword">new</span> <span class="keyword">HashMap</span>&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">String</span> s: strings)&#123;</span><br><span class="line">            <span class="keyword">String</span> <span class="variable">key</span> = getKey(s);</span><br><span class="line">            <span class="keyword">if</span>(!<span class="built_in">map</span>.containsKey(<span class="variable">key</span>))</span><br><span class="line">                <span class="built_in">map</span>.put(<span class="variable">key</span>, <span class="keyword">new</span> ArrayList&lt;<span class="keyword">String</span>&gt;());</span><br><span class="line">            <span class="built_in">map</span>.<span class="built_in">get</span>(<span class="variable">key</span>).<span class="built_in">add</span>(s);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">String</span> <span class="variable">key</span>: <span class="built_in">map</span>.keySet())&#123;</span><br><span class="line">            List&lt;<span class="keyword">String</span>&gt; list = <span class="built_in">map</span>.<span class="built_in">get</span>(<span class="variable">key</span>);</span><br><span class="line">            Collections.<span class="built_in">sort</span>(list);</span><br><span class="line">            result.<span class="built_in">add</span>(list);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">String</span> getKey(<span class="keyword">String</span> s)&#123;</span><br><span class="line">        StringBuffer <span class="variable">key</span> = <span class="keyword">new</span> StringBuffer();</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">1</span>; i &lt; s.length(); i++) &#123;</span><br><span class="line">            <span class="built_in">int</span> asc = s.charAt(i) - s.charAt(i-<span class="number">1</span>);</span><br><span class="line">            <span class="built_in">char</span> c = (<span class="built_in">char</span>) (asc&gt;=<span class="number">0</span>?asc:asc+<span class="number">26</span>);</span><br><span class="line">            <span class="variable">key</span>.<span class="built_in">append</span>(c);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="variable">key</span>.toString();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>First write a function that get a string’s key, caculate the adjacent chars’ ascii diffenence from first pair of chars to the last, then add them as the string’s key. Then retrieval the string list and get the map sets. Finally output the map sets. </p>
+</span>
       
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Hash-Table/" rel="tag">#Hash Table</a>
+          
+            <a href="/tags/String/" rel="tag">#String</a>
+          
+        </div>
       
 
       
@@ -285,6 +306,10 @@
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/01/06/190-Reverse-Bits/" rel="prev" title="#190 Reverse Bits">
+                #190 Reverse Bits <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -356,7 +381,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">48</span>
+              <span class="site-state-item-count">49</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
