@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Linked List," />
+  <meta name="keywords" content="Array,Hash Table," />
 
 
 
@@ -51,22 +51,19 @@
 
 
 
-<meta name="description" content="#206. Reverse Linked List
-Reverse a singly linked list.
-Solution:12345678910111213141516171819202122/** * Definition for singly-linked list. * public class ListNode &amp;#123; *     int val; *     ListNod">
+<meta name="description" content="#219. Contains Duplicate II
+Given an array of integers and an integer k, find out whether there are two distinct indices i and j in the array such that nums[i] = nums[j] and the difference between i a">
 <meta property="og:type" content="article">
-<meta property="og:title" content="#206 Reverse Linked List">
-<meta property="og:url" content="http://yoursite.com/2016/01/05/206-Reverse-Linked-List/index.html">
+<meta property="og:title" content="#219 Contains Duplicate II">
+<meta property="og:url" content="http://yoursite.com/2016/01/07/219-Contains-Duplicate-II/index.html">
 <meta property="og:site_name" content="Arbrash's Blog">
-<meta property="og:description" content="#206. Reverse Linked List
-Reverse a singly linked list.
-Solution:12345678910111213141516171819202122/** * Definition for singly-linked list. * public class ListNode &amp;#123; *     int val; *     ListNod">
-<meta property="og:updated_time" content="2016-01-06T02:10:22.927Z">
+<meta property="og:description" content="#219. Contains Duplicate II
+Given an array of integers and an integer k, find out whether there are two distinct indices i and j in the array such that nums[i] = nums[j] and the difference between i a">
+<meta property="og:updated_time" content="2016-01-07T09:08:01.595Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="#206 Reverse Linked List">
-<meta name="twitter:description" content="#206. Reverse Linked List
-Reverse a singly linked list.
-Solution:12345678910111213141516171819202122/** * Definition for singly-linked list. * public class ListNode &amp;#123; *     int val; *     ListNod">
+<meta name="twitter:title" content="#219 Contains Duplicate II">
+<meta name="twitter:description" content="#219. Contains Duplicate II
+Given an array of integers and an integer k, find out whether there are two distinct indices i and j in the array such that nums[i] = nums[j] and the difference between i a">
 
 
 
@@ -78,7 +75,7 @@ Solution:12345678910111213141516171819202122/** * Definition for singly-linked l
   };
 </script>
 
-  <title> #206 Reverse Linked List | Arbrash's Blog </title>
+  <title> #219 Contains Duplicate II | Arbrash's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -218,7 +215,7 @@ Solution:12345678910111213141516171819202122/** * Definition for singly-linked l
             
             
               
-                #206 Reverse Linked List
+                #219 Contains Duplicate II
               
             
           </h1>
@@ -227,8 +224,8 @@ Solution:12345678910111213141516171819202122/** * Definition for singly-linked l
         <div class="post-meta">
           <span class="post-time">
             Posted on
-            <time itemprop="dateCreated" datetime="2016-01-05T19:19:46-05:00" content="2016-01-05">
-              2016-01-05
+            <time itemprop="dateCreated" datetime="2016-01-07T03:53:59-05:00" content="2016-01-07">
+              2016-01-07
             </time>
           </span>
 
@@ -253,8 +250,8 @@ Solution:12345678910111213141516171819202122/** * Definition for singly-linked l
             
               <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2016/01/05/206-Reverse-Linked-List/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/05/206-Reverse-Linked-List/" itemprop="commentsCount"></span>
+              <a href="/2016/01/07/219-Contains-Duplicate-II/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/07/219-Contains-Duplicate-II/" itemprop="commentsCount"></span>
               </a>
             </span>
             
@@ -273,13 +270,12 @@ Solution:12345678910111213141516171819202122/** * Definition for singly-linked l
       
 
       
-        <span itemprop="articleBody"><p>#206. Reverse Linked List</p>
-<p>Reverse a singly linked list.</p>
-<p>Solution:<br><figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Definition <span class="keyword">for</span> singly-linked list.</span><br><span class="line"> * <span class="keyword">public</span> <span class="keyword">class</span> ListNode &#123;</span><br><span class="line"> *     <span class="built_in">int</span> val;</span><br><span class="line"> *     ListNode <span class="keyword">next</span>;</span><br><span class="line"> *     ListNode(<span class="built_in">int</span> x) &#123; val = x; &#125;</span><br><span class="line"> * &#125;</span><br><span class="line"> */</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="keyword">public</span> ListNode reverseList(ListNode head) &#123;</span><br><span class="line">        <span class="keyword">if</span>(head == <span class="literal">null</span>) return head;</span><br><span class="line">        ListNode newHead = <span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line">        newHead.<span class="keyword">next</span> = head;</span><br><span class="line">        <span class="keyword">while</span>(head.<span class="keyword">next</span> != <span class="literal">null</span>)&#123;</span><br><span class="line">            ListNode temp = head.<span class="keyword">next</span>;</span><br><span class="line">            head.<span class="keyword">next</span> = head.<span class="keyword">next</span>.<span class="keyword">next</span>;</span><br><span class="line">            temp.<span class="keyword">next</span> = newHead.<span class="keyword">next</span>;</span><br><span class="line">            newHead.<span class="keyword">next</span> = temp;</span><br><span class="line">        &#125;</span><br><span class="line">        return newHead.<span class="keyword">next</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>Use iterate method, in each loop, put the head.next to the first position.</p>
-<p>In place solution:<br><figure class="highlight monkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line">    <span class="keyword">public</span> ListNode reverseList(ListNode head) &#123;</span><br><span class="line">        ListNode newHead = <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">while</span>(head != <span class="literal">null</span>)&#123;</span><br><span class="line">            ListNode temp = head.<span class="keyword">next</span>;</span><br><span class="line">            head.<span class="keyword">next</span> = newHead;</span><br><span class="line">            newHead = head;</span><br><span class="line">            head = temp;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> newHead;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>In each loop, make the pointer direction from the to next element to the previous element. </p>
-<p>In place recursive solution:<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="keyword">public</span> ListNode reverseList(ListNode head) &#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">reverse</span>(<span class="keyword">null</span>, head);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">private</span> ListNode <span class="keyword">reverse</span>(ListNode newHead, ListNode head)&#123;</span><br><span class="line">        <span class="keyword">if</span>(head == <span class="keyword">null</span>) <span class="keyword">return</span> newHead;</span><br><span class="line">        ListNode temp = head.<span class="keyword">next</span>;</span><br><span class="line">        head.<span class="keyword">next</span> = newHead;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">reverse</span>(head, temp);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <span itemprop="articleBody"><p>#219. Contains Duplicate II</p>
+<p>Given an array of integers and an integer k, find out whether there are two distinct indices i and j in the array such that nums[i] = nums[j] and the difference between i and j is at most k.</p>
+<p>Solution:<br><figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> class Solution &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">boolean</span> containsNearbyDuplicate(<span class="built_in">int</span>[] nums, <span class="built_in">int</span> k) &#123;</span><br><span class="line">        <span class="keyword">HashMap</span>&lt;Integer, Integer&gt; <span class="built_in">map</span> = <span class="keyword">new</span> <span class="keyword">HashMap</span>&lt;Integer, Integer&gt;();</span><br><span class="line">        <span class="built_in">int</span> <span class="built_in">min</span> = Integer.MAX_VALUE;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">for</span>(<span class="built_in">int</span> i=<span class="number">0</span>; i&lt;nums.length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">map</span>.containsKey(nums[i]))&#123;</span><br><span class="line">                <span class="built_in">int</span> preIndex = <span class="built_in">map</span>.<span class="built_in">get</span>(nums[i]);</span><br><span class="line">                <span class="built_in">int</span> gap = i-preIndex;</span><br><span class="line">                <span class="built_in">min</span> = Math.<span class="built_in">min</span>(<span class="built_in">min</span>, gap);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">map</span>.put(nums[i], i);</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">min</span> &lt;= k)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Hash Set Solution:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> boolean <span class="title">containsNearbyDuplicate</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        Set&lt;Integer&gt; <span class="built_in">set</span> = <span class="keyword">new</span> HashSet&lt;Integer&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(i &gt; k) <span class="built_in">set</span>.remove(nums[i-k-<span class="number">1</span>]);</span><br><span class="line">            <span class="keyword">if</span>(!<span class="built_in">set</span>.add(nums[i])) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>hashmap use 14ms, hashset use 8ms.</p>
+<p>Because HashSet cannot contains duplicate elements, so add the element to the hashset, if i&gt;k, it indicate that there cannot be a same element at index i-k-1, so remove the nums[i-k-1] and continue the loop. if in the loops we can find a duplicate element, it’s true.</p>
 </span>
       
     </div>
@@ -288,7 +284,9 @@ Solution:12345678910111213141516171819202122/** * Definition for singly-linked l
       
         <div class="post-tags">
           
-            <a href="/tags/Linked-List/" rel="tag">#Linked List</a>
+            <a href="/tags/Array/" rel="tag">#Array</a>
+          
+            <a href="/tags/Hash-Table/" rel="tag">#Hash Table</a>
           
         </div>
       
@@ -297,17 +295,13 @@ Solution:12345678910111213141516171819202122/** * Definition for singly-linked l
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/05/13-Roman-to-Integer/" rel="next" title="#13 Roman to Integer">
-                <i class="fa fa-chevron-left"></i> #13 Roman to Integer
+              <a href="/2016/01/07/223-Rectangle-Area/" rel="next" title="#223 Rectangle Area">
+                <i class="fa fa-chevron-left"></i> #223 Rectangle Area
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/01/05/83-Remove-Duplicates-from-Sorted-List/" rel="prev" title="#83 Remove Duplicates from Sorted List">
-                #83 Remove Duplicates from Sorted List <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -485,9 +479,9 @@ Solution:12345678910111213141516171819202122/** * Definition for singly-linked l
 
     <script type="text/javascript">
       var disqus_shortname = 'arbrash';
-      var disqus_identifier = '2016/01/05/206-Reverse-Linked-List/';
-      var disqus_title = '#206 Reverse Linked List';
-      var disqus_url = 'http://yoursite.com/2016/01/05/206-Reverse-Linked-List/';
+      var disqus_identifier = '2016/01/07/219-Contains-Duplicate-II/';
+      var disqus_title = '#219 Contains Duplicate II';
+      var disqus_url = 'http://yoursite.com/2016/01/07/219-Contains-Duplicate-II/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');

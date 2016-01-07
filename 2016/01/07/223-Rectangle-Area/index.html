@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Linked List," />
+  <meta name="keywords" content="Math," />
 
 
 
@@ -51,22 +51,29 @@
 
 
 
-<meta name="description" content="#206. Reverse Linked List
-Reverse a singly linked list.
-Solution:12345678910111213141516171819202122/** * Definition for singly-linked list. * public class ListNode &amp;#123; *     int val; *     ListNod">
+<meta name="description" content="#223. Rectangle Area
+Find the total area covered by two rectilinear rectangles in a 2D plane.
+Each rectangle is defined by its bottom left corner and top right corner as shown in the figure.
+
+Assume t">
 <meta property="og:type" content="article">
-<meta property="og:title" content="#206 Reverse Linked List">
-<meta property="og:url" content="http://yoursite.com/2016/01/05/206-Reverse-Linked-List/index.html">
+<meta property="og:title" content="#223 Rectangle Area">
+<meta property="og:url" content="http://yoursite.com/2016/01/07/223-Rectangle-Area/index.html">
 <meta property="og:site_name" content="Arbrash's Blog">
-<meta property="og:description" content="#206. Reverse Linked List
-Reverse a singly linked list.
-Solution:12345678910111213141516171819202122/** * Definition for singly-linked list. * public class ListNode &amp;#123; *     int val; *     ListNod">
-<meta property="og:updated_time" content="2016-01-06T02:10:22.927Z">
+<meta property="og:description" content="#223. Rectangle Area
+Find the total area covered by two rectilinear rectangles in a 2D plane.
+Each rectangle is defined by its bottom left corner and top right corner as shown in the figure.
+
+Assume t">
+<meta property="og:image" content="https://leetcode.com/static/images/problemset/rectangle_area.png">
+<meta property="og:updated_time" content="2016-01-07T08:53:11.024Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="#206 Reverse Linked List">
-<meta name="twitter:description" content="#206. Reverse Linked List
-Reverse a singly linked list.
-Solution:12345678910111213141516171819202122/** * Definition for singly-linked list. * public class ListNode &amp;#123; *     int val; *     ListNod">
+<meta name="twitter:title" content="#223 Rectangle Area">
+<meta name="twitter:description" content="#223. Rectangle Area
+Find the total area covered by two rectilinear rectangles in a 2D plane.
+Each rectangle is defined by its bottom left corner and top right corner as shown in the figure.
+
+Assume t">
 
 
 
@@ -78,7 +85,7 @@ Solution:12345678910111213141516171819202122/** * Definition for singly-linked l
   };
 </script>
 
-  <title> #206 Reverse Linked List | Arbrash's Blog </title>
+  <title> #223 Rectangle Area | Arbrash's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -218,7 +225,7 @@ Solution:12345678910111213141516171819202122/** * Definition for singly-linked l
             
             
               
-                #206 Reverse Linked List
+                #223 Rectangle Area
               
             
           </h1>
@@ -227,8 +234,8 @@ Solution:12345678910111213141516171819202122/** * Definition for singly-linked l
         <div class="post-meta">
           <span class="post-time">
             Posted on
-            <time itemprop="dateCreated" datetime="2016-01-05T19:19:46-05:00" content="2016-01-05">
-              2016-01-05
+            <time itemprop="dateCreated" datetime="2016-01-07T03:36:42-05:00" content="2016-01-07">
+              2016-01-07
             </time>
           </span>
 
@@ -253,8 +260,8 @@ Solution:12345678910111213141516171819202122/** * Definition for singly-linked l
             
               <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2016/01/05/206-Reverse-Linked-List/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/05/206-Reverse-Linked-List/" itemprop="commentsCount"></span>
+              <a href="/2016/01/07/223-Rectangle-Area/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/07/223-Rectangle-Area/" itemprop="commentsCount"></span>
               </a>
             </span>
             
@@ -273,13 +280,13 @@ Solution:12345678910111213141516171819202122/** * Definition for singly-linked l
       
 
       
-        <span itemprop="articleBody"><p>#206. Reverse Linked List</p>
-<p>Reverse a singly linked list.</p>
-<p>Solution:<br><figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Definition <span class="keyword">for</span> singly-linked list.</span><br><span class="line"> * <span class="keyword">public</span> <span class="keyword">class</span> ListNode &#123;</span><br><span class="line"> *     <span class="built_in">int</span> val;</span><br><span class="line"> *     ListNode <span class="keyword">next</span>;</span><br><span class="line"> *     ListNode(<span class="built_in">int</span> x) &#123; val = x; &#125;</span><br><span class="line"> * &#125;</span><br><span class="line"> */</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="keyword">public</span> ListNode reverseList(ListNode head) &#123;</span><br><span class="line">        <span class="keyword">if</span>(head == <span class="literal">null</span>) return head;</span><br><span class="line">        ListNode newHead = <span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line">        newHead.<span class="keyword">next</span> = head;</span><br><span class="line">        <span class="keyword">while</span>(head.<span class="keyword">next</span> != <span class="literal">null</span>)&#123;</span><br><span class="line">            ListNode temp = head.<span class="keyword">next</span>;</span><br><span class="line">            head.<span class="keyword">next</span> = head.<span class="keyword">next</span>.<span class="keyword">next</span>;</span><br><span class="line">            temp.<span class="keyword">next</span> = newHead.<span class="keyword">next</span>;</span><br><span class="line">            newHead.<span class="keyword">next</span> = temp;</span><br><span class="line">        &#125;</span><br><span class="line">        return newHead.<span class="keyword">next</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>Use iterate method, in each loop, put the head.next to the first position.</p>
-<p>In place solution:<br><figure class="highlight monkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line">    <span class="keyword">public</span> ListNode reverseList(ListNode head) &#123;</span><br><span class="line">        ListNode newHead = <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">while</span>(head != <span class="literal">null</span>)&#123;</span><br><span class="line">            ListNode temp = head.<span class="keyword">next</span>;</span><br><span class="line">            head.<span class="keyword">next</span> = newHead;</span><br><span class="line">            newHead = head;</span><br><span class="line">            head = temp;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> newHead;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>In each loop, make the pointer direction from the to next element to the previous element. </p>
-<p>In place recursive solution:<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="keyword">public</span> ListNode reverseList(ListNode head) &#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">reverse</span>(<span class="keyword">null</span>, head);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">private</span> ListNode <span class="keyword">reverse</span>(ListNode newHead, ListNode head)&#123;</span><br><span class="line">        <span class="keyword">if</span>(head == <span class="keyword">null</span>) <span class="keyword">return</span> newHead;</span><br><span class="line">        ListNode temp = head.<span class="keyword">next</span>;</span><br><span class="line">        head.<span class="keyword">next</span> = newHead;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">reverse</span>(head, temp);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <span itemprop="articleBody"><p>#223. Rectangle Area</p>
+<p>Find the total area covered by two rectilinear rectangles in a 2D plane.</p>
+<p>Each rectangle is defined by its bottom left corner and top right corner as shown in the figure.</p>
+<p><img src="https://leetcode.com/static/images/problemset/rectangle_area.png" alt=""></p>
+<p>Assume that the total area is never beyond the maximum possible value of int.</p>
+<p>Solution:<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    public int computeArea(int A, int B, int C, int <span class="keyword">D</span>, int <span class="keyword">E</span>, int F, int <span class="keyword">G</span>, int <span class="keyword">H</span>) &#123;</span><br><span class="line">        int cover;</span><br><span class="line">        <span class="keyword">if</span>(A&gt;<span class="keyword">G</span> || C&lt;<span class="keyword">E</span> || <span class="keyword">D</span>&lt;F || B&gt;<span class="keyword">H</span>)</span><br><span class="line">            cover = 0;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            int <span class="keyword">m</span> = Math.<span class="literal">min</span>(C,<span class="keyword">G</span>) - Math.<span class="literal">max</span>(A,<span class="keyword">E</span>);</span><br><span class="line">            int <span class="keyword">n</span> = Math.<span class="literal">min</span>(<span class="keyword">D</span>,<span class="keyword">H</span>) - Math.<span class="literal">max</span>(B,F);</span><br><span class="line">            cover = <span class="keyword">m</span> * <span class="keyword">n</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> (C-A) * (<span class="keyword">D</span>-B) + (<span class="keyword">G</span>-<span class="keyword">E</span>) * (<span class="keyword">H</span>-F) - cover;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>In this problem, the point is to find the area of the overlap </p>
 </span>
       
     </div>
@@ -288,7 +295,7 @@ Solution:12345678910111213141516171819202122/** * Definition for singly-linked l
       
         <div class="post-tags">
           
-            <a href="/tags/Linked-List/" rel="tag">#Linked List</a>
+            <a href="/tags/Math/" rel="tag">#Math</a>
           
         </div>
       
@@ -297,16 +304,16 @@ Solution:12345678910111213141516171819202122/** * Definition for singly-linked l
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/05/13-Roman-to-Integer/" rel="next" title="#13 Roman to Integer">
-                <i class="fa fa-chevron-left"></i> #13 Roman to Integer
+              <a href="/2016/01/07/276-Paint-Fence/" rel="next" title="#276 Paint Fence">
+                <i class="fa fa-chevron-left"></i> #276 Paint Fence
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/01/05/83-Remove-Duplicates-from-Sorted-List/" rel="prev" title="#83 Remove Duplicates from Sorted List">
-                #83 Remove Duplicates from Sorted List <i class="fa fa-chevron-right"></i>
+              <a href="/2016/01/07/219-Contains-Duplicate-II/" rel="prev" title="#219 Contains Duplicate II">
+                #219 Contains Duplicate II <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -485,9 +492,9 @@ Solution:12345678910111213141516171819202122/** * Definition for singly-linked l
 
     <script type="text/javascript">
       var disqus_shortname = 'arbrash';
-      var disqus_identifier = '2016/01/05/206-Reverse-Linked-List/';
-      var disqus_title = '#206 Reverse Linked List';
-      var disqus_url = 'http://yoursite.com/2016/01/05/206-Reverse-Linked-List/';
+      var disqus_identifier = '2016/01/07/223-Rectangle-Area/';
+      var disqus_title = '#223 Rectangle Area';
+      var disqus_url = 'http://yoursite.com/2016/01/07/223-Rectangle-Area/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');

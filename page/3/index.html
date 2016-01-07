@@ -220,6 +220,327 @@
             
               
                 
+                <a class="post-title-link" href="/2016/01/06/198-House-Robber/" itemprop="url">
+                  #198 House Robber
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Posted on
+            <time itemprop="dateCreated" datetime="2016-01-06T02:18:41-05:00" content="2016-01-06">
+              2016-01-06
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; In
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2016/01/06/198-House-Robber/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/06/198-House-Robber/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>#198. House Robber</p>
+<p>You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is that adjacent houses have security system connected and it will automatically contact the police if two adjacent houses were broken into on the same night.</p>
+<p>Given a list of non-negative integers representing the amount of money of each house, determine the maximum amount of money you can rob tonight without alerting the police.</p>
+<p>Solution:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">rob</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> a = <span class="number">0</span>, b = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nums.length;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(i%<span class="number">2</span>==<span class="number">0</span>)</span><br><span class="line">                a = Math.max(a+nums[i],b);</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                b = Math.max(b+nums[i],a);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> Math.max(a,b);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>DP: P(k)=Max(P(k-2)+m(k),P(k-1))</p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/01/06/107-Binary-Tree-Level-Order-Traversal-II/" itemprop="url">
+                  #107 Binary Tree Level Order Traversal II
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Posted on
+            <time itemprop="dateCreated" datetime="2016-01-06T02:09:13-05:00" content="2016-01-06">
+              2016-01-06
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; In
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2016/01/06/107-Binary-Tree-Level-Order-Traversal-II/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/06/107-Binary-Tree-Level-Order-Traversal-II/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>#107. Binary Tree Level Order Traversal II</p>
+<p>Given a binary tree, return the bottom-up level order traversal of its nodes’ values. (ie, from left to right, level by level from leaf to root).</p>
+<p>For example:<br>Given binary tree {3,9,20,#,#,15,7},<br>    3<br>   / \<br>  9  20<br>    /  \<br>   15   7<br>return its bottom-up level order traversal as:<br>[<br>  [15,7],<br>  [9,20],<br>  [3]<br>]</p>
+<p>Solution:<br><figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public class <span class="type">Solution</span> &#123;</span><br><span class="line">    public <span class="type">List</span>&lt;<span class="type">List</span>&lt;<span class="type">Integer</span>&gt;&gt; levelOrderBottom(<span class="type">TreeNode</span> root) &#123;</span><br><span class="line">        <span class="type">List</span>&lt;<span class="type">List</span>&lt;<span class="type">Integer</span>&gt;&gt; <span class="literal">result</span> = new <span class="type">LinkedList</span>&lt;<span class="type">List</span>&lt;<span class="type">Integer</span>&gt;&gt;();</span><br><span class="line">        <span class="keyword">if</span>(root == null) <span class="keyword">return</span> <span class="literal">result</span>;</span><br><span class="line">        <span class="type">Queue</span>&lt;<span class="type">TreeNode</span>&gt; q = new <span class="type">LinkedList</span>&lt;&gt;();</span><br><span class="line">        q.add(root);</span><br><span class="line">        <span class="keyword">while</span>(q.size()&gt;<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="type">List</span>&lt;<span class="type">Integer</span>&gt; list = new <span class="type">ArrayList</span>&lt;&gt;();</span><br><span class="line">            <span class="type">int</span> size = q.size();</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;size;i++)&#123;</span><br><span class="line">                <span class="type">TreeNode</span> node = q.poll();</span><br><span class="line">                list.add(node.val);</span><br><span class="line">                <span class="keyword">if</span>(node.left!=null) q.add(node.left);</span><br><span class="line">                <span class="keyword">if</span>(node.right!=null) q.add(node.right);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="literal">result</span>.add(<span class="number">0</span>,list);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">result</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Use a list to stroe the result, use a list to store the node’s value at the same level, use a queue to get the same level nodes.</p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/01/05/27-Remove-Element/" itemprop="url">
+                  #27 Remove Element
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Posted on
+            <time itemprop="dateCreated" datetime="2016-01-05T22:53:17-05:00" content="2016-01-05">
+              2016-01-05
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; In
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2016/01/05/27-Remove-Element/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/05/27-Remove-Element/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>#27. Remove Element</p>
+<p>Given an array and a value, remove all instances of that value in place and return the new length.</p>
+<p>The order of elements can be changed. It doesn’t matter what you leave beyond the new length.</p>
+<p>Solution:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">removeElement</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nums.length;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[i] != val) nums[n++]=nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> n;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>store the non-val elements in the array and count the loop times.</p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/01/05/101-Symmetric-Tree/" itemprop="url">
                   #101 Symmetric Tree
                 </a>
@@ -951,328 +1272,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/01/05/263-Ugly-Number/" itemprop="url">
-                  #263 Ugly Number
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            Posted on
-            <time itemprop="dateCreated" datetime="2016-01-05T21:59:38-05:00" content="2016-01-05">
-              2016-01-05
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; In
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
-                    <span itemprop="name">LeetCode</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2016/01/05/263-Ugly-Number/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/05/263-Ugly-Number/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-              <p>#263. Ugly Number</p>
-<p>Write a program to check whether a given number is an ugly number.</p>
-<p>Ugly numbers are positive numbers whose prime factors only include 2, 3, 5. For example, 6, 8 are ugly while 14 is not ugly since it includes another prime factor 7.</p>
-<p>Note that 1 is typically treated as an ugly number.</p>
-<p>Solution:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> boolean <span class="title">isUgly</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">2</span>; i&lt;<span class="number">6</span> &amp;&amp; num&gt;<span class="number">0</span>; i++)</span><br><span class="line">            <span class="keyword">while</span> (num % i == <span class="number">0</span>)</span><br><span class="line">                num /= i;</span><br><span class="line">        <span class="keyword">return</span> num == <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>If num is a ugly number, we can divide the number from 2 to 5, finally get 1.</p>
-
-            
-          </span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/01/05/70-Climbing-Stairs/" itemprop="url">
-                  #70 Climbing Stairs
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            Posted on
-            <time itemprop="dateCreated" datetime="2016-01-05T21:50:08-05:00" content="2016-01-05">
-              2016-01-05
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; In
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
-                    <span itemprop="name">LeetCode</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2016/01/05/70-Climbing-Stairs/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/05/70-Climbing-Stairs/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-              <p>#70. Climbing Stairs</p>
-<p>You are climbing a stair case. It takes n steps to reach to the top.</p>
-<p>Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?</p>
-<p>Solution:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">climbStairs</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    	<span class="keyword">if</span>(n &lt;= <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">2</span>) <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">    </span><br><span class="line">        <span class="keyword">int</span> one_step_before = <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">int</span> two_steps_before = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> all_ways = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>; i&lt;n; i++)&#123;</span><br><span class="line">            all_ways = one_step_before + two_steps_before;</span><br><span class="line">            two_steps_before = one_step_before;</span><br><span class="line">            one_step_before = all_ways;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> all_ways;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>If we know the number ways to get to the points [n-1] and [n-2] respectively, denoted as n1 and n2 , then the total ways to get to the point [n] is n1 + n2. Because from the [n-1] point, we can take one single step to reach [n]. And from the [n-2] point, we could take two steps to get there. </p>
-
-            
-          </span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/01/05/83-Remove-Duplicates-from-Sorted-List/" itemprop="url">
-                  #83 Remove Duplicates from Sorted List
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            Posted on
-            <time itemprop="dateCreated" datetime="2016-01-05T21:14:27-05:00" content="2016-01-05">
-              2016-01-05
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; In
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
-                    <span itemprop="name">LeetCode</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2016/01/05/83-Remove-Duplicates-from-Sorted-List/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/05/83-Remove-Duplicates-from-Sorted-List/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-              <p>#83. Remove Duplicates from Sorted List</p>
-<p>Given a sorted linked list, delete all duplicates such that each element appear only once.</p>
-<p>For example,<br>Given 1-&gt;1-&gt;2, return 1-&gt;2.<br>Given 1-&gt;1-&gt;2-&gt;3-&gt;3, return 1-&gt;2-&gt;3.</p>
-<p>Solution:<br><figure class="highlight monkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line">    <span class="keyword">public</span> ListNode deleteDuplicates(ListNode head) &#123;</span><br><span class="line">        <span class="keyword">if</span>(head == <span class="literal">null</span> || head.<span class="keyword">next</span> == <span class="literal">null</span>)<span class="keyword">return</span> head;</span><br><span class="line">        head.<span class="keyword">next</span> = deleteDuplicates(head.<span class="keyword">next</span>);</span><br><span class="line">        <span class="keyword">return</span> head.val == head.<span class="keyword">next</span>.val ? head.<span class="keyword">next</span> : head;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>Iterative solution:<br><figure class="highlight monkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line">    <span class="keyword">public</span> ListNode deleteDuplicates(ListNode head) &#123;</span><br><span class="line">        <span class="keyword">if</span>(head == <span class="literal">null</span> || head.<span class="keyword">next</span> == <span class="literal">null</span>)</span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line">        ListNode p = head;</span><br><span class="line">        <span class="keyword">while</span>( p!= <span class="literal">null</span> &amp;&amp; p.<span class="keyword">next</span> != <span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(p.val == p.<span class="keyword">next</span>.val)</span><br><span class="line">                p.<span class="keyword">next</span> = p.<span class="keyword">next</span>.<span class="keyword">next</span>;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">                p = p.<span class="keyword">next</span>; </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
-            
-          </span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
 
   </section>
 
@@ -1319,7 +1318,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">51</span>
+              <span class="site-state-item-count">54</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
