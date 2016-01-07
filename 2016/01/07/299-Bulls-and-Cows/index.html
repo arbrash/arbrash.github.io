@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Array,Two Pointers," />
+  <meta name="keywords" content="Hash Table," />
 
 
 
@@ -51,22 +51,19 @@
 
 
 
-<meta name="description" content="#26. Remove Duplicates from Sorted Array
-Given a sorted array, remove the duplicates in place such that each element appear only once and return the new length.
-Do not allocate extra space for another">
+<meta name="description" content="#Bulls and Cows
+You are playing the following Bulls and Cows game with your friend: You write down a number and ask your friend to guess what the number is. Each time your friend makes a guess, you pr">
 <meta property="og:type" content="article">
-<meta property="og:title" content="#26 Remove Duplicates from Sorted Array">
-<meta property="og:url" content="http://yoursite.com/2016/01/06/26-Remove-Duplicates-from-Sorted-Array/index.html">
+<meta property="og:title" content="#299 Bulls and Cows">
+<meta property="og:url" content="http://yoursite.com/2016/01/07/299-Bulls-and-Cows/index.html">
 <meta property="og:site_name" content="Arbrash's Blog">
-<meta property="og:description" content="#26. Remove Duplicates from Sorted Array
-Given a sorted array, remove the duplicates in place such that each element appear only once and return the new length.
-Do not allocate extra space for another">
-<meta property="og:updated_time" content="2016-01-06T07:58:30.606Z">
+<meta property="og:description" content="#Bulls and Cows
+You are playing the following Bulls and Cows game with your friend: You write down a number and ask your friend to guess what the number is. Each time your friend makes a guess, you pr">
+<meta property="og:updated_time" content="2016-01-07T18:29:20.241Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="#26 Remove Duplicates from Sorted Array">
-<meta name="twitter:description" content="#26. Remove Duplicates from Sorted Array
-Given a sorted array, remove the duplicates in place such that each element appear only once and return the new length.
-Do not allocate extra space for another">
+<meta name="twitter:title" content="#299 Bulls and Cows">
+<meta name="twitter:description" content="#Bulls and Cows
+You are playing the following Bulls and Cows game with your friend: You write down a number and ask your friend to guess what the number is. Each time your friend makes a guess, you pr">
 
 
 
@@ -78,7 +75,7 @@ Do not allocate extra space for another">
   };
 </script>
 
-  <title> #26 Remove Duplicates from Sorted Array | Arbrash's Blog </title>
+  <title> #299 Bulls and Cows | Arbrash's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -218,7 +215,7 @@ Do not allocate extra space for another">
             
             
               
-                #26 Remove Duplicates from Sorted Array
+                #299 Bulls and Cows
               
             
           </h1>
@@ -227,8 +224,8 @@ Do not allocate extra space for another">
         <div class="post-meta">
           <span class="post-time">
             Posted on
-            <time itemprop="dateCreated" datetime="2016-01-06T02:53:34-05:00" content="2016-01-06">
-              2016-01-06
+            <time itemprop="dateCreated" datetime="2016-01-07T13:26:54-05:00" content="2016-01-07">
+              2016-01-07
             </time>
           </span>
 
@@ -253,8 +250,8 @@ Do not allocate extra space for another">
             
               <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2016/01/06/26-Remove-Duplicates-from-Sorted-Array/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/06/26-Remove-Duplicates-from-Sorted-Array/" itemprop="commentsCount"></span>
+              <a href="/2016/01/07/299-Bulls-and-Cows/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/07/299-Bulls-and-Cows/" itemprop="commentsCount"></span>
               </a>
             </span>
             
@@ -273,12 +270,12 @@ Do not allocate extra space for another">
       
 
       
-        <span itemprop="articleBody"><p>#26. Remove Duplicates from Sorted Array</p>
-<p>Given a sorted array, remove the duplicates in place such that each element appear only once and return the new length.</p>
-<p>Do not allocate extra space for another array, you must do this in place with constant memory.</p>
-<p>For example,<br>Given input array nums = [1,1,2],</p>
-<p>Your function should return length = 2, with the first two elements of nums being 1 and 2 respectively. It doesn’t matter what you leave beyond the new length.</p>
-<p>Solution:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">removeDuplicates</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(nums.length&lt;<span class="number">2</span>) <span class="keyword">return</span> nums.length;</span><br><span class="line">        <span class="keyword">int</span> len = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;nums.length;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i] != nums[i-<span class="number">1</span>])&#123;</span><br><span class="line">                nums[len++] = nums[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> len;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <span itemprop="articleBody"><p>#Bulls and Cows</p>
+<p>You are playing the following Bulls and Cows game with your friend: You write down a number and ask your friend to guess what the number is. Each time your friend makes a guess, you provide a hint that indicates how many digits in said guess match your secret number exactly in both digit and position (called “bulls”) and how many digits match the secret number but locate in the wrong position (called “cows”). Your friend will use successive guesses and hints to eventually derive the secret number.</p>
+<p>For example:</p>
+<p>Secret number:  “1807”<br>Friend’s guess: “7810”<br>Hint: 1 bull and 3 cows. (The bull is 8, the cows are 0, 1 and 7.)<br>Write a function to return a hint according to the secret number and friend’s guess, use A to indicate the bulls and B to indicate the cows. In the above example, your function should return “1A3B”.</p>
+<p>Please note that both secret number and friend’s guess may contain duplicate digits, for example:</p>
+<p>Secret number:  “1123”<br>Friend’s guess: “0111”<br>In this case, the 1st 1 in friend’s guess is a bull, the 2nd or 3rd 1 is a cow, and your function should return “1A1B”.<br>You may assume that the secret number and your friend’s guess only contain digits, and their lengths are always equal.</p>
 </span>
       
     </div>
@@ -287,9 +284,7 @@ Do not allocate extra space for another">
       
         <div class="post-tags">
           
-            <a href="/tags/Array/" rel="tag">#Array</a>
-          
-            <a href="/tags/Two-Pointers/" rel="tag">#Two Pointers</a>
+            <a href="/tags/Hash-Table/" rel="tag">#Hash Table</a>
           
         </div>
       
@@ -298,17 +293,13 @@ Do not allocate extra space for another">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/06/198-House-Robber/" rel="next" title="#198 House Robber">
-                <i class="fa fa-chevron-left"></i> #198 House Robber
+              <a href="/2016/01/07/290-Word-Pattern/" rel="next" title="#290 Word Pattern">
+                <i class="fa fa-chevron-left"></i> #290 Word Pattern
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/01/06/66-Plus-One/" rel="prev" title="#66 Plus One">
-                #66 Plus One <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -486,9 +477,9 @@ Do not allocate extra space for another">
 
     <script type="text/javascript">
       var disqus_shortname = 'arbrash';
-      var disqus_identifier = '2016/01/06/26-Remove-Duplicates-from-Sorted-Array/';
-      var disqus_title = '#26 Remove Duplicates from Sorted Array';
-      var disqus_url = 'http://yoursite.com/2016/01/06/26-Remove-Duplicates-from-Sorted-Array/';
+      var disqus_identifier = '2016/01/07/299-Bulls-and-Cows/';
+      var disqus_title = '#299 Bulls and Cows';
+      var disqus_url = 'http://yoursite.com/2016/01/07/299-Bulls-and-Cows/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
