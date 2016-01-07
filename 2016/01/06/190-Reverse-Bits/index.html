@@ -61,7 +61,7 @@ For example, given input 43261596 (represented in binary as 00000010100101000001
 <meta property="og:description" content="#190. Reverse Bits
 Reverse bits of a given 32 bits unsigned integer.
 For example, given input 43261596 (represented in binary as 00000010100101000001111010011100), return 964176192 (represented in bin">
-<meta property="og:updated_time" content="2016-01-07T03:36:13.353Z">
+<meta property="og:updated_time" content="2016-01-07T05:41:39.538Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="#190 Reverse Bits">
 <meta name="twitter:description" content="#190. Reverse Bits
@@ -278,7 +278,8 @@ For example, given input 43261596 (represented in binary as 00000010100101000001
 <p>For example, given input 43261596 (represented in binary as 00000010100101000001111010011100), return 964176192 (represented in binary as 00111001011110000010100101000000).</p>
 <p>Follow up:<br>If this function is called many times, how would you optimize it?</p>
 <p>Related problem: Reverse Integer</p>
-<p>Solution:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<p>Solution:<br><figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public class <span class="type">Solution</span> &#123;</span><br><span class="line">    // you need treat n <span class="keyword">as</span> an unsigned value</span><br><span class="line">    public <span class="type">int</span> reverseBits(<span class="type">int</span> n) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="literal">result</span> = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">32</span>;++i)&#123;</span><br><span class="line">            <span class="literal">result</span> = <span class="literal">result</span>&lt;&lt;<span class="number">1</span> | (n&amp;<span class="number">1</span>);</span><br><span class="line">            n&gt;&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">result</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Store the last bit to the result  then n shift to the right and the result shift to the left.</p>
 </span>
       
     </div>
@@ -303,6 +304,10 @@ For example, given input 43261596 (represented in binary as 00000010100101000001
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/01/07/157-Read-N-Characters-Given-Read4/" rel="prev" title="#157 Read N Characters Given Read4">
+                #157 Read N Characters Given Read4 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -374,7 +379,7 @@ For example, given input 43261596 (represented in binary as 00000010100101000001
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">49</span>
+              <span class="site-state-item-count">50</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>

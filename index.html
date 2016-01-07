@@ -220,6 +220,114 @@
             
               
                 
+                <a class="post-title-link" href="/2016/01/07/157-Read-N-Characters-Given-Read4/" itemprop="url">
+                  #157 Read N Characters Given Read4
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Posted on
+            <time itemprop="dateCreated" datetime="2016-01-07T00:52:16-05:00" content="2016-01-07">
+              2016-01-07
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; In
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/01/07/157-Read-N-Characters-Given-Read4/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/07/157-Read-N-Characters-Given-Read4/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>#157. Read N Characters Given Read4</p>
+<p>The API: int read4(char *buf) reads 4 characters at a time from a file.</p>
+<p>The return value is the actual number of characters read. For example, it returns 3 if there is only 3 characters left in the file.</p>
+<p>By using the read4 API, implement the function int read(char *buf, int n) that reads n characters from the file.</p>
+<p>Note:<br>The read function will only be called once for each test case.</p>
+<p>Solution:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/01/06/190-Reverse-Bits/" itemprop="url">
                   #190 Reverse Bits
                 </a>
@@ -285,7 +393,8 @@
 <p>For example, given input 43261596 (represented in binary as 00000010100101000001111010011100), return 964176192 (represented in binary as 00111001011110000010100101000000).</p>
 <p>Follow up:<br>If this function is called many times, how would you optimize it?</p>
 <p>Related problem: Reverse Integer</p>
-<p>Solution:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<p>Solution:<br><figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public class <span class="type">Solution</span> &#123;</span><br><span class="line">    // you need treat n <span class="keyword">as</span> an unsigned value</span><br><span class="line">    public <span class="type">int</span> reverseBits(<span class="type">int</span> n) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="literal">result</span> = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">32</span>;++i)&#123;</span><br><span class="line">            <span class="literal">result</span> = <span class="literal">result</span>&lt;&lt;<span class="number">1</span> | (n&amp;<span class="number">1</span>);</span><br><span class="line">            n&gt;&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">result</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Store the last bit to the result  then n shift to the right and the result shift to the left.</p>
 
             
           </span>
@@ -1167,113 +1276,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/01/06/102-Binary-Tree-Level-Order-Traversal/" itemprop="url">
-                  #102 Binary Tree Level Order Traversal
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            Posted on
-            <time itemprop="dateCreated" datetime="2016-01-06T15:01:01-05:00" content="2016-01-06">
-              2016-01-06
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; In
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
-                    <span itemprop="name">LeetCode</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/01/06/102-Binary-Tree-Level-Order-Traversal/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/06/102-Binary-Tree-Level-Order-Traversal/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-              <p>#102. Binary Tree Level Order Traversal</p>
-<p>Given a binary tree, return the level order traversal of its nodes’ values. (ie, from left to right, level by level).</p>
-<p>For example:<br>Given binary tree {3,9,20,#,#,15,7},<br>    3<br>   / \<br>  9  20<br>    /  \<br>   15   7<br>return its level order traversal as:<br>[<br>  [3],<br>  [9,20],<br>  [15,7]<br>]</p>
-<p>Solution:<br><figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public class <span class="type">Solution</span> &#123;</span><br><span class="line">    public <span class="type">List</span>&lt;<span class="type">List</span>&lt;<span class="type">Integer</span>&gt;&gt; levelOrder(<span class="type">TreeNode</span> root) &#123;</span><br><span class="line">        <span class="type">List</span>&lt;<span class="type">List</span>&lt;<span class="type">Integer</span>&gt;&gt; <span class="literal">result</span> = new <span class="type">LinkedList</span>&lt;<span class="type">List</span>&lt;<span class="type">Integer</span>&gt;&gt;();</span><br><span class="line">        <span class="keyword">if</span>(root == null) <span class="keyword">return</span> <span class="literal">result</span>;</span><br><span class="line">        <span class="type">Queue</span>&lt;<span class="type">TreeNode</span>&gt; q = new <span class="type">LinkedList</span>&lt;&gt;();</span><br><span class="line">        q.add(root);</span><br><span class="line">        <span class="keyword">while</span>(q.size()&gt;<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="type">int</span> size = q.size();</span><br><span class="line">            <span class="type">List</span>&lt;<span class="type">Integer</span>&gt; level = new <span class="type">LinkedList</span>&lt;<span class="type">Integer</span>&gt;();</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;size;i++)&#123;</span><br><span class="line">                <span class="type">TreeNode</span> node = q.poll();</span><br><span class="line">                level.add(node.val);</span><br><span class="line">                <span class="keyword">if</span>(node.left!=null) q.add(node.left);</span><br><span class="line">                <span class="keyword">if</span>(node.right!=null) q.add(node.right);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="literal">result</span>.add(level);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">result</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>It’s similar with the Binary Tree Level Order Traversal II, the only difference is that in this problem, we just use add(obj) function, in Binary Tree Level Order Traversal II, we use add(0,obj) to insert into the list at the 0 index and shifts the other to the right.</p>
-
-            
-          </span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
 
   </section>
 
@@ -1320,7 +1322,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">49</span>
+              <span class="site-state-item-count">50</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>

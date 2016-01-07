@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Breadth-first Search,Tree," />
+  <meta name="keywords" content="String," />
 
 
 
@@ -51,22 +51,22 @@
 
 
 
-<meta name="description" content="#107. Binary Tree Level Order Traversal II
-Given a binary tree, return the bottom-up level order traversal of its nodes’ values. (ie, from left to right, level by level from leaf to root).
-For example">
+<meta name="description" content="#157. Read N Characters Given Read4
+The API: int read4(char *buf) reads 4 characters at a time from a file.
+The return value is the actual number of characters read. For example, it returns 3 if there">
 <meta property="og:type" content="article">
-<meta property="og:title" content="#107 Binary Tree Level Order Traversal II">
-<meta property="og:url" content="http://yoursite.com/2016/01/06/107-Binary-Tree-Level-Order-Traversal-II/index.html">
+<meta property="og:title" content="#157 Read N Characters Given Read4">
+<meta property="og:url" content="http://yoursite.com/2016/01/07/157-Read-N-Characters-Given-Read4/index.html">
 <meta property="og:site_name" content="Arbrash's Blog">
-<meta property="og:description" content="#107. Binary Tree Level Order Traversal II
-Given a binary tree, return the bottom-up level order traversal of its nodes’ values. (ie, from left to right, level by level from leaf to root).
-For example">
-<meta property="og:updated_time" content="2016-01-06T07:18:49.377Z">
+<meta property="og:description" content="#157. Read N Characters Given Read4
+The API: int read4(char *buf) reads 4 characters at a time from a file.
+The return value is the actual number of characters read. For example, it returns 3 if there">
+<meta property="og:updated_time" content="2016-01-07T06:00:52.918Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="#107 Binary Tree Level Order Traversal II">
-<meta name="twitter:description" content="#107. Binary Tree Level Order Traversal II
-Given a binary tree, return the bottom-up level order traversal of its nodes’ values. (ie, from left to right, level by level from leaf to root).
-For example">
+<meta name="twitter:title" content="#157 Read N Characters Given Read4">
+<meta name="twitter:description" content="#157. Read N Characters Given Read4
+The API: int read4(char *buf) reads 4 characters at a time from a file.
+The return value is the actual number of characters read. For example, it returns 3 if there">
 
 
 
@@ -78,7 +78,7 @@ For example">
   };
 </script>
 
-  <title> #107 Binary Tree Level Order Traversal II | Arbrash's Blog </title>
+  <title> #157 Read N Characters Given Read4 | Arbrash's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -218,7 +218,7 @@ For example">
             
             
               
-                #107 Binary Tree Level Order Traversal II
+                #157 Read N Characters Given Read4
               
             
           </h1>
@@ -227,8 +227,8 @@ For example">
         <div class="post-meta">
           <span class="post-time">
             Posted on
-            <time itemprop="dateCreated" datetime="2016-01-06T02:09:13-05:00" content="2016-01-06">
-              2016-01-06
+            <time itemprop="dateCreated" datetime="2016-01-07T00:52:16-05:00" content="2016-01-07">
+              2016-01-07
             </time>
           </span>
 
@@ -253,8 +253,8 @@ For example">
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/06/107-Binary-Tree-Level-Order-Traversal-II/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/06/107-Binary-Tree-Level-Order-Traversal-II/" itemprop="commentsCount"></span>
+                <a href="/2016/01/07/157-Read-N-Characters-Given-Read4/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/07/157-Read-N-Characters-Given-Read4/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -273,11 +273,12 @@ For example">
       
 
       
-        <span itemprop="articleBody"><p>#107. Binary Tree Level Order Traversal II</p>
-<p>Given a binary tree, return the bottom-up level order traversal of its nodes’ values. (ie, from left to right, level by level from leaf to root).</p>
-<p>For example:<br>Given binary tree {3,9,20,#,#,15,7},<br>    3<br>   / \<br>  9  20<br>    /  \<br>   15   7<br>return its bottom-up level order traversal as:<br>[<br>  [15,7],<br>  [9,20],<br>  [3]<br>]</p>
-<p>Solution:<br><figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public class <span class="type">Solution</span> &#123;</span><br><span class="line">    public <span class="type">List</span>&lt;<span class="type">List</span>&lt;<span class="type">Integer</span>&gt;&gt; levelOrderBottom(<span class="type">TreeNode</span> root) &#123;</span><br><span class="line">        <span class="type">List</span>&lt;<span class="type">List</span>&lt;<span class="type">Integer</span>&gt;&gt; <span class="literal">result</span> = new <span class="type">LinkedList</span>&lt;<span class="type">List</span>&lt;<span class="type">Integer</span>&gt;&gt;();</span><br><span class="line">        <span class="keyword">if</span>(root == null) <span class="keyword">return</span> <span class="literal">result</span>;</span><br><span class="line">        <span class="type">Queue</span>&lt;<span class="type">TreeNode</span>&gt; q = new <span class="type">LinkedList</span>&lt;&gt;();</span><br><span class="line">        q.add(root);</span><br><span class="line">        <span class="keyword">while</span>(q.size()&gt;<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="type">List</span>&lt;<span class="type">Integer</span>&gt; list = new <span class="type">ArrayList</span>&lt;&gt;();</span><br><span class="line">            <span class="type">int</span> size = q.size();</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;size;i++)&#123;</span><br><span class="line">                <span class="type">TreeNode</span> node = q.poll();</span><br><span class="line">                list.add(node.val);</span><br><span class="line">                <span class="keyword">if</span>(node.left!=null) q.add(node.left);</span><br><span class="line">                <span class="keyword">if</span>(node.right!=null) q.add(node.right);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="literal">result</span>.add(<span class="number">0</span>,list);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">result</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>Use a list to stroe the result, use a list to store the node’s value at the same level, use a queue to get the same level nodes.</p>
+        <span itemprop="articleBody"><p>#157. Read N Characters Given Read4</p>
+<p>The API: int read4(char *buf) reads 4 characters at a time from a file.</p>
+<p>The return value is the actual number of characters read. For example, it returns 3 if there is only 3 characters left in the file.</p>
+<p>By using the read4 API, implement the function int read(char *buf, int n) that reads n characters from the file.</p>
+<p>Note:<br>The read function will only be called once for each test case.</p>
+<p>Solution:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
 </span>
       
     </div>
@@ -286,9 +287,7 @@ For example">
       
         <div class="post-tags">
           
-            <a href="/tags/Breadth-first-Search/" rel="tag">#Breadth-first Search</a>
-          
-            <a href="/tags/Tree/" rel="tag">#Tree</a>
+            <a href="/tags/String/" rel="tag">#String</a>
           
         </div>
       
@@ -297,17 +296,13 @@ For example">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/05/27-Remove-Element/" rel="next" title="#27 Remove Element">
-                <i class="fa fa-chevron-left"></i> #27 Remove Element
+              <a href="/2016/01/06/190-Reverse-Bits/" rel="next" title="#190 Reverse Bits">
+                <i class="fa fa-chevron-left"></i> #190 Reverse Bits
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/01/06/198-House-Robber/" rel="prev" title="#198 House Robber">
-                #198 House Robber <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -334,8 +329,8 @@ For example">
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/01/06/107-Binary-Tree-Level-Order-Traversal-II/"
-           data-title="#107 Binary Tree Level Order Traversal II" data-url="http://yoursite.com/2016/01/06/107-Binary-Tree-Level-Order-Traversal-II/">
+      <div class="ds-thread" data-thread-key="2016/01/07/157-Read-N-Characters-Given-Read4/"
+           data-title="#157 Read N Characters Given Read4" data-url="http://yoursite.com/2016/01/07/157-Read-N-Characters-Given-Read4/">
       </div>
     
   </div>
