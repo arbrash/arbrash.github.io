@@ -220,6 +220,873 @@
             
               
                 
+                <a class="post-title-link" href="/2016/01/08/8-String-to-Integer-atoi/" itemprop="url">
+                  #8 String to Integer (atoi)
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Posted on
+            <time itemprop="dateCreated" datetime="2016-01-08T02:43:12-05:00" content="2016-01-08">
+              2016-01-08
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; In
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2016/01/08/8-String-to-Integer-atoi/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/08/8-String-to-Integer-atoi/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>#8. String to Integer (atoi)</p>
+<p>Implement atoi to convert a string to an integer.</p>
+<p>Hint: Carefully consider all possible input cases. If you want a challenge, please do not see below and ask yourself what are the possible input cases.</p>
+<p>Notes: It is intended for this problem to be specified vaguely (ie, no given input specs). You are responsible to gather all the input requirements up front.</p>
+<p>Solution:<br><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> myAtoi(String <span class="keyword">str</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> <span class="keyword">index</span> = <span class="number">0</span>, sign = <span class="number">1</span>, total = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">//1. Empty string</span></span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">str</span>.length() == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">        <span class="comment">//2. Remove Spaces</span></span><br><span class="line">        <span class="keyword">while</span>(<span class="keyword">str</span>.charAt(<span class="keyword">index</span>) == <span class="string">' '</span> &amp;&amp; <span class="keyword">index</span> &lt; <span class="keyword">str</span>.length())</span><br><span class="line">            <span class="keyword">index</span> ++;</span><br><span class="line">    </span><br><span class="line">        <span class="comment">//3. Handle signs</span></span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">str</span>.charAt(<span class="keyword">index</span>) == <span class="string">'+'</span> || <span class="keyword">str</span>.charAt(<span class="keyword">index</span>) == <span class="string">'-'</span>)&#123;</span><br><span class="line">            sign = <span class="keyword">str</span>.charAt(<span class="keyword">index</span>) == <span class="string">'+'</span> ? <span class="number">1</span> : -<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">index</span> ++;</span><br><span class="line">        &#125;</span><br><span class="line">    </span><br><span class="line">        <span class="comment">//4. Convert number and avoid overflow</span></span><br><span class="line">        <span class="keyword">while</span>(<span class="keyword">index</span> &lt; <span class="keyword">str</span>.length())&#123;</span><br><span class="line">            <span class="keyword">int</span> digit = <span class="keyword">str</span>.charAt(<span class="keyword">index</span>) - <span class="string">'0'</span>;</span><br><span class="line">            <span class="keyword">if</span>(digit &lt; <span class="number">0</span> || digit &gt; <span class="number">9</span>) <span class="keyword">break</span>;</span><br><span class="line">    </span><br><span class="line">            <span class="comment">//check if total will be overflow after 10 times and add digit</span></span><br><span class="line">            <span class="keyword">if</span>(Integer.MAX_VALUE/<span class="number">10</span> &lt; total || Integer.MAX_VALUE/<span class="number">10</span> == total &amp;&amp; Integer.MAX_VALUE %<span class="number">10</span> &lt; digit)</span><br><span class="line">                <span class="keyword">return</span> sign == <span class="number">1</span> ? Integer.MAX_VALUE : Integer.MIN_VALUE;</span><br><span class="line">    </span><br><span class="line">            total = <span class="number">10</span> * total + digit;</span><br><span class="line">            <span class="keyword">index</span> ++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> total * sign;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/01/08/165-Compare-Version-Numbers/" itemprop="url">
+                  #165 Compare Version Numbers
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Posted on
+            <time itemprop="dateCreated" datetime="2016-01-08T02:39:47-05:00" content="2016-01-08">
+              2016-01-08
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; In
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2016/01/08/165-Compare-Version-Numbers/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/08/165-Compare-Version-Numbers/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>#165. Compare Version Numbers</p>
+<p>Compare two version numbers version1 and version2.<br>If version1 &gt; version2 return 1, if version1 &lt; version2 return -1, otherwise return 0.</p>
+<p>You may assume that the version strings are non-empty and contain only digits and the . character.<br>The . character does not represent a decimal point and is used to separate number sequences.<br>For instance, 2.5 is not “two and a half” or “half way to version three”, it is the fifth second-level revision of the second first-level revision.</p>
+<p>Here is an example of version numbers ordering:</p>
+<p>0.1 &lt; 1.1 &lt; 1.2 &lt; 13.37</p>
+<p>Solution:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compareVersion</span><span class="params">(String version1, String version2)</span> </span>&#123;</span><br><span class="line">        String[] levels1 = version1.split(<span class="string">"\\."</span>);</span><br><span class="line">        String[] levels2 = version2.split(<span class="string">"\\."</span>);</span><br><span class="line">    </span><br><span class="line">        <span class="keyword">int</span> length = Math.max(levels1.length, levels2.length);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;length; i++) &#123;</span><br><span class="line">            Integer v1 = i &lt; levels1.length ? Integer.parseInt(levels1[i]) : <span class="number">0</span>;</span><br><span class="line">            Integer v2 = i &lt; levels2.length ? Integer.parseInt(levels2[i]) : <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">int</span> compare = v1.compareTo(v2);</span><br><span class="line">            <span class="keyword">if</span> (compare != <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> compare;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>First split the version string by “.”, then compare the versions level by level .</p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/01/08/189-Rotate-Array/" itemprop="url">
+                  #189 Rotate Array
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Posted on
+            <time itemprop="dateCreated" datetime="2016-01-08T02:27:21-05:00" content="2016-01-08">
+              2016-01-08
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; In
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2016/01/08/189-Rotate-Array/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/08/189-Rotate-Array/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>#189. Rotate Array</p>
+<p>Rotate an array of n elements to the right by k steps.</p>
+<p>For example, with n = 7 and k = 3, the array [1,2,3,4,5,6,7] is rotated to [5,6,7,1,2,3,4].</p>
+<p>Note:<br>Try to come up as many solutions as you can, there are at least 3 different ways to solve this problem.</p>
+<p>Solution:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">rotate</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = nums.length;</span><br><span class="line">        <span class="keyword">int</span>[] newNums = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">        <span class="keyword">if</span>(n&gt;<span class="number">1</span>)&#123;</span><br><span class="line">            k = k % n;</span><br><span class="line">            System.arraycopy(nums,n-k,newNums,<span class="number">0</span>,k);</span><br><span class="line">            System.arraycopy(nums,<span class="number">0</span>,newNums,k,n-k);</span><br><span class="line">            System.arraycopy(newNums,<span class="number">0</span>,nums,<span class="number">0</span>,n);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>use static void arraycopy(Object src, int srcPos, Object dest, int destPos, int length) to copy the two parts of the array and copy to the destination array, then copy back.</p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/01/08/168-Excel-Sheet-Column-Title/" itemprop="url">
+                  #168 Excel Sheet Column Title
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Posted on
+            <time itemprop="dateCreated" datetime="2016-01-08T02:05:48-05:00" content="2016-01-08">
+              2016-01-08
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; In
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2016/01/08/168-Excel-Sheet-Column-Title/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/08/168-Excel-Sheet-Column-Title/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>#168. Excel Sheet Column Title</p>
+<p>Given a positive integer, return its corresponding column title as appear in an Excel sheet.</p>
+<p>For example:</p>
+<pre><code>1 -&gt; A
+2 -&gt; B
+3 -&gt; C
+...
+26 -&gt; Z
+27 -&gt; AA
+28 -&gt; AB 
+</code></pre><p>Solution:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">convertToTitle</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        StringBuilder s = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        <span class="keyword">while</span>(n&gt;<span class="number">0</span>)&#123;</span><br><span class="line">            n--;</span><br><span class="line">            s.insert(<span class="number">0</span>, (<span class="keyword">char</span>)(<span class="string">'A'</span> + n % <span class="number">26</span>));</span><br><span class="line">            n /= <span class="number">26</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> s.toString();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Every 26 get a Carry</p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/01/08/155-Min-Stack/" itemprop="url">
+                  #155 Min Stack
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Posted on
+            <time itemprop="dateCreated" datetime="2016-01-08T01:54:07-05:00" content="2016-01-08">
+              2016-01-08
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; In
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2016/01/08/155-Min-Stack/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/08/155-Min-Stack/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>#Min Stack</p>
+<p>Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.</p>
+<p>push(x) – Push element x onto stack.<br>pop() – Removes the element on top of the stack.<br>top() – Get the top element.<br>getMin() – Retrieve the minimum element in the stack.</p>
+<p>Solution:<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">MinStack</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> Node head;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">push</span>(<span class="params"><span class="keyword">int</span> x</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(head==<span class="keyword">null</span>)</span><br><span class="line">            head = <span class="keyword">new</span> Node(x,x);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            head = <span class="keyword">new</span> Node(x,Math.min(x,head.min),head);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">pop</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        head = head.next;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">top</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> head.val;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getMin</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> head.min;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">class</span> <span class="title">Node</span> &#123;</span><br><span class="line">        <span class="keyword">int</span> val;</span><br><span class="line">        <span class="keyword">int</span> min;</span><br><span class="line">        Node next;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="title">Node</span>(<span class="params"><span class="keyword">int</span> val, <span class="keyword">int</span> min</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>(val, min, <span class="keyword">null</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="title">Node</span>(<span class="params"><span class="keyword">int</span> val, <span class="keyword">int</span> min, Node next</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.val = val;</span><br><span class="line">            <span class="keyword">this</span>.min = min;</span><br><span class="line">            <span class="keyword">this</span>.next = next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Use class Node, which have a min variable to store the minimum value in the Node list.</p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/01/08/278-First-Bad-Version/" itemprop="url">
+                  #278 First Bad Version
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Posted on
+            <time itemprop="dateCreated" datetime="2016-01-08T01:31:11-05:00" content="2016-01-08">
+              2016-01-08
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; In
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2016/01/08/278-First-Bad-Version/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/08/278-First-Bad-Version/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>#278. First Bad Version</p>
+<p>You are a product manager and currently leading a team to develop a new product. Unfortunately, the latest version of your product fails the quality check. Since each version is developed based on the previous version, all the versions after a bad version are also bad.</p>
+<p>Suppose you have n versions [1, 2, …, n] and you want to find out the first bad one, which causes all the following ones to be bad.</p>
+<p>You are given an API bool isBadVersion(version) which will return whether version is bad. Implement a function to find the first bad version. You should minimize the number of calls to the API.</p>
+<p>Solution:<br><figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution extends VersionControl &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> firstBadVersion(<span class="built_in">int</span> n) &#123;</span><br><span class="line">        <span class="built_in">int</span> start = <span class="number">1</span>, <span class="keyword">end</span> = n;</span><br><span class="line">        <span class="keyword">while</span> (start &lt; <span class="keyword">end</span>) &#123;</span><br><span class="line">            <span class="built_in">int</span> <span class="built_in">mid</span> = start + (<span class="keyword">end</span>-start) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (!isBadVersion(<span class="built_in">mid</span>)) start = <span class="built_in">mid</span> + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">end</span> = <span class="built_in">mid</span>;            </span><br><span class="line">        &#125;        </span><br><span class="line">        return start;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>It’s an easy problem, but mid must be start + (end-start)/2 to avoid overflow!</p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/01/08/228-Summary-Ranges/" itemprop="url">
+                  #228 Summary Ranges
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Posted on
+            <time itemprop="dateCreated" datetime="2016-01-08T01:18:15-05:00" content="2016-01-08">
+              2016-01-08
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; In
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2016/01/08/228-Summary-Ranges/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/08/228-Summary-Ranges/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>#228. Summary Ranges</p>
+<p>Given a sorted integer array without duplicates, return the summary of its ranges.</p>
+<p>For example, given [0,1,2,4,5,7], return [“0-&gt;2”,”4-&gt;5”,”7”].</p>
+<p>Solution:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="keyword">public</span> List&lt;String&gt; summaryRanges(<span class="keyword">int</span>[] nums) &#123;</span><br><span class="line">        List&lt;String&gt; <span class="built_in">list</span> = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nums.length;++i)&#123;</span><br><span class="line">            <span class="keyword">int</span> left = nums[i];</span><br><span class="line">            <span class="keyword">while</span>(i+<span class="number">1</span>&lt;nums.length&amp;&amp;(nums[i+<span class="number">1</span>]-nums[i])==<span class="number">1</span>)</span><br><span class="line">                i++;</span><br><span class="line">            <span class="keyword">if</span>(left!=nums[i])</span><br><span class="line">                <span class="built_in">list</span>.add(left+<span class="string">"-&gt;"</span>+nums[i]);</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="built_in">list</span>.add(left+<span class="string">""</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">list</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>First store nums[i] as left then if nums[i+1]=nums[i]+1,just i++, if not, the new nums[i] is the right, add left-&gt;right to the list. </p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/01/08/204-Count-Primes/" itemprop="url">
+                  #204 Count Primes
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Posted on
+            <time itemprop="dateCreated" datetime="2016-01-08T00:36:51-05:00" content="2016-01-08">
+              2016-01-08
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; In
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2016/01/08/204-Count-Primes/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/08/204-Count-Primes/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>#204. Count Primes</p>
+<p>Description:</p>
+<p>Count the number of prime numbers less than a non-negative number, n.</p>
+<p>Solution:<br><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> countPrimes(<span class="keyword">int</span> n) &#123;</span><br><span class="line">        <span class="keyword">if</span>(n&lt;<span class="number">2</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> <span class="keyword">count</span> = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">boolean</span>[] notPrime = <span class="keyword">new</span> <span class="keyword">boolean</span>[n];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;n;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(notPrime[i]==<span class="keyword">false</span>)&#123;</span><br><span class="line">                <span class="keyword">count</span>++;</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">2</span>;i*j&lt;n;j++)</span><br><span class="line">                    notPrime[i*j] = <span class="keyword">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">count</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Use a boolean array mark the notprime number, 2 is the first prime number, so the for loop start at 2, if prime, count++, then use another loop to set other elements notPrime which have the divisor i.</p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/01/08/326-Power-of-Three/" itemprop="url">
                   #326 Power of Three
                 </a>
@@ -414,873 +1281,12 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/01/07/125-Valid-Palindrome/" itemprop="url">
-                  #125 Valid Palindrome
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            Posted on
-            <time itemprop="dateCreated" datetime="2016-01-07T23:08:03-05:00" content="2016-01-07">
-              2016-01-07
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; In
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
-                    <span itemprop="name">LeetCode</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2016/01/07/125-Valid-Palindrome/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/07/125-Valid-Palindrome/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-              <p>#125. Valid Palindrome</p>
-<p>Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.</p>
-<p>For example,<br>“A man, a plan, a canal: Panama” is a palindrome.<br>“race a car” is not a palindrome.</p>
-<p>Note:<br>Have you consider that the string might be empty? This is a good question to ask during an interview.</p>
-<p>For the purpose of this problem, we define empty string as valid palindrome.</p>
-<p>Solution:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> boolean <span class="title">isPalindrome</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(s.isEmpty())</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">int</span> head = <span class="number">0</span>, tail = s.length() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">char</span> ch, ct;</span><br><span class="line">        <span class="keyword">while</span>(head&lt;=tail)&#123;</span><br><span class="line">            ch = s.charAt(head);</span><br><span class="line">            ct = s.charAt(tail);</span><br><span class="line">            <span class="keyword">if</span> (!Character.isLetterOrDigit(ch)) &#123;</span><br><span class="line">                head++;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span>(!Character.isLetterOrDigit(ct)) &#123;</span><br><span class="line">                tail--;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">if</span>(Character.toLowerCase(ch) != Character.toLowerCase(ct))</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                head++;</span><br><span class="line">                tail--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>Use isLetterOrDigit() to get only char or Integer, then use toLowerCase to let all char be the lowercase, then compare the head from begin and the tail from the end.<br>if there is any char is not the same, return false, else return true.</p>
-
-            
-          </span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/01/07/7-Reverse-Integer/" itemprop="url">
-                  #7 Reverse Integer
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            Posted on
-            <time itemprop="dateCreated" datetime="2016-01-07T22:58:27-05:00" content="2016-01-07">
-              2016-01-07
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; In
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
-                    <span itemprop="name">LeetCode</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2016/01/07/7-Reverse-Integer/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/07/7-Reverse-Integer/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-              <p>#7. Reverse Integer</p>
-<p>Reverse digits of an integer.</p>
-<p>Example1: x = 123, return 321<br>Example2: x = -123, return -321</p>
-<p>Solution:<br><figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public class <span class="type">Solution</span> &#123;</span><br><span class="line">    public <span class="type">int</span> reverse(<span class="type">int</span> x) &#123;</span><br><span class="line">        boolean isNegative = x &lt; <span class="number">0</span>;</span><br><span class="line">        x = <span class="type">Math</span>.abs(x);</span><br><span class="line">        <span class="type">int</span> <span class="literal">result</span> = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> max_diff = <span class="type">Integer</span>.<span class="type">MAX_VALUE</span> / <span class="number">10</span>;</span><br><span class="line">        <span class="keyword">while</span>(x &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="literal">result</span> &gt; max_diff) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            <span class="literal">result</span> = <span class="number">10</span>*<span class="literal">result</span> + x % <span class="number">10</span>;</span><br><span class="line">            x /= <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> isNegative ? -<span class="literal">result</span> : <span class="literal">result</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>Use mod to get the digits and reverse them.</p>
-
-            
-          </span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/01/07/28-Implement-strStr/" itemprop="url">
-                  #28 Implement strStr()
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            Posted on
-            <time itemprop="dateCreated" datetime="2016-01-07T22:28:14-05:00" content="2016-01-07">
-              2016-01-07
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; In
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
-                    <span itemprop="name">LeetCode</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2016/01/07/28-Implement-strStr/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/07/28-Implement-strStr/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-              <p>#28. Implement strStr()</p>
-<p>Implement strStr().</p>
-<p>Returns the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.</p>
-<p>Solution:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">strStr</span><span class="params">(String haystack, String needle)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; ; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; ; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (j == needle.length()) </span><br><span class="line">                    <span class="keyword">return</span> i;</span><br><span class="line">                <span class="keyword">if</span> (i + j == haystack.length())</span><br><span class="line">                    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">                <span class="keyword">if</span> (needle.charAt(j) != haystack.charAt(i + j))</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>Use Brute-Force matching algorithms.</p>
-
-            
-          </span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/01/07/303-Range-Sum-Query-Immutable/" itemprop="url">
-                  #303 Range Sum Query - Immutable
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            Posted on
-            <time itemprop="dateCreated" datetime="2016-01-07T21:50:30-05:00" content="2016-01-07">
-              2016-01-07
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; In
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
-                    <span itemprop="name">LeetCode</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2016/01/07/303-Range-Sum-Query-Immutable/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/07/303-Range-Sum-Query-Immutable/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-              <p>#303. Range Sum Query - Immutable</p>
-<p>Given an integer array nums, find the sum of the elements between indices i and j (i ≤ j), inclusive.</p>
-<p>Example:<br>Given nums = [-2, 0, 3, -5, 2, -1]</p>
-<p>sumRange(0, 2) -&gt; 1<br>sumRange(2, 5) -&gt; -1<br>sumRange(0, 5) -&gt; -3<br>Note:<br>You may assume that the array does not change.<br>There are many calls to sumRange function.</p>
-<p>Solution:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> NumArray &#123;</span><br><span class="line">    <span class="keyword">int</span>[] sums;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">NumArray</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;nums.length;i++)</span><br><span class="line">            nums[i] += nums[i-<span class="number">1</span>];</span><br><span class="line">        sums = nums;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">sumRange</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(i==<span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> sums[j];</span><br><span class="line">        <span class="keyword">return</span> sums[j] - sums[i-<span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>In the constructor, we can caculate every sum from begin to index in the array and add into int[] sums,then if i==0, just return sums[j], else, we use the sums[j] - sums[i-1] to get the sum  between i and j.</p>
-
-            
-          </span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/01/07/170-Two-Sum-III-Data-structure-design/" itemprop="url">
-                  #170 Two Sum III - Data structure design
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            Posted on
-            <time itemprop="dateCreated" datetime="2016-01-07T21:29:13-05:00" content="2016-01-07">
-              2016-01-07
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; In
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
-                    <span itemprop="name">LeetCode</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2016/01/07/170-Two-Sum-III-Data-structure-design/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/07/170-Two-Sum-III-Data-structure-design/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-              <p>#170. Two Sum III - Data structure design</p>
-<p>Design and implement a TwoSum class. It should support the following operations: add and find.</p>
-<p>add - Add the number to an internal data structure.<br>find - Find if there exists any pair of numbers which sum is equal to the value.</p>
-<p>For example,<br>add(1); add(3); add(5);<br>find(4) -&gt; true<br>find(7) -&gt; false</p>
-<p>Solution:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> TwoSum &#123;</span><br><span class="line">    <span class="keyword">private</span> List&lt;Integer&gt; <span class="built_in">list</span> = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">    <span class="keyword">private</span> Map&lt;Integer, Integer&gt; <span class="built_in">map</span> = <span class="keyword">new</span> HashMap&lt;Integer, Integer&gt;();</span><br><span class="line">    <span class="comment">// Add the number to an internal data structure.</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> number)</span> </span>&#123;</span><br><span class="line">	    <span class="keyword">if</span>(<span class="built_in">map</span>.containsKey(number))</span><br><span class="line">	        <span class="built_in">map</span>.put(number,<span class="built_in">map</span>.get(number)+<span class="number">1</span>);</span><br><span class="line">	    <span class="keyword">else</span>&#123;</span><br><span class="line">	        <span class="built_in">map</span>.put(number,<span class="number">1</span>);</span><br><span class="line">	        <span class="built_in">list</span>.add(number);</span><br><span class="line">	    &#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Find if there exists any pair of numbers which sum is equal to the value.</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> boolean <span class="title">find</span><span class="params">(<span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">	    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="built_in">list</span>.size();i++)&#123;</span><br><span class="line">	        <span class="keyword">int</span> num1 = <span class="built_in">list</span>.get(i), num2 = value - num1;</span><br><span class="line">	        <span class="keyword">if</span>((num1 == num2 &amp;&amp; <span class="built_in">map</span>.get(num1)&gt;<span class="number">1</span>) || (num1 != num2 &amp;&amp; <span class="built_in">map</span>.containsKey(num2)))</span><br><span class="line">	            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	    &#125;</span><br><span class="line">	    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>Use hashmap to store the number as key, the value is the count of this number. So in add function, if containskey, increment the value, if not, put the set(number,1) into map.<br>In find function, from the list to find a pair num1 and num2 which sum equal value, if num1==num2, the count of number must greater than 1, if not, use containsKey to find num2.</p>
-
-            
-          </span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/01/07/257-Binary-Tree-Paths/" itemprop="url">
-                  #257 Binary Tree Paths
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            Posted on
-            <time itemprop="dateCreated" datetime="2016-01-07T20:47:38-05:00" content="2016-01-07">
-              2016-01-07
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; In
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
-                    <span itemprop="name">LeetCode</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2016/01/07/257-Binary-Tree-Paths/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/07/257-Binary-Tree-Paths/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-              <p>#257. Binary Tree Paths</p>
-<p>Given a binary tree, return all root-to-leaf paths.</p>
-<p>For example, given the following binary tree:</p>
-<p>   1<br> /   \<br>2     3<br> \<br>  5<br>All root-to-leaf paths are:</p>
-<p>[“1-&gt;2-&gt;5”, “1-&gt;3”]</p>
-<p>Solution:<br><figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="keyword">public</span> List&lt;<span class="built_in">String</span>&gt; binaryTreePaths(TreeNode root) &#123;</span><br><span class="line">    List&lt;<span class="built_in">String</span>&gt; answer = <span class="keyword">new</span> ArrayList&lt;<span class="built_in">String</span>&gt;();</span><br><span class="line">    <span class="keyword">if</span> (root != <span class="literal">null</span>) searchBT(root, <span class="string">""</span>, answer);</span><br><span class="line">    return answer;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">private</span> void searchBT(TreeNode root, <span class="built_in">String</span> path, List&lt;<span class="built_in">String</span>&gt; answer) &#123;</span><br><span class="line">        <span class="keyword">if</span> (root.<span class="built_in">left</span> == <span class="literal">null</span> &amp;&amp; root.<span class="built_in">right</span> == <span class="literal">null</span>) answer.add(path + root.val);</span><br><span class="line">        <span class="keyword">if</span> (root.<span class="built_in">left</span> != <span class="literal">null</span>) searchBT(root.<span class="built_in">left</span>, path + root.val + <span class="string">"-&gt;"</span>, answer);</span><br><span class="line">        <span class="keyword">if</span> (root.<span class="built_in">right</span> != <span class="literal">null</span>) searchBT(root.<span class="built_in">right</span>, path + root.val + <span class="string">"-&gt;"</span>, answer);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>Use recursive method with dfs().</p>
-
-            
-          </span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/01/07/234-Palindrome-Linked-List/" itemprop="url">
-                  #234 Palindrome Linked List
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            Posted on
-            <time itemprop="dateCreated" datetime="2016-01-07T17:35:21-05:00" content="2016-01-07">
-              2016-01-07
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; In
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
-                    <span itemprop="name">LeetCode</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2016/01/07/234-Palindrome-Linked-List/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/07/234-Palindrome-Linked-List/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-              <p>#234. Palindrome Linked List</p>
-<p>Given a singly linked list, determine if it is a palindrome.</p>
-<p>Solution:<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">boolean</span> isPalindrome(ListNode head) &#123;</span><br><span class="line">        <span class="keyword">if</span>(head == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        ListNode slow = head;</span><br><span class="line">        ListNode fast = head;</span><br><span class="line">        ListNode p = slow.<span class="keyword">next</span>;</span><br><span class="line">        ListNode pre = slow;</span><br><span class="line">        <span class="keyword">while</span>(fast.<span class="keyword">next</span>!=<span class="keyword">null</span> &amp;&amp; fast.<span class="keyword">next</span>.<span class="keyword">next</span>!=<span class="keyword">null</span>)&#123;</span><br><span class="line">            fast = fast.<span class="keyword">next</span>.<span class="keyword">next</span>;</span><br><span class="line">            pre = slow;</span><br><span class="line">            slow = p;</span><br><span class="line">            p = p.<span class="keyword">next</span>;</span><br><span class="line">            slow.<span class="keyword">next</span> = pre;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(fast.<span class="keyword">next</span> == <span class="keyword">null</span>)</span><br><span class="line">            slow = slow.<span class="keyword">next</span>;</span><br><span class="line">        <span class="keyword">while</span>(p!=<span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(p.val!=slow.val)</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                p = p.<span class="keyword">next</span>;</span><br><span class="line">                slow = slow.<span class="keyword">next</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>Find mid pointer and reverse head half part, if the number of elements is odd, the head of the first need shift to left one step. then compare every element in the first and second part, if val is not equal, return false, after compare all the element, return true.</p>
-
-            
-          </span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/01/07/67-Add-Binary/" itemprop="url">
-                  #67 Add Binary
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            Posted on
-            <time itemprop="dateCreated" datetime="2016-01-07T16:21:30-05:00" content="2016-01-07">
-              2016-01-07
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; In
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
-                    <span itemprop="name">LeetCode</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2016/01/07/67-Add-Binary/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/07/67-Add-Binary/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-              <p>#67. Add Binary</p>
-<p>Given two binary strings, return their sum (also a binary string).</p>
-<p>For example,<br>a = “11”<br>b = “1”<br>Return “100”.</p>
-<p>Solution:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">addBinary</span><span class="params">(String a, String b)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> diff = Math.<span class="built_in">abs</span>(a.length()-b.length());</span><br><span class="line">        <span class="keyword">char</span>[] longer = a.length()&gt;=b.length()?a.toCharArray():b.toCharArray();</span><br><span class="line">        <span class="keyword">char</span>[] shorter = a.length()&lt;b.length()?a.toCharArray():b.toCharArray();</span><br><span class="line">        <span class="keyword">int</span> maxLength = longer.length, carry = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=maxLength-<span class="number">1</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">            <span class="keyword">int</span> j = i - diff;</span><br><span class="line">            <span class="keyword">char</span> c1 = longer[i];</span><br><span class="line">            <span class="keyword">char</span> c2 = j&gt;=<span class="number">0</span>?(<span class="keyword">char</span>)(shorter[j]):(<span class="keyword">char</span>)<span class="string">'0'</span>;</span><br><span class="line">            <span class="keyword">if</span>(carry == <span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span>(c1==<span class="string">'1'</span> &amp;&amp; c2==<span class="string">'1'</span>)</span><br><span class="line">                    carry = <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">if</span>(c1 == c2)</span><br><span class="line">                    longer[i] = <span class="string">'0'</span>;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                    longer[i] = <span class="string">'1'</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">if</span>(c1==<span class="string">'0'</span> &amp;&amp; c2==<span class="string">'0'</span>)</span><br><span class="line">                    carry = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">if</span>(c1 == c2)</span><br><span class="line">                    longer[i] = <span class="string">'1'</span>;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                    longer[i] = <span class="string">'0'</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        String result = carry==<span class="number">1</span>? carry+<span class="keyword">new</span> String(longer):<span class="keyword">new</span> String(longer);</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>First find the longer string and the shorter string, then if carry is 0, c1 = c2 =1, carry change to 1, if c1=c2,the digit is 0, else is 1. if carry is 1, c1=c2=0, carry change to 0, if c1=c2 the digit is 1, else the digit is 0.</p>
-
-            
-          </span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
 
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1321,7 +1327,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">93</span>
+              <span class="site-state-item-count">101</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -1335,7 +1341,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">20</span>
+              <span class="site-state-item-count">21</span>
               <span class="site-state-item-name">tags</span>
               </a>
           </div>
