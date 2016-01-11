@@ -220,6 +220,442 @@
             
               
                 
+                <a class="post-title-link" href="/2016/01/08/268-Missing-Number/" itemprop="url">
+                  #268 Missing Number
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Posted on
+            <time itemprop="dateCreated" datetime="2016-01-08T19:24:20-05:00" content="2016-01-08">
+              2016-01-08
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; In
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2016/01/08/268-Missing-Number/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/08/268-Missing-Number/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>#268. Missing Number</p>
+<p>Given an array containing n distinct numbers taken from 0, 1, 2, …, n, find the one that is missing from the array.</p>
+<p>For example,<br>Given nums = [0, 1, 3] return 2.</p>
+<p>Note:<br>Your algorithm should run in linear runtime complexity. Could you implement it using only constant extra space complexity?</p>
+<p>Solution:<br><figure class="highlight zephir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> missingNumber(<span class="keyword">int</span>[] nums) &#123;</span><br><span class="line">        <span class="keyword">int</span> <span class="keyword">xor</span> = <span class="number">0</span>, i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(;i&lt;nums.length;i++)</span><br><span class="line">            <span class="keyword">xor</span> ^= i ^ nums[i];</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">xor</span> ^ i;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Because the array is 0,1,2,…,n, it’s the same with the array’s index, so we can xor the number and its index from 0 to nums.length-1, finally xor the previous result with nums.length, then we get the missing number.</p>
+<p>Sum solution:<br><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> missingNumber(<span class="keyword">int</span>[] nums) &#123;</span><br><span class="line">        <span class="keyword">int</span> <span class="keyword">sum</span> = nums.length;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nums.length;i++)</span><br><span class="line">            <span class="keyword">sum</span> += i-nums[i];</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">sum</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Add all the number in the array minus all the number in the nums[] will get the missing number.</p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/01/08/94-Binary-Tree-Inorder-Traversal/" itemprop="url">
+                  #94 Binary Tree Inorder Traversal
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Posted on
+            <time itemprop="dateCreated" datetime="2016-01-08T18:55:06-05:00" content="2016-01-08">
+              2016-01-08
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; In
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2016/01/08/94-Binary-Tree-Inorder-Traversal/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/08/94-Binary-Tree-Inorder-Traversal/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>#94. Binary Tree Inorder Traversal</p>
+<p>Given a binary tree, return the inorder traversal of its nodes’ values.</p>
+<p>For example:<br>Given binary tree {1,#,2,3},<br>   1<br>    \<br>     2<br>    /<br>   3<br>return [1,3,2].</p>
+<p>Solution:<br><figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> class Solution &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">List</span>&lt;<span class="built_in">Integer</span>&gt; inorderTraversal(TreeNode root) &#123;</span><br><span class="line">        <span class="built_in">List</span>&lt;<span class="built_in">Integer</span>&gt; lst = <span class="literal">new</span> ArrayList&lt;<span class="built_in">Integer</span>&gt;();</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">if</span>(root == <span class="built_in">null</span>)</span><br><span class="line">            <span class="keyword">return</span> lst; </span><br><span class="line"> </span><br><span class="line">        <span class="built_in">Stack</span>&lt;TreeNode&gt; <span class="built_in">stack</span> = <span class="literal">new</span> <span class="built_in">Stack</span>&lt;TreeNode&gt;();</span><br><span class="line">        TreeNode p = root;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">while</span>(<span class="subst">!</span><span class="built_in">stack</span><span class="built_in">.</span>empty() <span class="subst">||</span> p != <span class="built_in">null</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(p != <span class="built_in">null</span>)&#123;</span><br><span class="line">                <span class="built_in">stack</span><span class="built_in">.</span>push(p);</span><br><span class="line">                p = p<span class="built_in">.</span>left;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                TreeNode t = <span class="built_in">stack</span><span class="built_in">.</span>pop();</span><br><span class="line">                lst<span class="built_in">.</span>add(t<span class="built_in">.</span>val);</span><br><span class="line">                p = t<span class="built_in">.</span>right;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">return</span> lst;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>In iterative method,if node is not null, push a node into stack, and set it as its left node. If node is null, pop a node from stack and add it into list, then set p as its right node.</p>
+<p>Recursive solution:<br><figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> class Solution &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">List</span>&lt;<span class="built_in">Integer</span>&gt; inorderTraversal(TreeNode root) &#123;</span><br><span class="line">        <span class="built_in">List</span>&lt;<span class="built_in">Integer</span>&gt; lst = <span class="literal">new</span> ArrayList&lt;<span class="built_in">Integer</span>&gt;();</span><br><span class="line">        <span class="keyword">if</span>(root!=<span class="built_in">null</span>)&#123;</span><br><span class="line">            lst<span class="built_in">.</span>addAll(inorderTraversal(root<span class="built_in">.</span>left));</span><br><span class="line">            lst<span class="built_in">.</span>add(root<span class="built_in">.</span>val);</span><br><span class="line">            lst<span class="built_in">.</span>addAll(inorderTraversal(root<span class="built_in">.</span>right));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> lst;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/01/08/144-Binary-Tree-Preorder-Traversal/" itemprop="url">
+                  #144 Binary Tree Preorder Traversal
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Posted on
+            <time itemprop="dateCreated" datetime="2016-01-08T18:19:54-05:00" content="2016-01-08">
+              2016-01-08
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; In
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2016/01/08/144-Binary-Tree-Preorder-Traversal/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/08/144-Binary-Tree-Preorder-Traversal/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>#144. Binary Tree Preorder Traversal</p>
+<p>Given a binary tree, return the preorder traversal of its nodes’ values.</p>
+<p>For example:<br>Given binary tree {1,#,2,3},<br>   1<br>    \<br>     2<br>    /<br>   3<br>return [1,2,3].</p>
+<p>Solution:<br><figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> class Solution &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">List</span>&lt;<span class="built_in">Integer</span>&gt; preorderTraversal(TreeNode root) &#123;</span><br><span class="line">        <span class="built_in">List</span>&lt;<span class="built_in">Integer</span>&gt; <span class="built_in">list</span> = <span class="literal">new</span> LinkedList&lt;<span class="built_in">Integer</span>&gt;();</span><br><span class="line">        <span class="built_in">Stack</span>&lt;TreeNode&gt; rights = <span class="literal">new</span> <span class="built_in">Stack</span>&lt;TreeNode&gt;();</span><br><span class="line">        <span class="keyword">while</span>(root != <span class="built_in">null</span>)&#123;</span><br><span class="line">            <span class="built_in">list</span><span class="built_in">.</span>add(root<span class="built_in">.</span>val);</span><br><span class="line">            <span class="keyword">if</span>(root<span class="built_in">.</span>right != <span class="built_in">null</span>)</span><br><span class="line">                rights<span class="built_in">.</span>push(root<span class="built_in">.</span>right);</span><br><span class="line">            root = root<span class="built_in">.</span>left;</span><br><span class="line">            <span class="keyword">if</span>(root == <span class="built_in">null</span> <span class="subst">&amp;&amp;</span> <span class="subst">!</span>rights<span class="built_in">.</span>isEmpty())</span><br><span class="line">                root = rights<span class="built_in">.</span>pop();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">list</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Use iterative method, in each loop, add the root to the list. If find right node, store it to the stack, and set the root = root.left, if root is null but stack has right nodes, set root = rights.pop().</p>
+<p>Recursive solution:<br><figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public class <span class="type">Solution</span> &#123;</span><br><span class="line">    public <span class="type">List</span>&lt;<span class="type">Integer</span>&gt; preorderTraversal(<span class="type">TreeNode</span> root) &#123;</span><br><span class="line">        <span class="type">List</span>&lt;<span class="type">Integer</span>&gt; <span class="literal">result</span> = new <span class="type">ArrayList</span>&lt;<span class="type">Integer</span>&gt;();</span><br><span class="line">        <span class="keyword">if</span> (root != null)&#123;</span><br><span class="line">            <span class="literal">result</span>.add(root.val);</span><br><span class="line">            <span class="literal">result</span>.addAll(preorderTraversal(root.left));</span><br><span class="line">            <span class="literal">result</span>.addAll(preorderTraversal(root.right));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">result</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/01/08/319-Bulb-Switcher/" itemprop="url">
+                  #319 Bulb Switcher
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Posted on
+            <time itemprop="dateCreated" datetime="2016-01-08T18:04:27-05:00" content="2016-01-08">
+              2016-01-08
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; In
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2016/01/08/319-Bulb-Switcher/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/08/319-Bulb-Switcher/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>#319. Bulb Switcher</p>
+<p>There are n bulbs that are initially off. You first turn on all the bulbs. Then, you turn off every second bulb. On the third round, you toggle every third bulb (turning on if it’s off or turning off if it’s on). For the nth round, you only toggle the last bulb. Find how many bulbs are on after n rounds.</p>
+<p>Example:</p>
+<p>Given n = 3. </p>
+<p>At first, the three bulbs are [off, off, off].<br>After first round, the three bulbs are [on, on, on].<br>After second round, the three bulbs are [on, off, on].<br>After third round, the three bulbs are [on, off, off]. </p>
+<p>So you should return 1, because there is only one bulb is on.</p>
+<p>Solution:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">bulbSwitch</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">int</span>)Math.<span class="built_in">sqrt</span>(n);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>A bulb ends up on iff it is switched an odd number of times. A square has odd divisors, so bulb ends up on only if it’s a square.</p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/01/08/281-Zigzag-Iterator/" itemprop="url">
                   #281 Zigzag Iterator
                 </a>
@@ -848,443 +1284,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/01/08/260-Single-Number-III/" itemprop="url">
-                  #260 Single Number III
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            Posted on
-            <time itemprop="dateCreated" datetime="2016-01-08T15:28:21-05:00" content="2016-01-08">
-              2016-01-08
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; In
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
-                    <span itemprop="name">LeetCode</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2016/01/08/260-Single-Number-III/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/08/260-Single-Number-III/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-              <p>#260. Single Number III</p>
-<p>Given an array of numbers nums, in which exactly two elements appear only once and all the other elements appear exactly twice. Find the two elements that appear only once.</p>
-<p>For example:</p>
-<p>Given nums = [1, 2, 1, 3, 2, 5], return [3, 5].</p>
-<p>Note:<br>The order of the result is not important. So in the above example, [5, 3] is also correct.<br>Your algorithm should run in linear runtime complexity. Could you implement it using only constant space complexity?</p>
-<p>Solution:<br><figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">public class <span class="type">Solution</span> &#123;</span><br><span class="line">    public <span class="type">int</span>[] singleNumber(<span class="type">int</span>[] nums) &#123;</span><br><span class="line">        <span class="type">int</span> diff = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> num: nums)&#123;</span><br><span class="line">        diff^=num;</span><br><span class="line">    &#125;</span><br><span class="line">    diff = <span class="type">Integer</span>.highestOneBit(diff);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span>[] <span class="literal">result</span> = new <span class="type">int</span>[<span class="number">2</span>];</span><br><span class="line">    <span class="type">Arrays</span>.fill(<span class="literal">result</span>,<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> num: nums)&#123;</span><br><span class="line">        <span class="keyword">if</span>((diff &amp; num) == <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="literal">result</span>[<span class="number">0</span>] ^= num;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="literal">result</span>[<span class="number">1</span>] ^= num;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">result</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>There are two single number, so xor all the number == xor single s1 and single s2, diff represent the different bit of them, then we choose only one bit to separate the two single numbers to two different part, then do xor in each part, finally we get these two singal numbers.</p>
-
-            
-          </span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/01/08/245-Shortest-Word-Distance-III/" itemprop="url">
-                  #245 Shortest Word Distance III
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            Posted on
-            <time itemprop="dateCreated" datetime="2016-01-08T15:06:14-05:00" content="2016-01-08">
-              2016-01-08
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; In
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
-                    <span itemprop="name">LeetCode</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2016/01/08/245-Shortest-Word-Distance-III/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/08/245-Shortest-Word-Distance-III/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-              <p>#245. Shortest Word Distance III</p>
-<p>This is a follow up of Shortest Word Distance. The only difference is now word1 could be the same as word2.</p>
-<p>Given a list of words and two words word1 and word2, return the shortest distance between these two words in the list.</p>
-<p>word1 and word2 may be the same and they represent two individual words in the list.</p>
-<p>For example,<br>Assume that words = [“practice”, “makes”, “perfect”, “coding”, “makes”].</p>
-<p>Given word1 = “makes”, word2 = “coding”, return 1.<br>Given word1 = “makes”, word2 = “makes”, return 3.</p>
-<p>Solution:<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">public</span> class Solution &#123;</span><br><span class="line">    public int shortestWordDistance(<span class="keyword">String[] </span>words, <span class="keyword">String </span>word1, <span class="keyword">String </span>word2) &#123;</span><br><span class="line">        <span class="preprocessor">if</span> (words == null) return -<span class="number">1</span><span class="comment">;</span></span><br><span class="line">        int <span class="literal">p1</span> = -<span class="number">1</span>, <span class="literal">p2</span> = -<span class="number">1</span><span class="comment">;</span></span><br><span class="line">        int diff = words.length<span class="comment">;</span></span><br><span class="line">        for (int i = <span class="number">0</span><span class="comment">; i &lt; words.length; i++) &#123;</span></span><br><span class="line">            <span class="preprocessor">if</span> (words[i].equals(word1)) &#123;</span><br><span class="line">                <span class="preprocessor">if</span> (word1.equals(word2)) &#123;</span><br><span class="line">                    <span class="preprocessor">if</span> (<span class="literal">p1</span> != -<span class="number">1</span>)</span><br><span class="line">                        diff = Math.min(diff, i - <span class="literal">p1</span>)<span class="comment">;</span></span><br><span class="line">                    <span class="literal">p1</span> = i<span class="comment">;</span></span><br><span class="line">                &#125;</span><br><span class="line">                <span class="preprocessor">else</span> &#123;</span><br><span class="line">                    <span class="literal">p1</span> = i<span class="comment">;</span></span><br><span class="line">                    <span class="preprocessor">if</span> (<span class="literal">p2</span> != -<span class="number">1</span>)</span><br><span class="line">                        diff = Math.min(diff, <span class="literal">p1</span> - <span class="literal">p2</span>)<span class="comment">;</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="preprocessor">else</span> <span class="preprocessor">if</span> (words[i].equals(word2)) &#123;</span><br><span class="line">                <span class="literal">p2</span> = i<span class="comment">;</span></span><br><span class="line">                <span class="preprocessor">if</span> (<span class="literal">p1</span> != -<span class="number">1</span>) </span><br><span class="line">                    diff = Math.min(diff, <span class="literal">p2</span> - <span class="literal">p1</span>)<span class="comment">;</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return diff<span class="comment">;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>First set a diff and the pointers initialize as -1, then if these two words found, update the diff.</p>
-
-            
-          </span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/01/08/323-Number-of-Connected-Components-in-an-Undirected-Graph/" itemprop="url">
-                  #323 Number of Connected Components in an Undirected Graph
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            Posted on
-            <time itemprop="dateCreated" datetime="2016-01-08T14:06:24-05:00" content="2016-01-08">
-              2016-01-08
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; In
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
-                    <span itemprop="name">LeetCode</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2016/01/08/323-Number-of-Connected-Components-in-an-Undirected-Graph/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/08/323-Number-of-Connected-Components-in-an-Undirected-Graph/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-              <p>#323. Number of Connected Components in an Undirected Graph</p>
-<p>Given n nodes labeled from 0 to n - 1 and a list of undirected edges (each edge is a pair of nodes), write a function to find the number of connected components in an undirected graph.</p>
-<p>Example 1:<br>     0          3<br>     |          |<br>     1 — 2    4<br>Given n = 5 and edges = [[0, 1], [1, 2], [3, 4]], return 2.</p>
-<p>Example 2:<br>     0           4<br>     |           |<br>     1 — 2 — 3<br>Given n = 5 and edges = [[0, 1], [1, 2], [2, 3], [3, 4]], return 1.</p>
-<p>Note:<br>You can assume that no duplicate edges will appear in edges. Since all edges are undirected, [0, 1] is the same as [1, 0] and thus will not appear together in edges.</p>
-<p>Solution:<br><figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">public class <span class="type">Solution</span> &#123;</span><br><span class="line">    public <span class="type">int</span> countComponents(<span class="type">int</span> n, <span class="type">int</span>[][] edges) &#123;</span><br><span class="line">        <span class="type">int</span>[] <span class="literal">result</span> = new <span class="type">int</span>[n];</span><br><span class="line">        <span class="type">int</span> count = n;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">            <span class="literal">result</span>[i]=i;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span>[] edge:edges)&#123;</span><br><span class="line">            <span class="type">int</span> a = root(<span class="literal">result</span>,edge[<span class="number">0</span>]);</span><br><span class="line">            <span class="type">int</span> b = root(<span class="literal">result</span>,edge[<span class="number">1</span>]);</span><br><span class="line">            <span class="keyword">if</span>(a==b) <span class="keyword">continue</span>;</span><br><span class="line">                <span class="literal">result</span>[b]=a;</span><br><span class="line">            count--; </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public <span class="type">int</span> root(<span class="type">int</span>[] <span class="literal">result</span>,<span class="type">int</span> n)&#123;</span><br><span class="line">        <span class="keyword">while</span>(<span class="literal">result</span>[n]!=n)&#123;</span><br><span class="line">            <span class="literal">result</span>[n] = <span class="literal">result</span>[<span class="literal">result</span>[n]];</span><br><span class="line">            n=<span class="literal">result</span>[n];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> n;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>Use Quick-Union algorithm.</p>
-
-            
-          </span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/01/08/167-Two-Sum-II-Input-array-is-sorted/" itemprop="url">
-                  #167 Two Sum II - Input array is sorted
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            Posted on
-            <time itemprop="dateCreated" datetime="2016-01-08T13:52:55-05:00" content="2016-01-08">
-              2016-01-08
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; In
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
-                    <span itemprop="name">LeetCode</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2016/01/08/167-Two-Sum-II-Input-array-is-sorted/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/08/167-Two-Sum-II-Input-array-is-sorted/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-              <p>#167. Two Sum II - Input array is sorted</p>
-<p>Given an array of integers that is already sorted in ascending order, find two numbers such that they add up to a specific target number.</p>
-<p>The function twoSum should return indices of the two numbers such that they add up to the target, where index1 must be less than index2. Please note that your returned answers (both index1 and index2) are not zero-based.</p>
-<p>You may assume that each input would have exactly one solution.</p>
-<p>Input: numbers={2, 7, 11, 15}, target=9<br>Output: index1=1, index2=2</p>
-<p>Solution:<br><figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span>[] twoSum(<span class="built_in">int</span>[] numbers, <span class="built_in">int</span> target) &#123;</span><br><span class="line">        <span class="built_in">int</span> <span class="built_in">left</span> = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">int</span> <span class="built_in">right</span> = numbers.length-<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(<span class="built_in">left</span> &lt; <span class="built_in">right</span>)&#123;</span><br><span class="line">            <span class="built_in">int</span> temp = numbers[<span class="built_in">left</span>] + numbers[<span class="built_in">right</span>];</span><br><span class="line">            <span class="keyword">if</span>(temp &gt; target)&#123;</span><br><span class="line">                <span class="built_in">right</span>--;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(temp &lt; target)&#123;</span><br><span class="line">                <span class="built_in">left</span>++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                return <span class="keyword">new</span> <span class="built_in">int</span>[] &#123; <span class="built_in">left</span> + <span class="number">1</span>, <span class="built_in">right</span> + <span class="number">1</span> &#125;;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>Use binary search. The output is the index+1.</p>
-
-            
-          </span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
 
   </section>
 
@@ -1331,7 +1330,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">105</span>
+              <span class="site-state-item-count">109</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
