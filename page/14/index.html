@@ -220,6 +220,219 @@
             
               
                 
+                <a class="post-title-link" href="/2016/01/05/243-Shortest-Word-Distance/" itemprop="url">
+                  #243 Shortest Word Distance
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Posted on
+            <time itemprop="dateCreated" datetime="2016-01-05T14:36:36-05:00" content="2016-01-05">
+              2016-01-05
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; In
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2016/01/05/243-Shortest-Word-Distance/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/05/243-Shortest-Word-Distance/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>#243. Shortest Word Distance</p>
+<p>Given a list of words and two words word1 and word2, return the shortest distance between these two words in the list.</p>
+<p>For example,<br>Assume that words = [“practice”, “makes”, “perfect”, “coding”, “makes”].</p>
+<p>Given word1 = “coding”, word2 = “practice”, return 3.<br>Given word1 = “makes”, word2 = “coding”, return 1.</p>
+<p>Solution:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">shortestDistance</span><span class="params">(String[] words, String word1, String word2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (words == null) <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> p1 = -<span class="number">1</span>, p2 = -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> diff = words.length;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; words.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (words[i].equals(word1)) &#123;</span><br><span class="line">                p1 = i;</span><br><span class="line">                <span class="keyword">if</span> (p2 != -<span class="number">1</span>) </span><br><span class="line">                    diff = Math.min(diff, p1 - p2);</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (words[i].equals(word2)) &#123;</span><br><span class="line">                p2 = i;</span><br><span class="line">                <span class="keyword">if</span> (p1 != -<span class="number">1</span>) </span><br><span class="line">                    diff = Math.min(diff, p2 - p1);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> diff;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/01/05/104-Maximum-Depth-of-Binary-Tree/" itemprop="url">
+                  #104 Maximum Depth of Binary Tree
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Posted on
+            <time itemprop="dateCreated" datetime="2016-01-05T14:27:00-05:00" content="2016-01-05">
+              2016-01-05
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; In
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2016/01/05/104-Maximum-Depth-of-Binary-Tree/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/05/104-Maximum-Depth-of-Binary-Tree/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>#104. Maximum Depth of Binary Tree</p>
+<p>Given a binary tree, find its maximum depth.</p>
+<p>The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.</p>
+<p>Solution:<br><figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> maxDepth(TreeNode root) &#123;</span><br><span class="line">        <span class="keyword">if</span>(root==<span class="literal">null</span>) return <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(root.<span class="built_in">left</span>==<span class="literal">null</span>&amp;&amp;root.<span class="built_in">right</span>==<span class="literal">null</span>) return <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(root.<span class="built_in">left</span>==<span class="literal">null</span>&amp;&amp;root.<span class="built_in">right</span>!=<span class="literal">null</span>) return maxDepth(root.<span class="built_in">right</span>)+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(root.<span class="built_in">left</span>!=<span class="literal">null</span>&amp;&amp;root.<span class="built_in">right</span>==<span class="literal">null</span>) return maxDepth(root.<span class="built_in">left</span>)+<span class="number">1</span>;</span><br><span class="line">        return Math.max(maxDepth(root.<span class="built_in">left</span>),maxDepth(root.<span class="built_in">right</span>))+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/01/05/258-Add-Digits/" itemprop="url">
                   258. Add Digits
                 </a>
@@ -782,7 +995,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">135</span>
+              <span class="site-state-item-count">137</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>

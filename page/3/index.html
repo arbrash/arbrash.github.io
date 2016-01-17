@@ -220,6 +220,223 @@
             
               
                 
+                <a class="post-title-link" href="/2016/01/13/62-Unique-Paths/" itemprop="url">
+                  #62 Unique Paths
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Posted on
+            <time itemprop="dateCreated" datetime="2016-01-13T00:15:26-05:00" content="2016-01-13">
+              2016-01-13
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; In
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2016/01/13/62-Unique-Paths/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/13/62-Unique-Paths/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>#62. Unique Paths</p>
+<p>A robot is located at the top-left corner of a m x n grid (marked ‘Start’ in the diagram below).</p>
+<p>The robot can only move either down or right at any point in time. The robot is trying to reach the bottom-right corner of the grid (marked ‘Finish’ in the diagram below).</p>
+<p>How many possible unique paths are there?</p>
+<p><img src="http://articles.leetcode.com/wp-content/uploads/2014/12/robot_maze.png" alt=""><br>Above is a 3 x 7 grid. How many possible unique paths are there?<br>Note: m and n will be at most 100.</p>
+<p>Solution:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">uniquePaths</span><span class="params">(<span class="keyword">int</span> m, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(m&gt;n) <span class="keyword">return</span> uniquePaths(n,m);</span><br><span class="line">        <span class="keyword">int</span>[] cur = <span class="keyword">new</span> <span class="keyword">int</span>[m];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;n;j++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;m;i++)</span><br><span class="line">                cur[i] += cur[i-<span class="number">1</span>]+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span> cur[m-<span class="number">1</span>]+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Becaues can only move right or down, so the idea is Path[i][j] = Path[i - 1][j] + Path[i][j - 1], also the P[0][j] = 1, P[i][0] = 1, then do cur[i] += cur[i-1] from path[1][1] to path[m][n].</p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/01/13/230-Kth-Smallest-Element-in-a-BST/" itemprop="url">
+                  #230 Kth Smallest Element in a BST
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Posted on
+            <time itemprop="dateCreated" datetime="2016-01-13T00:00:08-05:00" content="2016-01-13">
+              2016-01-13
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; In
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2016/01/13/230-Kth-Smallest-Element-in-a-BST/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/13/230-Kth-Smallest-Element-in-a-BST/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>#230. Kth Smallest Element in a BST</p>
+<p>Given a binary search tree, write a function kthSmallest to find the kth smallest element in it.</p>
+<p>Note:<br>You may assume k is always valid, 1 ≤ k ≤ BST’s total elements.</p>
+<p>Follow up:<br>What if the BST is modified (insert/delete operations) often and you need to find the kth smallest frequently? How would you optimize the kthSmallest routine?</p>
+<p>Solution:<br><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> kthSmallest(TreeNode root, <span class="keyword">int</span> k) &#123;</span><br><span class="line">        <span class="keyword">int</span> <span class="keyword">count</span> = countNodes(root.left);</span><br><span class="line">        <span class="keyword">if</span>(k&lt;=<span class="keyword">count</span>)</span><br><span class="line">            <span class="keyword">return</span> kthSmallest(root.left,k);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (k&gt;<span class="keyword">count</span>+<span class="number">1</span>)</span><br><span class="line">            <span class="keyword">return</span> kthSmallest(root.right,k-<span class="number">1</span>-<span class="keyword">count</span>);</span><br><span class="line">        <span class="keyword">return</span> root.val;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> countNodes(TreeNode n)&#123;</span><br><span class="line">        <span class="keyword">if</span>(n==<span class="keyword">null</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span> + countNodes(n.left) + countNodes(n.right);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>First count the number of nodes in left subtree, if k&lt;=count, continue find kthSmallest in the left subtree,<br>if k=count+1, it’s the kthSmallest and return it, if k&gt;count+1,contine find k-1-count thSmallest in the right subtree.</p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/01/12/250-Count-Univalue-Suvtrees/" itemprop="url">
                   #250 Count Univalue Suvtrees
                 </a>
@@ -1063,231 +1280,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/01/11/116-Populating-Next-Right-Pointers-in-Each-Node/" itemprop="url">
-                  #116 Populating Next Right Pointers in Each Node
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            Posted on
-            <time itemprop="dateCreated" datetime="2016-01-11T13:14:49-05:00" content="2016-01-11">
-              2016-01-11
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; In
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
-                    <span itemprop="name">LeetCode</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2016/01/11/116-Populating-Next-Right-Pointers-in-Each-Node/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/11/116-Populating-Next-Right-Pointers-in-Each-Node/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-              <p>#116. Populating Next Right Pointers in Each Node</p>
-<p>Given a binary tree</p>
-<pre><code>struct TreeLinkNode {
-  TreeLinkNode *left;
-  TreeLinkNode *right;
-  TreeLinkNode *next;
-}
-</code></pre><p>Populate each next pointer to point to its next right node. If there is no next right node, the next pointer should be set to NULL.</p>
-<p>Initially, all next pointers are set to NULL.</p>
-<p>Note:</p>
-<p>You may only use constant extra space.<br>You may assume that it is a perfect binary tree (ie, all leaves are at the same level, and every parent has two children).<br>For example,<br>Given the following perfect binary tree,<br>         1<br>       /  \<br>      2    3<br>     / \  / \<br>    4  5  6  7<br>After calling your function, the tree should look like:<br>         1 -&gt; NULL<br>       /  \<br>      2 -&gt; 3 -&gt; NULL<br>     / \  / \<br>    4-&gt;5-&gt;6-&gt;7 -&gt; NULL</p>
-<figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Definition <span class="keyword">for</span> binary tree <span class="keyword">with</span> <span class="keyword">next</span> pointer.</span><br><span class="line"> * <span class="keyword">public</span> <span class="keyword">class</span> TreeLinkNode &#123;</span><br><span class="line"> *     <span class="built_in">int</span> val;</span><br><span class="line"> *     TreeLinkNode <span class="built_in">left</span>, <span class="built_in">right</span>, <span class="keyword">next</span>;</span><br><span class="line"> *     TreeLinkNode(<span class="built_in">int</span> x) &#123; val = x; &#125;</span><br><span class="line"> * &#125;</span><br><span class="line"> */</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="keyword">public</span> void connect(TreeLinkNode root) &#123;</span><br><span class="line">        <span class="keyword">if</span>(root == <span class="literal">null</span> || root.<span class="built_in">left</span> == <span class="literal">null</span>)</span><br><span class="line">            return;</span><br><span class="line">        root.<span class="built_in">left</span>.<span class="keyword">next</span> = root.<span class="built_in">right</span>;</span><br><span class="line">        <span class="keyword">if</span>(root.<span class="keyword">next</span> != <span class="literal">null</span>)</span><br><span class="line">            root.<span class="built_in">right</span>.<span class="keyword">next</span> = root.<span class="keyword">next</span>.<span class="built_in">left</span>;</span><br><span class="line">        connect(root.<span class="built_in">left</span>);</span><br><span class="line">        connect(root.<span class="built_in">right</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Use recursive method, if root==null or root has no child, return, else set root.left.next = root.right. if root’s next pointer is not null, set the root.right.next=root.next.left. then connect left part and right part recursively. </p>
-
-            
-          </span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/01/09/137-Single-Number-II/" itemprop="url">
-                  #137 Single Number II
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            Posted on
-            <time itemprop="dateCreated" datetime="2016-01-09T14:10:22-05:00" content="2016-01-09">
-              2016-01-09
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; In
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
-                    <span itemprop="name">LeetCode</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2016/01/09/137-Single-Number-II/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/09/137-Single-Number-II/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-              <p>#137. Single Number II</p>
-<p>Given an array of integers, every element appears three times except for one. Find that single one.</p>
-<p>Note:<br>Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?</p>
-<p>Solution:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Solution &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">singleNumber</span><span class="params">(<span class="keyword">int</span>[] A)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> ones = <span class="number">0</span>, twos = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; A.length; i++)&#123;</span><br><span class="line">            ones = (ones ^ A[i]) &amp; ~twos;</span><br><span class="line">            twos = (twos ^ A[i]) &amp; ~ones;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ones;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>What we need to do is to store the number of ‘1’s of every bit. Since each of the 32 bits follow the same rules, we just need to consider 1 bit. We know a number appears 3 times at most, so we need 2 bits to store that. Now we have 4 state, 00, 01, 10 and 11, but we only need 3 of them.</p>
-<p>In this solution, 00, 01 and 10 are chosen. Let ‘ones’ represents the first bit, ‘twos’ represents the second bit. Then we need to set rules for ‘ones’ and ‘twos’ so that they act as we hopes. The complete loop is 00-&gt;10-&gt;01-&gt;00(0-&gt;1-&gt;2-&gt;3/0).</p>
-<p>For ‘ones’, we can get ‘ones = ones ^ A[i]; if (twos == 1) then ones = 0’, that can be tansformed to ‘ones = (ones ^ A[i]) &amp; ~twos’.</p>
-<p>Similarly, for ‘twos’, we can get ‘twos = twos ^ A[i]; if (ones<em> == 1) then twos = 0’ and ‘twos = (twos ^ A[i]) &amp; ~ones’. Notice that ‘ones</em>‘ is the value of ‘ones’ after calculation, that is why twos is calculated later.</p>
-
-            
-          </span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
 
   </section>
 
@@ -1334,7 +1326,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">135</span>
+              <span class="site-state-item-count">137</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
